@@ -7,6 +7,8 @@ TagManager:
   - Customer
   - Machine
   - Door
+  - Line
+  - Basket
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Customer
   - Machine
   - Door
-  - 
-  - 
+  - Basket
+  - CustomerUI
   - 
   - 
   - 

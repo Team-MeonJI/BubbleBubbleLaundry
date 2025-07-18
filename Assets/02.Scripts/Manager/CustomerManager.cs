@@ -1,6 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
+using Utils.EnumTypes;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -10,14 +11,14 @@ public class CustomerManager : MonoBehaviour
     public GameObject customerPrefab;
     private Transform door;
 
-    public List<Transform> lines = new List<Transform>();
+    private List<Transform> lines = new List<Transform>();
     private List<CustomerController> customers = new List<CustomerController>();
 
     private const int customerMaxCount = 5;
     private int customerCount = 0;
 
     private float currentTime = 0.0f;
-    private float appearedTime = 5.0f;
+    private float appearedTime = 10.0f;
 
     private void Awake()
     {
@@ -38,6 +39,9 @@ public class CustomerManager : MonoBehaviour
 
     private void Update()
     {
+        if (customerCount >= customerMaxCount)
+            return;
+
         if(currentTime < appearedTime)
         {
             currentTime += Time.deltaTime;
@@ -52,16 +56,30 @@ public class CustomerManager : MonoBehaviour
     // ¼Õ´Ô µîÀå
     public void EnqueueCustomer(CustomerController _customer)
     {
-        if (customerCount >= 5)
+        if (customers.Count >= 5)
             return;
 
         customerCount++;
+        customers.Add(_customer);
+        customers[customerCount - 1].state = CustomerState.Move;
+        customers[customerCount - 1].lineIndex = customerCount - 1;
+        customers[customerCount - 1].SetDestination(lines[customerCount - 1]);
     }
 
     // ¼Õ´Ô ÅðÀå
-    public void DequeueCustomer()
+    public void DequeueCustomer(int _index)
     {
+        if (customers.Count <= 0)
+            return;
 
+        customers[_index].SetDestination(door);
+        customers.RemoveAt(_index);
         customerCount--;
+
+        for (int i = 0; i < customers.Count; i++)
+        {
+            customers[i].lineIndex = i;
+            customers[i].SetDestination(lines[i]);
+        }
     }
 }

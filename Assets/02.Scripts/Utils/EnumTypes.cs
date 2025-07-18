@@ -3,8 +3,10 @@ namespace Utils.EnumTypes
     // 손님 상태
     public enum CustomerState
     {
-        Idle,
-        Wait
+        Idle,  // 기본
+        Move,  // 이동
+        Wait,  // 기다림
+        Leave  // 퇴장
     }
 
     // 기계 타입
