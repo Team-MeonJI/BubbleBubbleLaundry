@@ -12,7 +12,7 @@ public class CustomerManager : MonoBehaviour
     private Transform door;
 
     private List<Transform> lines = new List<Transform>();
-    private List<CustomerController> customers = new List<CustomerController>();
+    private List<CustomerBehaviour> customers = new List<CustomerBehaviour>();
 
     private const int customerMaxCount = 5;
     private int customerCount = 0;
@@ -49,12 +49,12 @@ public class CustomerManager : MonoBehaviour
         else
         {
             currentTime = 0;
-            EnqueueCustomer(Instantiate(customerPrefab, door.position, Quaternion.identity).GetComponent<CustomerController>());
+            EnqueueCustomer(Instantiate(customerPrefab, door.position, Quaternion.identity).GetComponent<CustomerBehaviour>());
         }
     }
 
     // ¼Õ´Ô µîÀå
-    public void EnqueueCustomer(CustomerController _customer)
+    public void EnqueueCustomer(CustomerBehaviour _customer)
     {
         if (customers.Count >= 5)
             return;
@@ -72,6 +72,7 @@ public class CustomerManager : MonoBehaviour
         if (customers.Count <= 0)
             return;
 
+        customers[_index].Init();
         customers[_index].SetDestination(door);
         customers.RemoveAt(_index);
         customerCount--;

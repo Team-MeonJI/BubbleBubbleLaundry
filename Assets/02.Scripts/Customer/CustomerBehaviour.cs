@@ -1,14 +1,18 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Utils.EnumTypes;
 
-public class CustomerController : MonoBehaviour
+public class CustomerBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
 
     public CustomerState state = CustomerState.Idle;
     private GameObject basket;
+    private GameObject speechBubble;
+    private Slider speechBubbleSlider;
+    private Image sliderFillImage;
     private TextMeshProUGUI laundryCountText;
 
     private float moveSpeed = 2.5f;
@@ -24,16 +28,22 @@ public class CustomerController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         basket = transform.GetChild(0).GetChild(0).gameObject;
+        speechBubble = transform.GetChild(1).GetChild(0).gameObject;
+        speechBubbleSlider = speechBubble.GetComponentInChildren<Slider>(true);
+        sliderFillImage = speechBubble.transform.GetChild(1).GetComponentInChildren<Image>(true);
         laundryCountText = basket.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>(true);
 
         Init();
     }
 
-    private void Init()
+    public void Init()
     {
         agent.speed = moveSpeed;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        basket.SetActive(false);
+        speechBubble.SetActive(false);
     }
 
     private void Update()
@@ -62,7 +72,15 @@ public class CustomerController : MonoBehaviour
     {
         if(currentTime < waitingTime)
         {
+            if(currentTime >= (waitingTime / 3) * 2)
+                sliderFillImage.color = Color.red;
+            else if(currentTime >= (waitingTime / 3))
+                sliderFillImage.color = Color.yellow;
+            else if(currentTime >= 0)
+                sliderFillImage.color = Color.green;
+
             currentTime += Time.deltaTime;
+            speechBubbleSlider.value = currentTime / waitingTime;
         }
         else
         {
@@ -101,11 +119,12 @@ public class CustomerController : MonoBehaviour
         {
             Destroy(gameObject, 0.25f);
         }
-        else if(coll.transform.CompareTag("Line") && state == CustomerState.Move)
+        else if (coll.transform.CompareTag("Line") && state == CustomerState.Move)
         {
             state = CustomerState.Wait;
             laundryCount = Random.Range(minLaundryCount, maxLaundryCount);
             laundryCountText.text = laundryCount.ToString();
+            speechBubble.SetActive(true);
             basket.SetActive(true);
         }
     }
