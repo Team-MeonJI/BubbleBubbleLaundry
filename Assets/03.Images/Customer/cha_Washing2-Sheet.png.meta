@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 74ed08e78f0273247bbc7bfd342592a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6771609167553006668
+    second: cha_Washing2-Sheet_0
+  - first:
+      213: -6206819647689688358
+    second: cha_Washing2-Sheet_1
+  - first:
+      213: -2739349758388588719
+    second: cha_Washing2-Sheet_2
+  - first:
+      213: -9016381069543262046
+    second: cha_Washing2-Sheet_3
+  - first:
+      213: 8980689616369453855
+    second: cha_Washing2-Sheet_4
+  - first:
+      213: 6146962873558416873
+    second: cha_Washing2-Sheet_5
+  - first:
+      213: -9119042981072721346
+    second: cha_Washing2-Sheet_6
+  - first:
+      213: -9093572416277941550
+    second: cha_Washing2-Sheet_7
+  - first:
+      213: 378046261376366157
+    second: cha_Washing2-Sheet_8
+  - first:
+      213: 6224534381375401434
+    second: cha_Washing2-Sheet_9
+  - first:
+      213: -4679965696441513134
+    second: cha_Washing2-Sheet_10
+  - first:
+      213: -4810777424445765232
+    second: cha_Washing2-Sheet_11
+  - first:
+      213: 6302410643302034138
+    second: cha_Washing2-Sheet_12
+  - first:
+      213: 3348269741813154812
+    second: cha_Washing2-Sheet_13
+  - first:
+      213: -6557423838200892502
+    second: cha_Washing2-Sheet_14
+  - first:
+      213: 617271050776617674
+    second: cha_Washing2-Sheet_15
+  - first:
+      213: -6427293441563516735
+    second: cha_Washing2-Sheet_16
+  - first:
+      213: -7169067420941490606
+    second: cha_Washing2-Sheet_17
+  - first:
+      213: 2392414044467270386
+    second: cha_Washing2-Sheet_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 75
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c86cd09a699fd50800000000000000
+      internalID: 6771609167553006668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada7a826a62fcd9a0800000000000000
+      internalID: -6206819647689688358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f22bf88efdbf9d0800000000000000
+      internalID: -2739349758388588719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8315620316fd280800000000000000
+      internalID: -9016381069543262046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b8db5df91d1ac70800000000000000
+      internalID: 8980689616369453855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9edb6fd5a266e4550800000000000000
+      internalID: 6146962873558416873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a24a539b6a27180800000000000000
+      internalID: -9119042981072721346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2767431142dc180800000000000000
+      internalID: -9093572416277941550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 4
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46b00e52171f3500800000000000000
+      internalID: 378046261376366157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 4
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add26167a0df16650800000000000000
+      internalID: 6224534381375401434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 4
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b079e9efb6d0fb0800000000000000
+      internalID: -4679965696441513134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 4
+        width: 118
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 099017acb6fac3db0800000000000000
+      internalID: -4810777424445765232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 4
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adaa8a6a619a67750800000000000000
+      internalID: 6302410643302034138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 4
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf346fc1791777e20800000000000000
+      internalID: 3348269741813154812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 5
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa37b5a03c95ff4a0800000000000000
+      internalID: -6557423838200892502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac22caf00ccf09800800000000000000
+      internalID: 617271050776617674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0a86c0baaadc6a0800000000000000
+      internalID: -6427293441563516735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256e4fbf92b528c90800000000000000
+      internalID: -7169067420941490606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2902cd5ef833120800000000000000
+      internalID: 2392414044467270386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cha_Washing2-Sheet_0: 6771609167553006668
+      cha_Washing2-Sheet_1: -6206819647689688358
+      cha_Washing2-Sheet_10: -4679965696441513134
+      cha_Washing2-Sheet_11: -4810777424445765232
+      cha_Washing2-Sheet_12: 6302410643302034138
+      cha_Washing2-Sheet_13: 3348269741813154812
+      cha_Washing2-Sheet_14: -6557423838200892502
+      cha_Washing2-Sheet_15: 617271050776617674
+      cha_Washing2-Sheet_16: -6427293441563516735
+      cha_Washing2-Sheet_17: -7169067420941490606
+      cha_Washing2-Sheet_18: 2392414044467270386
+      cha_Washing2-Sheet_2: -2739349758388588719
+      cha_Washing2-Sheet_3: -9016381069543262046
+      cha_Washing2-Sheet_4: 8980689616369453855
+      cha_Washing2-Sheet_5: 6146962873558416873
+      cha_Washing2-Sheet_6: -9119042981072721346
+      cha_Washing2-Sheet_7: -9093572416277941550
+      cha_Washing2-Sheet_8: 378046261376366157
+      cha_Washing2-Sheet_9: 6224534381375401434
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
