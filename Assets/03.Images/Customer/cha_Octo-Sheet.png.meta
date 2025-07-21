@@ -62,6 +62,18 @@ TextureImporter:
   - first:
       213: 7967434324840313765
     second: cha_Octo-Sheet_19
+  - first:
+      213: 795334377601205320
+    second: cha_Octo-Sheet_20
+  - first:
+      213: -7821892255697095798
+    second: cha_Octo-Sheet_21
+  - first:
+      213: -6695041850692612239
+    second: cha_Octo-Sheet_22
+  - first:
+      213: 5461702735902473982
+    second: cha_Octo-Sheet_23
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,7 +120,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 75
+  spritePixelsToUnits: 65
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -233,7 +245,7 @@ TextureImporter:
         x: 140
         y: 1
         width: 40
-        height: 63
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,7 +333,7 @@ TextureImporter:
         x: 396
         y: 1
         width: 40
-        height: 63
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,9 +374,9 @@ TextureImporter:
       name: cha_Octo-Sheet_8
       rect:
         serializedVersion: 2
-        x: 522
+        x: 524
         y: 1
-        width: 42
+        width: 40
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,9 +396,9 @@ TextureImporter:
       name: cha_Octo-Sheet_9
       rect:
         serializedVersion: 2
-        x: 586
+        x: 588
         y: 1
-        width: 42
+        width: 40
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -406,9 +418,9 @@ TextureImporter:
       name: cha_Octo-Sheet_10
       rect:
         serializedVersion: 2
-        x: 650
+        x: 652
         y: 1
-        width: 42
+        width: 40
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -428,9 +440,9 @@ TextureImporter:
       name: cha_Octo-Sheet_11
       rect:
         serializedVersion: 2
-        x: 714
+        x: 716
         y: 1
-        width: 42
+        width: 40
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -450,7 +462,7 @@ TextureImporter:
       name: cha_Octo-Sheet_12
       rect:
         serializedVersion: 2
-        x: 780
+        x: 778
         y: 1
         width: 42
         height: 63
@@ -472,7 +484,7 @@ TextureImporter:
       name: cha_Octo-Sheet_13
       rect:
         serializedVersion: 2
-        x: 844
+        x: 842
         y: 1
         width: 42
         height: 62
@@ -494,7 +506,7 @@ TextureImporter:
       name: cha_Octo-Sheet_14
       rect:
         serializedVersion: 2
-        x: 908
+        x: 906
         y: 1
         width: 42
         height: 63
@@ -516,7 +528,7 @@ TextureImporter:
       name: cha_Octo-Sheet_15
       rect:
         serializedVersion: 2
-        x: 972
+        x: 970
         y: 1
         width: 42
         height: 62
@@ -540,7 +552,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1036
         y: 1
-        width: 40
+        width: 42
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -562,7 +574,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1100
         y: 1
-        width: 40
+        width: 42
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -584,7 +596,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1164
         y: 1
-        width: 40
+        width: 42
         height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -606,7 +618,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1228
         y: 1
-        width: 40
+        width: 42
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -618,6 +630,94 @@ TextureImporter:
       bones: []
       spriteID: 5a37c5f1e43029e60800000000000000
       internalID: 7967434324840313765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Octo-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 1
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844839e0768990b00800000000000000
+      internalID: 795334377601205320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Octo-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 1
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a83bbc38f6e037390800000000000000
+      internalID: -7821892255697095798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Octo-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 1
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17fc71d98ee6613a0800000000000000
+      internalID: -6695041850692612239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Octo-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 1
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efefe3273bddbcb40800000000000000
+      internalID: 5461702735902473982
       vertices: []
       indices: 
       edges: []
@@ -649,6 +749,10 @@ TextureImporter:
       cha_Octo-Sheet_18: -3369786560764591577
       cha_Octo-Sheet_19: 7967434324840313765
       cha_Octo-Sheet_2: 6126898937308133592
+      cha_Octo-Sheet_20: 795334377601205320
+      cha_Octo-Sheet_21: -7821892255697095798
+      cha_Octo-Sheet_22: -6695041850692612239
+      cha_Octo-Sheet_23: 5461702735902473982
       cha_Octo-Sheet_3: 2036897618782331688
       cha_Octo-Sheet_4: 2032686880809256370
       cha_Octo-Sheet_5: -8898819452976824823

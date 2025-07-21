@@ -59,6 +59,18 @@ TextureImporter:
   - first:
       213: 2392414044467270386
     second: cha_Washing2-Sheet_18
+  - first:
+      213: -7957176760403133877
+    second: cha_Washing2-Sheet_19
+  - first:
+      213: -7519279229584144999
+    second: cha_Washing2-Sheet_20
+  - first:
+      213: -4387692679446209790
+    second: cha_Washing2-Sheet_21
+  - first:
+      213: 8898062651686395287
+    second: cha_Washing2-Sheet_22
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,7 +117,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 75
+  spritePixelsToUnits: 65
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -230,7 +242,7 @@ TextureImporter:
         x: 138
         y: 4
         width: 44
-        height: 55
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,7 +330,7 @@ TextureImporter:
         x: 394
         y: 4
         width: 44
-        height: 55
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,9 +371,9 @@ TextureImporter:
       name: cha_Washing2-Sheet_8
       rect:
         serializedVersion: 2
-        x: 517
+        x: 522
         y: 4
-        width: 60
+        width: 44
         height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -381,9 +393,9 @@ TextureImporter:
       name: cha_Washing2-Sheet_9
       rect:
         serializedVersion: 2
-        x: 581
+        x: 586
         y: 4
-        width: 60
+        width: 44
         height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -403,9 +415,9 @@ TextureImporter:
       name: cha_Washing2-Sheet_10
       rect:
         serializedVersion: 2
-        x: 645
+        x: 650
         y: 4
-        width: 60
+        width: 44
         height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -425,10 +437,10 @@ TextureImporter:
       name: cha_Washing2-Sheet_11
       rect:
         serializedVersion: 2
-        x: 709
+        x: 714
         y: 4
-        width: 118
-        height: 55
+        width: 44
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,10 +459,10 @@ TextureImporter:
       name: cha_Washing2-Sheet_12
       rect:
         serializedVersion: 2
-        x: 831
+        x: 773
         y: 4
         width: 60
-        height: 54
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,10 +481,10 @@ TextureImporter:
       name: cha_Washing2-Sheet_13
       rect:
         serializedVersion: 2
-        x: 895
+        x: 837
         y: 4
         width: 60
-        height: 55
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -491,10 +503,10 @@ TextureImporter:
       name: cha_Washing2-Sheet_14
       rect:
         serializedVersion: 2
-        x: 959
-        y: 5
+        x: 901
+        y: 4
         width: 60
-        height: 53
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -513,9 +525,9 @@ TextureImporter:
       name: cha_Washing2-Sheet_15
       rect:
         serializedVersion: 2
-        x: 1034
+        x: 965
         y: 4
-        width: 44
+        width: 118
         height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -535,10 +547,10 @@ TextureImporter:
       name: cha_Washing2-Sheet_16
       rect:
         serializedVersion: 2
-        x: 1098
+        x: 1087
         y: 4
-        width: 44
-        height: 54
+        width: 60
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,9 +569,9 @@ TextureImporter:
       name: cha_Washing2-Sheet_17
       rect:
         serializedVersion: 2
-        x: 1162
+        x: 1151
         y: 4
-        width: 44
+        width: 60
         height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -579,7 +591,51 @@ TextureImporter:
       name: cha_Washing2-Sheet_18
       rect:
         serializedVersion: 2
-        x: 1226
+        x: 1215
+        y: 5
+        width: 60
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2902cd5ef833120800000000000000
+      internalID: 2392414044467270386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a7d2535ed629190800000000000000
+      internalID: -7957176760403133877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1354
         y: 4
         width: 44
         height: 54
@@ -591,8 +647,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2902cd5ef833120800000000000000
-      internalID: 2392414044467270386
+      spriteID: 9950aa9216726a790800000000000000
+      internalID: -7519279229584144999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 4
+        width: 44
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bd60a41c8cb13c0800000000000000
+      internalID: -4387692679446209790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cha_Washing2-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 4
+        width: 44
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d10f676d44c7b70800000000000000
+      internalID: 8898062651686395287
       vertices: []
       indices: 
       edges: []
@@ -622,7 +722,11 @@ TextureImporter:
       cha_Washing2-Sheet_16: -6427293441563516735
       cha_Washing2-Sheet_17: -7169067420941490606
       cha_Washing2-Sheet_18: 2392414044467270386
+      cha_Washing2-Sheet_19: -7957176760403133877
       cha_Washing2-Sheet_2: -2739349758388588719
+      cha_Washing2-Sheet_20: -7519279229584144999
+      cha_Washing2-Sheet_21: -4387692679446209790
+      cha_Washing2-Sheet_22: 8898062651686395287
       cha_Washing2-Sheet_3: -9016381069543262046
       cha_Washing2-Sheet_4: 8980689616369453855
       cha_Washing2-Sheet_5: 6146962873558416873
