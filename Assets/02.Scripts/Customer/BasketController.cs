@@ -1,21 +1,21 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class BasketController : MonoBehaviour
 {
-    private void OnMouseDown()
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] basketSprites;
+    public Sprite[] basketSelectSprites;
+
+    public int customerUID = 0;
+
+    private void Start()
     {
-        Debug.Log("Point Click");
-        transform.position = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = basketSprites[Random.Range(0, basketSprites.Length)];
     }
 
-    private void OnMouseDrag()
-    {
-        Debug.Log("Point Drag");
-        transform.position += transform.position;
-    }
-
-    private void OnMouseUp()
+    // 빨래바구니 선택
+    public void OnSelect()
     {
         
     }

@@ -7,19 +7,20 @@ using Utils.EnumTypes;
 public class CustomerBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public CustomerState state = CustomerState.Idle;
-    private GameObject basket;
     private GameObject speechBubble;
-    private Slider speechBubbleSlider;
-    private Image sliderFillImage;
-    private TextMeshProUGUI laundryCountText;
 
-    private float moveSpeed = 2.5f;
+    private Vector2 dir;
+    private float moveSpeed = 1.0f;
     public int lineIndex = 0;
+
+    public int customerUID = 0;
     private int laundryCount = 0;
-    private const int minLaundryCount = 1;
-    private const int maxLaundryCount = 5;
+    private const int minLaundryCount = 2;
+    private const int maxLaundryCount = 4;
 
     private float currentTime = 0.0f;
     private float waitingTime = 30.0f;
@@ -27,11 +28,9 @@ public class CustomerBehaviour : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        basket = transform.GetChild(0).GetChild(0).gameObject;
-        speechBubble = transform.GetChild(1).GetChild(0).gameObject;
-        speechBubbleSlider = speechBubble.GetComponentInChildren<Slider>(true);
-        sliderFillImage = speechBubble.transform.GetChild(1).GetComponentInChildren<Image>(true);
-        laundryCountText = basket.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>(true);
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        speechBubble = transform.GetChild(0).GetChild(0).gameObject;
 
         Init();
     }
@@ -42,12 +41,12 @@ public class CustomerBehaviour : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        basket.SetActive(false);
         speechBubble.SetActive(false);
     }
 
     private void Update()
     {
+        OnDirection();
         StateHandler();
     }
 
@@ -72,15 +71,14 @@ public class CustomerBehaviour : MonoBehaviour
     {
         if(currentTime < waitingTime)
         {
-            if(currentTime >= (waitingTime / 3) * 2)
-                sliderFillImage.color = Color.red;
-            else if(currentTime >= (waitingTime / 3))
-                sliderFillImage.color = Color.yellow;
-            else if(currentTime >= 0)
-                sliderFillImage.color = Color.green;
+            if (lineIndex == 0)
+                speechBubble.SetActive(true);
+            else
+                speechBubble.SetActive(false);
 
+            spriteRenderer.sortingOrder = lineIndex + 2;
+            animator.SetInteger("Dir", 1);
             currentTime += Time.deltaTime;
-            speechBubbleSlider.value = currentTime / waitingTime;
         }
         else
         {
@@ -113,6 +111,56 @@ public class CustomerBehaviour : MonoBehaviour
         return false;
     }
 
+    // 방향 확인
+    public void OnDirection()
+    {
+        //if (!agent.hasPath)
+        //    return;
+
+        dir = new Vector2(agent.velocity.x, agent.velocity.y).normalized;
+
+        if (dir.sqrMagnitude > 0.01f)
+        {
+            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            {
+                if (dir.x > 0)
+                {
+                    // 오른쪽 이동
+                    Debug.Log("Right");
+                    transform.localScale = new Vector3(1, 1, 1);
+                    animator.SetInteger("Dir", 4);
+                }
+                else
+                {
+                    // 왼쪽 이동
+                    Debug.Log("Left");
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    animator.SetInteger("Dir", 4);
+                }
+            }
+            else
+            {
+                if (dir.y > 0)
+                {
+                    // 위로 이동
+                    Debug.Log("Back");
+                    animator.SetInteger("Dir", 3);
+                }
+                else
+                {
+                    // 아래로 이동
+                    Debug.Log("Front");
+                    animator.SetInteger("Dir", 2);
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Front Idle");
+            animator.SetInteger("Dir", 0);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.transform.CompareTag("Door") && state == CustomerState.Leave)
@@ -123,9 +171,6 @@ public class CustomerBehaviour : MonoBehaviour
         {
             state = CustomerState.Wait;
             laundryCount = Random.Range(minLaundryCount, maxLaundryCount);
-            laundryCountText.text = laundryCount.ToString();
-            speechBubble.SetActive(true);
-            basket.SetActive(true);
         }
     }
 }

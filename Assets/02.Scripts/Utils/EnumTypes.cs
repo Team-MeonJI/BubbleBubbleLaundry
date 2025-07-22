@@ -6,6 +6,8 @@ namespace Utils.EnumTypes
         Idle,  // 기본
         Move,  // 이동
         Wait,  // 기다림
+        Happy, // 기쁨
+        Angry, // 화남
         Leave  // 퇴장
     }
 

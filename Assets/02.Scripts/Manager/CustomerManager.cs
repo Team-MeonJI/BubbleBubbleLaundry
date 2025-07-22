@@ -33,7 +33,7 @@ public class CustomerManager : MonoBehaviour
     private void Init()
     {
         door = GameObject.Find("Door").GetComponent<Transform>();
-        lines = GameObject.Find("Line").GetComponentsInChildren<Transform>().ToList();
+        lines = GameObject.Find("CounterLine").GetComponentsInChildren<Transform>().ToList();
         lines.Remove(lines[0]);
     }
 
