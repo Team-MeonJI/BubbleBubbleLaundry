@@ -24,12 +24,13 @@ public class CustomerBehaviour : MonoBehaviour
     public int lineIndex = 0;
 
     public int customerUID = 0;
-    private int laundryCount = 0;
+    public int laundryCount = 0;
     private const int minLaundryCount = 2;
-    private const int maxLaundryCount = 4;
+    private const int maxLaundryCount = 5;
 
     private float currentTime = 0.0f;
     private float waitingTime = 30.0f;
+    private float laundryWaitingTime = 30.0f;
 
     private void Awake()
     {
@@ -49,6 +50,9 @@ public class CustomerBehaviour : MonoBehaviour
 
     public void Init()
     {
+        currentTime = 0.0f;
+        spriteRenderer.sortingOrder = 2;
+
         agent.speed = moveSpeed;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -68,12 +72,16 @@ public class CustomerBehaviour : MonoBehaviour
         {
             case CustomerState.Idle:
                 break;
-            case CustomerState.Move:
+            case CustomerState.CounterZone:
                 break;
-            case CustomerState.WaitLine:
+            case CustomerState.CompleteZone:
                 break;
             case CustomerState.Wait:
+                spriteRenderer.sortingOrder = lineIndex + 3;
                 OnWaiting();
+                break;
+            case CustomerState.LaundryWait:
+                OnLaundryWaiting();
                 break;
             case CustomerState.Leave:
                 break;
@@ -86,21 +94,15 @@ public class CustomerBehaviour : MonoBehaviour
         agent.SetDestination(_target.position);
     }
 
-    // 기다기는 중
+    // 주문 기다리는 중
     public void OnWaiting()
     {
-        if (OnRayCheck()?.name == "Bubble")
-            CustomerManager.Instance.OnOrder(lineIndex);
+        if (lineIndex != 0)
+            return;
 
         if (currentTime < waitingTime)
         {
-            if (lineIndex == 0)
-                speechBubble.SetActive(true);
-            else
-                speechBubble.SetActive(false);
-
-            spriteRenderer.sortingOrder = lineIndex + 2;
-            animator.SetInteger("Dir", 1);
+            speechBubble.SetActive(true);
             currentTime += Time.deltaTime;
         }
         else
@@ -109,67 +111,44 @@ public class CustomerBehaviour : MonoBehaviour
             state = CustomerState.Leave;
             CustomerManager.Instance.DequeueCustomer(lineIndex);
         }
+
+        if (OnRayCheck()?.name == "Bubble")
+            CustomerManager.Instance.OnOrder(lineIndex);
     }
 
-    // 목적지 도착 확인
-    public bool HasArriveDestination()
+    // 빨래 기다리는 중
+    public void OnLaundryWaiting()
     {
-        // 경로 계산이 끝났다면
-        if (!agent.pathPending)
+        if (currentTime < laundryWaitingTime)
         {
-            // 남은 거리가 짧다면
-            if (agent.remainingDistance <= agent.stoppingDistance)
-            {
-                // 움직이지 않는 상태라면
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0.0f)
-                    return true;
-            }
+            animator.SetInteger("Dir", 1);
+            currentTime += Time.deltaTime;
         }
-        return false;
+        else
+        {
+            currentTime = 0.0f;
+            state = CustomerState.Leave;
+            CustomerManager.Instance.DequeueCompleteZone(lineIndex);
+        }
     }
 
     // 방향 확인
     public void OnDirection()
     {
-        //if (!agent.hasPath)
-        //    return;
-
         dir = new Vector2(agent.velocity.x, agent.velocity.y).normalized;
+        Debug.DrawRay(transform.position, dir * 1.5f, Color.red);
 
         if (dir.sqrMagnitude > 0.01f)
         {
-            if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            if (dir.y > 0.3f)
+                animator.SetInteger("Dir", 3);
+            else if (dir.y < -0.3f)
+                animator.SetInteger("Dir", 2);
+            else if (dir.x > 0.0f || dir.x < 0.0f)
             {
-                if (dir.x > 0)
-                {
-                    // 오른쪽 이동
-                    transform.localScale = new Vector3(1, 1, 1);
-                    animator.SetInteger("Dir", 4);
-                }
-                else
-                {
-                    // 왼쪽 이동
-                    transform.localScale = new Vector3(-1, 1, 1);
-                    animator.SetInteger("Dir", 4);
-                }
+                transform.localScale = new Vector3(((dir.x > 0.0) ? -1 : 1), 1, 1);
+                animator.SetInteger("Dir", 4);
             }
-            else
-            {
-                if (dir.y > 0)
-                {
-                    // 위로 이동
-                    animator.SetInteger("Dir", 3);
-                }
-                else
-                {
-                    // 아래로 이동
-                    animator.SetInteger("Dir", 2);
-                }
-            }
-        }
-        else
-        {
-            animator.SetInteger("Dir", 0);
         }
     }
 
@@ -193,22 +172,45 @@ public class CustomerBehaviour : MonoBehaviour
             return null;
     }
 
+    // AI가 목적지에 도착했는지 확인용
+    private bool HasReacheDestination()
+    {
+        // 경로 계산이 끝났다면
+        if (!agent.pathPending)
+        {
+            // 남은 거리가 짧다면
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                // 움직이지 않는 상태라면
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0.0f)
+                    return true;
+            }
+        }
+        return false;
+    }
+
     private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.transform.CompareTag("Door") && state == CustomerState.Leave)
         {
             Destroy(gameObject, 0.25f);
         }
-        else if (coll.transform.CompareTag("Line"))
+        if (coll.transform.CompareTag("Line") && state == CustomerState.CounterZone)
         {
-            if(state == CustomerState.Move)
+            spriteRenderer.sortingOrder = lineIndex + 3;
+
+            if (HasReacheDestination())
             {
                 state = CustomerState.Wait;
+                animator.SetInteger("Dir", 1);
                 laundryCount = Random.Range(minLaundryCount, maxLaundryCount);
             }
-            else if(state == CustomerState.WaitLine)
+        }
+        if (coll.transform.CompareTag("CompleteZone") && HasReacheDestination())
+        {
+            if (state == CustomerState.CompleteZone)
             {
-                state = CustomerState.Wait;
+                state = CustomerState.LaundryWait;
             }
         }
     }

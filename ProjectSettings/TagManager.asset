@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Line
   - Basket
+  - CompleteZone
   layers:
   - Default
   - TransparentFX

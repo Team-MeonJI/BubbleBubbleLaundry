@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private AudioManager instance;
+    public AudioManager Instance { get { return instance; } }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (instance != null)
+            Destroy(instance);
+        else
+            instance = this;
     }
 }

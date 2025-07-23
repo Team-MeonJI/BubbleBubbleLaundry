@@ -1,16 +1,32 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private static UIManager instance;
+    public static UIManager Instance {  get { return instance; } }
+
+    private Canvas canvas;
+    public TextMeshProUGUI timerText;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+            Destroy(instance);
+        else
+            instance = this;
+
+        Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Init()
     {
-        
+        canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
+        timerText = canvas.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
+    }
+
+    public void TimerHandler(float _time)
+    {
+        timerText.text = string.Format("{0:00}:{1:00}", (int)(_time / 60.0f), (int)(_time % 60.0f));
     }
 }
