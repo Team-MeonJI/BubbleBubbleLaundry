@@ -30,30 +30,11 @@ public class MachineManager : MonoBehaviour
             hit = Physics2D.Raycast(_pos, Vector2.zero, 0.0f);
 
             if (hit.collider != null)
-            {
-                clickCount++;
-                
+            {                
                 if (hit.collider.CompareTag("Machine"))
                     OnMachineSelect();
                 else if (hit.collider.CompareTag("Basket"))
                     OnBasketSelect();
-                else
-                {
-                    Debug.Log("::: 선택 실수 :::");
-                    if (machine != null)
-                    {
-                        machine.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                        machine = null;
-                        basket = null;
-                    }
-                    else if (basket != null)
-                    {
-                        basket.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                        basket = null;
-                    }
-
-                    clickCount = 0;
-                }
             }
         }
     }
@@ -63,13 +44,26 @@ public class MachineManager : MonoBehaviour
     {
         MachineController _machine = hit.collider?.GetComponent<MachineController>();
 
-        if (clickCount == 1)
+        if (_machine.machineState == MachineState.Complete)
         {
+            if (machine != null)
+            {
+                machine.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                machine = null;
+                basket = null;
+            }
+            if (basket != null)
+            {
+                basket.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                basket = null;
+                clickCount = 0;
+            }
+
             basket = _machine.currentBasket;
             machine = _machine;
             machine.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
-        else if (clickCount >= 2 && basket != null && _machine != null)
+        else if (basket != null && _machine != null)
         {
             if (basket.laundryState == _machine.laundryState && _machine.machineState == MachineState.Idle)
             {
@@ -86,7 +80,6 @@ public class MachineManager : MonoBehaviour
 
                 basket.OnNextStep();
                 basket.gameObject.SetActive(false);
-                clickCount = 0;
             }
             else
             {
@@ -96,7 +89,6 @@ public class MachineManager : MonoBehaviour
                     machine = null;
                     basket = null;
                 }
-                clickCount = 0;
             }
         }
     }
