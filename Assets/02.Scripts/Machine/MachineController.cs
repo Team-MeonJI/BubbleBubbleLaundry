@@ -35,6 +35,12 @@ public class MachineController : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        timer.SetActive(false);
+        machineState = MachineState.Idle;
+    }
+
     // 작동 시간 설정
     public void SetTime(int _laundryCount)
     {
@@ -54,7 +60,7 @@ public class MachineController : MonoBehaviour
         else
         {
             currentTime = 0;
-            machineState += 1;
+            machineState = MachineState.Complete;
         }
     }
 }

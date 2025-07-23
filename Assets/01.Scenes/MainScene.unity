@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basket: {fileID: 0}
   machine: {fileID: 0}
+  clickCount: 0
 --- !u!4 &43540677
 Transform:
   m_ObjectHideFlags: 0
@@ -3924,6 +3925,7 @@ GameObject:
   - component: {fileID: 1571860851}
   - component: {fileID: 1571860850}
   - component: {fileID: 1571860852}
+  - component: {fileID: 1571860853}
   m_Layer: 0
   m_Name: MainFloor
   m_TagString: Untagged
@@ -4023,6 +4025,52 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!61 &1571860853
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571860849}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.777779, y: 10.074074}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 17.777779, y: 10.074074}
+  m_EdgeRadius: 0
 --- !u!4 &1661546959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1919063912099322343, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}

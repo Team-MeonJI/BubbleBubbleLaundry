@@ -12,7 +12,7 @@ public class MachineManager : MonoBehaviour
     public BasketController basket;
     public MachineController machine;
 
-    private int clickCount = 0;
+    public int clickCount = 0;
 
     private void Awake()
     {
@@ -34,12 +34,25 @@ public class MachineManager : MonoBehaviour
                 clickCount++;
                 
                 if (hit.collider.CompareTag("Machine"))
-                {
                     OnMachineSelect();
-                }
                 else if (hit.collider.CompareTag("Basket"))
-                {
                     OnBasketSelect();
+                else
+                {
+                    Debug.Log("::: 선택 실수 :::");
+                    if (machine != null)
+                    {
+                        machine.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                        machine = null;
+                        basket = null;
+                    }
+                    else if (basket != null)
+                    {
+                        basket.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                        basket = null;
+                    }
+
+                    clickCount = 0;
                 }
             }
         }
@@ -56,28 +69,34 @@ public class MachineManager : MonoBehaviour
             machine = _machine;
             machine.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
-        else if (basket != null && _machine != null)
+        else if (clickCount >= 2 && basket != null && _machine != null)
         {
-            if ((basket.laundryState == _machine.laundryState) && _machine.machineState == MachineState.Idle)
+            if (basket.laundryState == _machine.laundryState && _machine.machineState == MachineState.Idle)
             {
-                Debug.Log(_machine.machineType.ToString() + "세탁 시작");
                 if (machine != null)
+                {
                     machine.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    machine.Init();
+                    machine = null;
+                }
 
                 _machine.currentBasket = basket;
                 _machine.SetTime(basket.laundryCount);
                 _machine.machineState = MachineState.Working;
+
                 basket.OnNextStep();
                 basket.gameObject.SetActive(false);
                 clickCount = 0;
             }
-        }
-        else
-        {
-            if (basket != null)
+            else
             {
-                basket.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                basket = null;
+                if (machine != null)
+                {
+                    machine.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    machine = null;
+                    basket = null;
+                }
+                clickCount = 0;
             }
         }
     }
