@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_TargetDisplay: 0
 --- !u!114 &1112200045945075122
 MonoBehaviour:
@@ -325,7 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  speechBubble:
+  speechBubble: {fileID: 0}
+  speechBubbles:
   - {fileID: 8646169412117799693}
   - {fileID: 7332807772177950619}
   - {fileID: 1905118056589823239}

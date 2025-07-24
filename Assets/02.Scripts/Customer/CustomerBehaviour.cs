@@ -17,7 +17,8 @@ public class CustomerBehaviour : MonoBehaviour
     private Canvas canvas;
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
-    public GameObject[] speechBubble;
+    public GameObject speechBubble;
+    public GameObject[] speechBubbles;
 
     public CustomerState state = CustomerState.Idle;
     private Vector2 dir;
@@ -44,6 +45,7 @@ public class CustomerBehaviour : MonoBehaviour
         canvas.worldCamera = uiCam;
         raycaster = canvas.GetComponent<GraphicRaycaster>();
         eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        speechBubble = canvas.transform.GetChild(0).gameObject;
 
         Init();
     }
@@ -57,8 +59,9 @@ public class CustomerBehaviour : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        for(int i = 0; i < speechBubble.Length; i++)
-            speechBubble[i].SetActive(false);
+        speechBubble.SetActive(false);
+        for (int i = 0; i < speechBubbles.Length; i++)
+            speechBubbles[i].SetActive(false);
     }
 
     private void Update()
@@ -103,7 +106,8 @@ public class CustomerBehaviour : MonoBehaviour
 
         if (currentTime < waitingTime)
         {
-            speechBubble[0].SetActive(true);
+            speechBubble.SetActive(true);
+            speechBubbles[0].SetActive(true);
             currentTime += Time.deltaTime;
         }
         else

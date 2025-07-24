@@ -163,13 +163,14 @@ public class CustomerManager : MonoBehaviour
     public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry)
     {
         Debug.Log(":: ≈¿Â Ω√¿€ ::");
-        completeZoneCustomers[_index].speechBubble[1].SetActive(true);
+        completeZoneCustomers[_index].speechBubble.SetActive(true);
+        completeZoneCustomers[_index].speechBubbles[1].SetActive(true);
         completeZoneCustomers[_index].state = CustomerState.Happy;
         completeZoneCustomers[_index].animator.SetInteger("Dir", 0);
 
         yield return new WaitForSeconds(2.5f);
 
-        completeZoneCustomers[_index].speechBubble[1].SetActive(false);
+        completeZoneCustomers[_index].speechBubbles[1].SetActive(false);
         DequeueCompleteZone(_index);
         Destroy(_laundry);
     }
