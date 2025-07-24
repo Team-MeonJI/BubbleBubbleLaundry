@@ -44,7 +44,7 @@ public class MachineController : MonoBehaviour
     // 작동 시간 설정
     public void SetTime(int _laundryCount)
     {
-        operationTime += (_laundryCount - 1) * 1.5f;
+        operationTime += (_laundryCount) * 1.5f;
     }
 
     // 기계 작동 시작

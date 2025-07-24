@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1930796621, guid: ace35fd9c06533241b5a4bfdb2806a6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -324,6 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6398cc6301891947bedd6a970812f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  speechBubble:
+  - {fileID: 7890410624214472789}
+  - {fileID: 9204898301986954435}
+  - {fileID: 3752814972810847}
   state: 0
   lineIndex: 0
   customerUID: 0
@@ -425,8 +430,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+--- !u!1 &3752814972810847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2875452600425288291, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 2876390371415172156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3946939193705877786 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 2876390371415172156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7890410624214472789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362277963877039209, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 2876390371415172156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9204898301986954435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6364892433025169663, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
   m_PrefabInstance: {fileID: 2876390371415172156}
   m_PrefabAsset: {fileID: 0}

@@ -5,18 +5,19 @@ using System.Linq;
 using System.Collections.Generic;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class CustomerBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private Animator animator;
+    public Animator animator;
     private SpriteRenderer spriteRenderer;
 
     private Camera uiCam;
     private Canvas canvas;
     private GraphicRaycaster raycaster;
     private EventSystem eventSystem;
-    private GameObject speechBubble;
+    public GameObject[] speechBubble;
 
     public CustomerState state = CustomerState.Idle;
     private Vector2 dir;
@@ -43,7 +44,6 @@ public class CustomerBehaviour : MonoBehaviour
         canvas.worldCamera = uiCam;
         raycaster = canvas.GetComponent<GraphicRaycaster>();
         eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        speechBubble = canvas.transform.GetChild(0).gameObject;
 
         Init();
     }
@@ -51,13 +51,14 @@ public class CustomerBehaviour : MonoBehaviour
     public void Init()
     {
         currentTime = 0.0f;
-        spriteRenderer.sortingOrder = 2;
+        spriteRenderer.sortingOrder = 10;
 
         agent.speed = moveSpeed;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        speechBubble.SetActive(false);
+        for(int i = 0; i < speechBubble.Length; i++)
+            speechBubble[i].SetActive(false);
     }
 
     private void Update()
@@ -77,7 +78,7 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.CompleteZone:
                 break;
             case CustomerState.Wait:
-                spriteRenderer.sortingOrder = lineIndex + 3;
+                spriteRenderer.sortingOrder = lineIndex + 10;
                 OnWaiting();
                 break;
             case CustomerState.LaundryWait:
@@ -102,7 +103,7 @@ public class CustomerBehaviour : MonoBehaviour
 
         if (currentTime < waitingTime)
         {
-            speechBubble.SetActive(true);
+            speechBubble[0].SetActive(true);
             currentTime += Time.deltaTime;
         }
         else
@@ -127,14 +128,17 @@ public class CustomerBehaviour : MonoBehaviour
         else
         {
             currentTime = 0.0f;
-            state = CustomerState.Leave;
-            CustomerManager.Instance.DequeueCompleteZone(lineIndex);
+            //state = CustomerState.Leave;
+            //CustomerManager.Instance.DequeueCompleteZone(lineIndex);
         }
     }
 
     // 방향 확인
     public void OnDirection()
     {
+        if (state == CustomerState.Happy)
+            return;
+
         dir = new Vector2(agent.velocity.x, agent.velocity.y).normalized;
         Debug.DrawRay(transform.position, dir * 1.5f, Color.red);
 
@@ -197,7 +201,7 @@ public class CustomerBehaviour : MonoBehaviour
         }
         if (coll.transform.CompareTag("Line") && state == CustomerState.CounterZone)
         {
-            spriteRenderer.sortingOrder = lineIndex + 3;
+            spriteRenderer.sortingOrder = lineIndex + 10;
 
             if (HasReacheDestination())
             {

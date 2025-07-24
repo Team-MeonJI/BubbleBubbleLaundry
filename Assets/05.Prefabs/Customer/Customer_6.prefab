@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -170570177, guid: f6eb5c7de9a761b40bf4fd4ec6f5b081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -324,6 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6398cc6301891947bedd6a970812f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  speechBubble:
+  - {fileID: 4845016379814639187}
+  - {fileID: 5837496545532850885}
+  - {fileID: 3364751013659924569}
   state: 0
   lineIndex: 0
   customerUID: 0
@@ -428,5 +433,20 @@ PrefabInstance:
 --- !u!224 &1763988674635022108 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 672821813889681978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3364751013659924569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2875452600425288291, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 672821813889681978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4845016379814639187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362277963877039209, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 672821813889681978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5837496545532850885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6364892433025169663, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
   m_PrefabInstance: {fileID: 672821813889681978}
   m_PrefabAsset: {fileID: 0}

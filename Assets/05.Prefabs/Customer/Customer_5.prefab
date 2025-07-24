@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1457433522, guid: 8fc825100cdbbeb45b7421ff356ba0ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -324,6 +324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6398cc6301891947bedd6a970812f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  speechBubble:
+  - {fileID: 7289968448334420658}
+  - {fileID: 8580812194022006308}
+  - {fileID: 623220972020724920}
   state: 0
   lineIndex: 0
   customerUID: 0
@@ -402,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.7
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -420,13 +425,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bubble
       objectReference: {fileID: 0}
+    - target: {fileID: 4497466914507637090, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+--- !u!1 &623220972020724920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2875452600425288291, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 3405153202168719067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4498301418803106813 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 3405153202168719067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7289968448334420658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5362277963877039209, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 3405153202168719067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8580812194022006308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6364892433025169663, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
   m_PrefabInstance: {fileID: 3405153202168719067}
   m_PrefabAsset: {fileID: 0}
