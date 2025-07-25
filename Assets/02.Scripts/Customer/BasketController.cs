@@ -55,6 +55,20 @@ public class BasketController : MonoBehaviour
             }
         }
 
-        CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry);
+        if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex] != null)
+        {
+            if (customerUID == CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].customerUID)
+                CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, 1);
+            else
+            {
+                Debug.Log("::: ª°∑ß∞®¿« ¡÷¿Œ¿Ã æ∆¥’¥œ¥Ÿ :::");
+                Destroy(_laundry, 1.0f);
+            }
+        }
+        else
+        {
+            Debug.Log("::: ª°∑ß∞®¿« ¡÷¿Œ¿Ã æ∆¥’¥œ¥Ÿ :::");
+            Destroy(_laundry, 1.0f);
+        }
     }
 }

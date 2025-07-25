@@ -20,7 +20,7 @@ public class CustomerManager : MonoBehaviour
     [SerializeField]
     private List<CustomerBehaviour> counterCustomers = new List<CustomerBehaviour>();
     [SerializeField]
-    private List<CustomerBehaviour> completeZoneCustomers = new List<CustomerBehaviour>();
+    public List<CustomerBehaviour> completeZoneCustomers = new List<CustomerBehaviour>(5);
 
     private const int customerMaxCount = 5;
     private int counterZoneCustomerCount = 0;
@@ -96,7 +96,7 @@ public class CustomerManager : MonoBehaviour
             {
                 isLaundryFull[i] = true;
 
-                completeZoneCustomers.Add(counterCustomers[_index]);
+                completeZoneCustomers[i] = counterCustomers[_index];
                 counterCustomers.RemoveAt(_index);
 
                 GameObject _basket = Instantiate(basketPrefab, basketTranform[i].position, Quaternion.identity);
@@ -129,18 +129,6 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
-    // º’¥‘ ¥Î±‚¡Ÿø°º≠ ≈¿Â
-    public void DequeueCompleteZone(int _index)
-    {
-        Debug.Log("≈¿Â");
-        completeZoneCustomers[_index].state = CustomerState.Leave;
-        completeZoneCustomers[_index].Init();
-        completeZoneCustomers[_index].SetDestination(door);
-        completeZoneCustomers.RemoveAt(_index);
-        isLaundryFull[_index] = false;
-        completeZoneCustomerCount--;
-    }
-
     // º’¥‘ ∞°∞‘ø°º≠ ≈¿Â
     public void DequeueCustomer(int _index)
     {
@@ -159,24 +147,30 @@ public class CustomerManager : MonoBehaviour
         }
     }
 
-    // º’¥‘ ª°∑° πﬁ∞Ì ≈¿Â
-    public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry)
+    // º’¥‘ ¥Î±‚¡Ÿø°º≠ ≈¿Â
+    public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry, int _expression)
     {
         Debug.Log(":: ≈¿Â Ω√¿€ ::");
         completeZoneCustomers[_index].speechBubble.SetActive(true);
-        completeZoneCustomers[_index].speechBubbles[1].SetActive(true);
+        completeZoneCustomers[_index].speechBubbles[_expression].SetActive(true);
         completeZoneCustomers[_index].state = CustomerState.Happy;
         completeZoneCustomers[_index].animator.SetInteger("Dir", 0);
 
         yield return new WaitForSeconds(2.5f);
 
-        completeZoneCustomers[_index].speechBubbles[1].SetActive(false);
-        DequeueCompleteZone(_index);
+        completeZoneCustomers[_index].speechBubbles[_expression].SetActive(false);
+        completeZoneCustomers[_index].state = CustomerState.Leave;
+        completeZoneCustomers[_index].Init();
+        completeZoneCustomers[_index].spriteRenderer.sortingOrder -= 1;
+        completeZoneCustomers[_index].SetDestination(door);
+        completeZoneCustomers[_index] = null;
+        isLaundryFull[_index] = false;
+        completeZoneCustomerCount--;
         Destroy(_laundry);
     }
 
-    public void CoroutineHandler(int _index, GameObject _laundry)
+    public void CoroutineHandler(int _index, GameObject _laundry, int _expression)
     {
-        StartCoroutine(OnDelivelySuccess(_index, _laundry));
+        StartCoroutine(OnDelivelySuccess(_index, _laundry, _expression));
     }
 }
