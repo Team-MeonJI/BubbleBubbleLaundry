@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1d838648374eb6246a0ce67c6b682e73, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60772a2ef5fba6e419012b5a23fb83ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,17 +149,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
   basketSprites:
-  - {fileID: 21300000, guid: 1d838648374eb6246a0ce67c6b682e73, type: 3}
-  - {fileID: 21300000, guid: 75f28876813b7584f84bbdfd6f179814, type: 3}
-  - {fileID: 21300000, guid: ad50a1bb8aef2a4458f0218925b252b0, type: 3}
-  - {fileID: 21300000, guid: f2ecb0c52f3bb6248995f8f49d3c8f2a, type: 3}
-  - {fileID: 21300000, guid: 07b173868a3a70e4d818d4c72155cd47, type: 3}
+  - {fileID: 21300000, guid: 60772a2ef5fba6e419012b5a23fb83ba, type: 3}
+  - {fileID: 21300000, guid: 51e8e8deeba2e714dbb6bd119b946310, type: 3}
+  - {fileID: 21300000, guid: a40a33ce0ba84e0429107cf87e94a31d, type: 3}
+  - {fileID: 21300000, guid: 77428be4f156f2844929bf9f3e6746e0, type: 3}
+  - {fileID: 21300000, guid: d15958f0306c30f49a3673c689c4eaf6, type: 3}
   basketSelectSprites:
-  - {fileID: 21300000, guid: 1d838648374eb6246a0ce67c6b682e73, type: 3}
-  - {fileID: 21300000, guid: 75f28876813b7584f84bbdfd6f179814, type: 3}
-  - {fileID: 21300000, guid: ad50a1bb8aef2a4458f0218925b252b0, type: 3}
-  - {fileID: 21300000, guid: f2ecb0c52f3bb6248995f8f49d3c8f2a, type: 3}
-  - {fileID: 21300000, guid: 07b173868a3a70e4d818d4c72155cd47, type: 3}
+  - {fileID: 21300000, guid: 1207d677325675e439912f36bce52c63, type: 3}
+  - {fileID: 21300000, guid: 8eb91a7eb574f3e4bb14ab6be117e931, type: 3}
+  - {fileID: 21300000, guid: 38edd57ae3f6af6449ce460f7089a07e, type: 3}
+  - {fileID: 21300000, guid: 06c034c95ca783d4083ce9ccd14d88ab, type: 3}
+  - {fileID: 21300000, guid: d821f9e744f4866459b884283e75d582, type: 3}
   laundryPrefab: {fileID: 1895521304553013513, guid: 26d1948d3608a5940ae5f5a728faf01b, type: 3}
   laundrySprites:
   - {fileID: 21300000, guid: 2c41e1933e857de44b014e23559ab793, type: 3}

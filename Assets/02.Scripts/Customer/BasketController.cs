@@ -71,4 +71,13 @@ public class BasketController : MonoBehaviour
             Destroy(_laundry, 1.0f);
         }
     }
+
+    // 바구니 선택
+    public void OnSelect(bool isActive)
+    {
+        if(!isActive)
+            spriteRenderer.sprite = basketSprites[spriteIndex];
+        else
+            spriteRenderer.sprite = basketSelectSprites[spriteIndex];
+    }
 }

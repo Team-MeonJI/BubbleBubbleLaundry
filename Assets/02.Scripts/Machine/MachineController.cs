@@ -4,8 +4,12 @@ using Utils.EnumTypes;
 
 public class MachineController : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
     private GameObject timer;
     private Slider timerSlider;
+
+    public Sprite[] machineSprites;
+    public Sprite[] selectSprites;
 
     public MachineType machineType;
     public LaundryState laundryState;
@@ -17,6 +21,7 @@ public class MachineController : MonoBehaviour
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         timer = transform.GetChild(0).GetChild(0).gameObject;
         timerSlider = timer.GetComponent<Slider>();
     }
@@ -62,5 +67,16 @@ public class MachineController : MonoBehaviour
             currentTime = 0;
             machineState = MachineState.Complete;
         }
+    }
+
+    // 기계 선택
+    public void OnSelect(bool isActive, int _index)
+    {
+        Debug.Log(_index);
+
+        if (!isActive)
+            spriteRenderer.sprite = machineSprites[_index];
+        else
+            spriteRenderer.sprite = selectSprites[_index];
     }
 }

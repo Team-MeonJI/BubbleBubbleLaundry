@@ -50,13 +50,13 @@ public class MachineManager : MonoBehaviour
             {
                 // 빨래 완료 된 기계에서 빨랫감 꺼내기
                 machine = _machine;
-                OnColorHandler(machine.gameObject, Color.red);
+                machine.OnSelect(true, (int)machine.machineType - 1);
                 basket = machine.currentBasket;
 
                 if(_machine.machineType == MachineType.IroningBoard)
                 {
                     basket.OnComplete();
-                    OnColorHandler(machine.gameObject, Color.white);
+                    machine.OnSelect(false, (int)machine.machineType - 1);
                     machine.Init();
                     machine = null;
                     basket = null;
@@ -74,7 +74,7 @@ public class MachineManager : MonoBehaviour
                     _machine.SetTime(basket.laundryCount);
                     _machine.machineState = MachineState.Working;
 
-                    OnColorHandler(machine.gameObject, Color.white);
+                    machine.OnSelect(false, (int)machine.machineType - 1);
                     machine.Init();
                     machine = null;
 
@@ -88,7 +88,7 @@ public class MachineManager : MonoBehaviour
                     _machine.SetTime(basket.laundryCount);
                     _machine.machineState = MachineState.Working;
 
-                    OnColorHandler(basket.gameObject, Color.white);
+                    machine.OnSelect(false, (int)machine.machineType - 1);
                     machine = null;
 
                     basket.OnNextStep();
@@ -100,12 +100,12 @@ public class MachineManager : MonoBehaviour
             {
                 if (machine != null)
                 {
-                    OnColorHandler(machine.gameObject, Color.white);
+                    machine.OnSelect(false, (int)machine.machineType - 1);
                     machine = null;
                 }
                 else
                 {
-                    OnColorHandler(basket.gameObject, Color.white);
+                    machine.OnSelect(false, (int)machine.machineType - 1);
                     basket = null;
                 }
             }
@@ -117,26 +117,26 @@ public class MachineManager : MonoBehaviour
     {
         if (machine != null)
         {
-            OnColorHandler(machine.gameObject, Color.white);
+            machine.GetComponent<BasketController>().OnSelect(false);
             machine = null;
         }
 
         if (basket == null)
         {
             basket = hit.collider?.GetComponent<BasketController>();
-            OnColorHandler(basket.gameObject, Color.red);
+            basket.OnSelect(true);
         }
         else
         {
-            OnColorHandler(basket.gameObject, Color.white);
+            basket.OnSelect(false);
             basket = hit.collider?.GetComponent<BasketController>();
-            OnColorHandler(basket.gameObject, Color.red);
+            basket.OnSelect(true);
         }
     }
 
     // 오브젝트 색상 변경
-    public void OnColorHandler(GameObject _object, Color _color)
-    {
-        _object.GetComponent<SpriteRenderer>().color = _color;
-    }
+    //public void OnColorHandler(GameObject _object, Color _color)
+    //{
+    //    _object.GetComponent<SpriteRenderer>().color = _color;
+    //}
 }
