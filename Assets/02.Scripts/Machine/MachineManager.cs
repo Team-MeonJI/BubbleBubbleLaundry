@@ -48,13 +48,14 @@ public class MachineManager : MonoBehaviour
         {
             if (_machine.machineState == MachineState.Complete)
             {
-                // 빨래 완료 된 기계에서 빨랫감 꺼내기
+                // 빨래를 완료한 기계 선택
                 machine = _machine;
                 machine.OnSelect(true);
                 basket = machine.currentBasket;
 
                 if(_machine.machineType == MachineType.IroningBoard)
                 {
+                    // 작동을 끝낸 다리미 선택
                     basket.OnComplete();
                     _machine.Init();
                     machine.OnSelect(false);
@@ -66,45 +67,67 @@ public class MachineManager : MonoBehaviour
         }
         else if(basket != null)
         {
-            if(_machine.machineState == MachineState.Idle && basket.laundryState == _machine.laundryState)
+            if(_machine.machineState == MachineState.Idle)
             {
-                // 비어 있는 기계에 빨래 넣기
-                if (machine != null)
+                if(basket.laundryState == _machine.laundryState)
                 {
-                    _machine.currentBasket = basket;
-                    _machine.SetTime(basket.laundryCount);
-                    _machine.animator.SetBool("Action", true);
-                    _machine.machineState = MachineState.Working;
+                    // 이미 이전 단계의 기계를 선택했으며 비어 있는 기계를 선택
+                    if (machine != null)
+                    {
+                        _machine.currentBasket = basket;
+                        _machine.SetTime(basket.laundryCount);
+                        _machine.animator.SetBool("Action", true);
+                        _machine.machineState = MachineState.Working;
 
-                    machine.OnSelect(false);
-                    machine.Init();
-                    machine = null;
+                        machine.OnSelect(false);
+                        machine.Init();
+                        machine = null;
 
-                    basket.OnNextStep();
-                    basket.gameObject.SetActive(false);
-                    basket = null;
+                        basket.OnNextStep();
+                        basket.gameObject.SetActive(false);
+                        basket = null;
+                    }
+                    else
+                    {
+                        _machine.currentBasket = basket;
+                        _machine.SetTime(basket.laundryCount);
+                        _machine.animator.SetBool("Action", true);
+                        _machine.machineState = MachineState.Working;
+
+                        _machine.OnSelect(false);
+                        machine = null;
+
+                        basket.OnNextStep();
+                        basket.gameObject.SetActive(false);
+                        basket = null;
+                    }
                 }
                 else
                 {
-                    _machine.currentBasket = basket;
-                    _machine.SetTime(basket.laundryCount);
-                    _machine.animator.SetBool("Action", true);
-                    _machine.machineState = MachineState.Working;
+                    StartCoroutine(UIManager.Instance.OnException("올바른 단계가 아닙니다!!"));
 
-                    _machine.OnSelect(false);
-                    machine = null;
-
-                    basket.OnNextStep();
-                    basket.gameObject.SetActive(false);
-                    basket = null;
+                    if (machine != null)
+                    {
+                        machine.OnSelect(false);
+                        machine = null;
+                        basket = null;
+                    }
+                    else
+                    {
+                        basket.OnSelect(false);
+                        basket = null;
+                    }
                 }
             }
             else
             {
+                StartCoroutine(UIManager.Instance.OnException("세탁물이 들어있어 넣을 수 없어요!!"));
+
                 if (machine != null)
                 {
                     machine.OnSelect(false);
                     machine = null;
+                    basket = null;
                 }
                 else
                 {
@@ -135,5 +158,11 @@ public class MachineManager : MonoBehaviour
             basket = hit.collider?.GetComponent<BasketController>();
             basket.OnSelect(true);
         }
+    }
+
+    // 기계 확인
+    public void OnMachineCheck(int _UID)
+    {
+
     }
 }

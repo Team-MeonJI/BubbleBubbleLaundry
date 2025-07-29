@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class UIManager : MonoBehaviour
     private Canvas canvas;
     public TextMeshProUGUI timerText;
     private TextMeshProUGUI moneyText;
+    private GameObject exceptonObject;
+    private TextMeshProUGUI exceptionText;
 
     private void Awake()
     {
@@ -25,6 +28,8 @@ public class UIManager : MonoBehaviour
         canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
         timerText = canvas.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
         moneyText = canvas.transform.GetChild(0).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+        exceptonObject = canvas.transform.GetChild(1).gameObject;
+        exceptionText = exceptonObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void TimerHandler(float _time)
@@ -34,6 +39,16 @@ public class UIManager : MonoBehaviour
 
     public void MoneyHandler(int _money)
     {
+        moneyText.text = _money.ToString();
+    }
 
+    public IEnumerator OnException(string _text)
+    {
+        exceptionText.text = _text;
+        exceptonObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        exceptonObject.SetActive(false);
     }
 }

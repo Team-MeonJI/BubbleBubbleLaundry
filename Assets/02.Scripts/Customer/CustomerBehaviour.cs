@@ -152,9 +152,9 @@ public class CustomerBehaviour : MonoBehaviour
 
         if (dir.sqrMagnitude > 0.01f)
         {
-            if (dir.y > 0.33f)
+            if (dir.y > 0.32f)
                 animator.SetInteger("Dir", 3);
-            else if (dir.y < -0.33f)
+            else if (dir.y < -0.32f)
                 animator.SetInteger("Dir", 2);
             else if (dir.x > 0.0f || dir.x < 0.0f)
             {
