@@ -19,7 +19,7 @@ public class BasketController : MonoBehaviour
     public int customerUID = 0;
     public int laundryCount = 0;
     public int laundryZoneIndex = 0;
-    private int spriteIndex = 0;
+    public int spriteIndex = 0;
 
     private void Awake()
     {
@@ -58,18 +58,17 @@ public class BasketController : MonoBehaviour
         if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex] != null)
         {
             if (customerUID == CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].customerUID)
-                CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, 1);
-            else
             {
-                Debug.Log("::: ª°∑ß∞®¿« ¡÷¿Œ¿Ã æ∆¥’¥œ¥Ÿ :::");
-                Destroy(_laundry, 1.0f);
+                if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].state != CustomerState.Angry)
+                    CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, 1);
+                else
+                    Destroy(_laundry, 0.5f);
             }
+            else
+                Destroy(_laundry, 0.5f);
         }
         else
-        {
-            Debug.Log("::: ª°∑ß∞®¿« ¡÷¿Œ¿Ã æ∆¥’¥œ¥Ÿ :::");
-            Destroy(_laundry, 1.0f);
-        }
+            Destroy(_laundry, 0.5f);
     }
 
     // πŸ±∏¥œ º±≈√

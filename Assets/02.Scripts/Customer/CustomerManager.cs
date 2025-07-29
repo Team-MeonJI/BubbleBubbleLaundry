@@ -121,6 +121,7 @@ public class CustomerManager : MonoBehaviour
         counterZoneCustomerCount--;
         completeZoneCustomers[_index].Init();
         completeZoneCustomers[_index].SetDestination(completeZone[_index]);
+        completeZoneCustomers[_index].spriteRenderer.sortingOrder = 1;
 
         for (int i = 0; i < counterCustomers.Count; i++)
         {
@@ -153,7 +154,7 @@ public class CustomerManager : MonoBehaviour
         Debug.Log(":: ÅðÀå ½ÃÀÛ ::");
         completeZoneCustomers[_index].speechBubble.SetActive(true);
         completeZoneCustomers[_index].speechBubbles[_expression].SetActive(true);
-        completeZoneCustomers[_index].state = CustomerState.Happy;
+        completeZoneCustomers[_index].state = (_expression == 1) ? CustomerState.Happy : CustomerState.Angry;
         completeZoneCustomers[_index].animator.SetInteger("Dir", 0);
 
         yield return new WaitForSeconds(2.5f);
@@ -161,7 +162,7 @@ public class CustomerManager : MonoBehaviour
         completeZoneCustomers[_index].speechBubbles[_expression].SetActive(false);
         completeZoneCustomers[_index].state = CustomerState.Leave;
         completeZoneCustomers[_index].Init();
-        completeZoneCustomers[_index].spriteRenderer.sortingOrder -= 1;
+        completeZoneCustomers[_index].spriteRenderer.sortingOrder = 1;
         completeZoneCustomers[_index].SetDestination(door);
         completeZoneCustomers[_index] = null;
         isLaundryFull[_index] = false;

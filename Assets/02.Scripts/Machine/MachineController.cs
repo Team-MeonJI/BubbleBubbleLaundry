@@ -1,15 +1,16 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.EnumTypes;
 
 public class MachineController : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    public Animator animator;
     private GameObject timer;
     private Slider timerSlider;
 
-    public Sprite[] machineSprites;
-    public Sprite[] selectSprites;
+    private SpriteRenderer laundryObject;
+    public Sprite[] laundrySprites;
 
     public MachineType machineType;
     public LaundryState laundryState;
@@ -19,11 +20,12 @@ public class MachineController : MonoBehaviour
     private float currentTime = 0;
     public float operationTime = 5;
 
-    private void Start()
+    private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         timer = transform.GetChild(0).GetChild(0).gameObject;
         timerSlider = timer.GetComponent<Slider>();
+        laundryObject = transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -31,9 +33,10 @@ public class MachineController : MonoBehaviour
         switch (machineState)
         {
             case MachineState.Idle:
+                Init();
                 break;
             case MachineState.Working:
-                OnOperation();
+                StartCoroutine(OnOperation());
                 break;
             case MachineState.Complete:
                 break;
@@ -42,7 +45,10 @@ public class MachineController : MonoBehaviour
 
     public void Init()
     {
+        OnLaundryHandler(false);
         timer.SetActive(false);
+        currentBasket = null;
+        currentTime = 0.0f;
         machineState = MachineState.Idle;
     }
 
@@ -53,11 +59,16 @@ public class MachineController : MonoBehaviour
     }
 
     // 기계 작동 시작
-    public void OnOperation()
+    private IEnumerator OnOperation()
     {
+        if (machineType == MachineType.IroningBoard)
+            OnLaundryHandler(true);
+
+        yield return new WaitForSeconds(0.433f);
+
         timer.SetActive(true);
 
-        if(currentTime < operationTime)
+        if(currentTime < operationTime && machineState == MachineState.Working)
         {
             currentTime += Time.deltaTime;
             timerSlider.value = (float)(currentTime / operationTime);
@@ -65,18 +76,30 @@ public class MachineController : MonoBehaviour
         else
         {
             currentTime = 0;
+            timer.SetActive(false);
+            animator.SetBool("Action", false);
             machineState = MachineState.Complete;
+
+            yield return new WaitForSeconds(0.3f);
+
+            OnLaundryHandler(true);
         }
     }
 
     // 기계 선택
-    public void OnSelect(bool isActive, int _index)
+    public void OnSelect(bool isActive)
     {
-        Debug.Log(_index);
-
         if (!isActive)
-            spriteRenderer.sprite = machineSprites[_index];
+            animator.SetBool("Select", false);
         else
-            spriteRenderer.sprite = selectSprites[_index];
+            animator.SetBool("Select", true);
+    }
+
+    // 완료된 빨랫감 관리
+    public void OnLaundryHandler(bool isActive)
+    {
+        if (isActive && currentBasket != null)
+            laundryObject.sprite = laundrySprites[currentBasket.spriteIndex];
+        laundryObject.gameObject.SetActive(isActive);
     }
 }

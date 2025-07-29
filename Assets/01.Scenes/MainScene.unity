@@ -925,7 +925,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 3590b98e341b27e488e239e0723a0136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1541,7 +1541,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fc32c0eb9d2cf644da3aa5055514ef52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3344,6 +3344,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30113759}
     m_Modifications:
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: laundrySprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a0961342bb077b4085366edd30245e0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d40ebb170e22e14292f86c9e22279c0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b57196e52427433488e3305fb5279416, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f55e62910e00d4d48bafbd100cd92a80, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: d6874aa00cff8dd498e59ed82c4b03eb, type: 3}
+    - target: {fileID: 1098323760666632323, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1407413261668094530, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
       propertyPath: m_Name
       value: Ironing_2
@@ -3388,6 +3424,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5500526625410049815, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279124885802952648, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3425,8 +3469,8 @@ Transform:
   m_GameObject: {fileID: 1420137764}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.095, z: 0}
+  m_LocalScale: {x: 2, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2006463771}
@@ -3833,6 +3877,68 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &1511102683
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2072645619}
+    m_Modifications:
+    - target: {fileID: 203471661452924016, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_Name
+      value: WashingMachine_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+--- !u!4 &1511102684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
+  m_PrefabInstance: {fileID: 1511102683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1513624274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4424,7 +4530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fc32c0eb9d2cf644da3aa5055514ef52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4444,6 +4550,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30113759}
     m_Modifications:
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: laundrySprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a0961342bb077b4085366edd30245e0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d40ebb170e22e14292f86c9e22279c0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b57196e52427433488e3305fb5279416, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f55e62910e00d4d48bafbd100cd92a80, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: d6874aa00cff8dd498e59ed82c4b03eb, type: 3}
+    - target: {fileID: 1098323760666632323, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1407413261668094530, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
       propertyPath: m_Name
       value: Ironing_3
@@ -4487,6 +4629,14 @@ PrefabInstance:
     - target: {fileID: 1919063912099322343, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500526625410049815, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279124885802952648, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5138,7 +5288,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fc32c0eb9d2cf644da3aa5055514ef52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5533,7 +5683,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fc32c0eb9d2cf644da3aa5055514ef52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5946,7 +6096,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.011469841, y: -0.040144265}
+  m_Offset: {x: -0.011469841, y: -0.021722943}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5956,7 +6106,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.3763762, y: 0.5985569}
+  m_Size: {x: 2.3763762, y: 0.54943436}
   m_EdgeRadius: 0
 --- !u!212 &2006463773
 SpriteRenderer:
@@ -6100,68 +6250,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &2011738171
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2072645619}
-    m_Modifications:
-    - target: {fileID: 203471661452924016, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_Name
-      value: WashingMachine_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
---- !u!4 &2011738172 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1348667674395837515, guid: 194c5b08313706c4ba16c2fde8c97eaf, type: 3}
-  m_PrefabInstance: {fileID: 2011738171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030052958
 GameObject:
   m_ObjectHideFlags: 0
@@ -6187,7 +6275,7 @@ Transform:
   m_GameObject: {fileID: 2030052958}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.15, y: 0.9, z: 0}
+  m_LocalPosition: {x: 4.15, y: 0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6409,7 +6497,7 @@ Transform:
   m_Children:
   - {fileID: 1885592356}
   - {fileID: 457113886}
-  - {fileID: 2011738172}
+  - {fileID: 1511102684}
   m_Father: {fileID: 1083743707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2131662987
@@ -6676,6 +6764,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 30113759}
     m_Modifications:
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372290331399471094, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: laundrySprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a0961342bb077b4085366edd30245e0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d40ebb170e22e14292f86c9e22279c0, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: b57196e52427433488e3305fb5279416, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f55e62910e00d4d48bafbd100cd92a80, type: 3}
+    - target: {fileID: 667004478636930905, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: 'laundrySprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: d6874aa00cff8dd498e59ed82c4b03eb, type: 3}
+    - target: {fileID: 1098323760666632323, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1407413261668094530, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
       propertyPath: m_Name
       value: Ironing_1
@@ -6719,6 +6843,14 @@ PrefabInstance:
     - target: {fileID: 1919063912099322343, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500526625410049815, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279124885802952648, guid: a955238c1efc13f4c95a5a71a1e96120, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

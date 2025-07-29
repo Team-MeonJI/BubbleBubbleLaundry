@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 9061844844787041013}
   - component: {fileID: 7446361113011839196}
   m_Layer: 5
-  m_Name: Timer_1
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,12 +297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4aca900a05e714d90987681eec5fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineSprites:
-  - {fileID: 21300000, guid: d500cd8fa14a4964f96fcead03edbdb5, type: 3}
-  - {fileID: 21300000, guid: d0a13bf71eb1a47498ce4d1bb50e1616, type: 3}
-  selectSprites:
-  - {fileID: 21300000, guid: 20c80b8aa3e6d6945ab7040871f2bb73, type: 3}
-  - {fileID: 21300000, guid: f494ebebe312d2e4694f152882b5236d, type: 3}
+  animator: {fileID: 0}
+  laundrySprites:
+  - {fileID: 21300000, guid: 47c6a3ba6c5ea014aa7b6c023afa6681, type: 3}
+  - {fileID: 21300000, guid: 682b5a8cc6cd62146abf61a7aab7ee6e, type: 3}
+  - {fileID: 21300000, guid: 47c34fef684916046a992e61d0f1cdac, type: 3}
+  - {fileID: 21300000, guid: a0b0ac4037fb7364195b3578fc048b96, type: 3}
+  - {fileID: 21300000, guid: 97c85e649385e3d4ea24d6c6514c465e, type: 3}
   machineType: 2
   laundryState: 2
   machineState: 0
