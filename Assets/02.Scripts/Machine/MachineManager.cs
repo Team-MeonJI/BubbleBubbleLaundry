@@ -11,6 +11,7 @@ public class MachineManager : MonoBehaviour
     private RaycastHit2D hit;
     public BasketController basket;
     public MachineController machine;
+    public GameObject[] machines;
 
     public int clickCount = 0;
 
@@ -20,6 +21,8 @@ public class MachineManager : MonoBehaviour
             Destroy(instance);
         else
             instance = this;
+
+        machines = GameObject.FindGameObjectsWithTag("Machine");
     }
 
     private void Update()
@@ -163,6 +166,20 @@ public class MachineManager : MonoBehaviour
     // 기계 확인
     public void OnMachineCheck(int _UID)
     {
+        for(int i = 0; i < 10; i++)
+        {
+            MachineController _machine = machines[i].GetComponent<MachineController>();
 
+            if(_machine.currentBasket !=  null)
+            {
+                if (_machine.currentBasket.customerUID == _UID)
+                {
+                    GameObject _basket = _machine.currentBasket.gameObject;
+                    _machine.Init();
+                    Destroy(_basket);
+                    return;
+                }
+            }
+        }
     }
 }

@@ -30,9 +30,9 @@ public class CustomerBehaviour : MonoBehaviour
     private const int minLaundryCount = 2;
     private const int maxLaundryCount = 5;
 
-    private float currentTime = 0.0f;
+    public float currentTime = 0.0f;
     private float waitingTime = 30.0f;
-    private float laundryWaitingTime = 50.0f;
+    private float laundryWaitingTime = 40.0f;
 
     private void Awake()
     {
@@ -137,7 +137,8 @@ public class CustomerBehaviour : MonoBehaviour
         {
             currentTime = 0.0f;
             state = CustomerState.Angry;
-            CustomerManager.Instance.CoroutineHandler(lineIndex, null, 2);
+            MachineManager.Instance.OnMachineCheck(customerUID);
+            CustomerManager.Instance.CoroutineHandler(lineIndex, null, null, 2);
         }
     }
 

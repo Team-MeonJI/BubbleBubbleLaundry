@@ -60,23 +60,8 @@ public class BasketController : MonoBehaviour
             if (customerUID == CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].customerUID)
             {
                 if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].state != CustomerState.Angry)
-                    CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, 1);
-                else
-                {
-                    MachineManager.Instance.OnMachineCheck(customerUID);
-                    Destroy(_laundry, 0.5f);
-                }
+                    CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, gameObject, 1);
             }
-            else
-            {
-                MachineManager.Instance.OnMachineCheck(customerUID);
-                Destroy(_laundry, 0.5f);
-            }
-        }
-        else
-        {
-            MachineManager.Instance.OnMachineCheck(customerUID);
-            Destroy(_laundry, 0.5f);
         }
     }
 

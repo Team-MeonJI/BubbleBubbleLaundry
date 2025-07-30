@@ -45,11 +45,17 @@ public class MachineController : MonoBehaviour
 
     public void Init()
     {
+        StopAllCoroutines();
+        machineState = MachineState.Idle;
+
         OnLaundryHandler(false);
         timer.SetActive(false);
+
         currentBasket = null;
         currentTime = 0.0f;
-        machineState = MachineState.Idle;
+
+        animator.SetBool("Select", false);
+        animator.SetBool("Action", false);
     }
 
     // 작동 시간 설정

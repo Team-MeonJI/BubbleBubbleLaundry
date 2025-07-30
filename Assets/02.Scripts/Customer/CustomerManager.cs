@@ -149,7 +149,7 @@ public class CustomerManager : MonoBehaviour
     }
 
     // º’¥‘ ¥Î±‚¡Ÿø°º≠ ≈¿Â
-    public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry, int _expression)
+    public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry, GameObject _basket, int _expression)
     {
         Debug.Log(":: ≈¿Â Ω√¿€ ::");
         completeZoneCustomers[_index].speechBubble.SetActive(true);
@@ -168,10 +168,11 @@ public class CustomerManager : MonoBehaviour
         isLaundryFull[_index] = false;
         completeZoneCustomerCount--;
         Destroy(_laundry);
+        Destroy(_basket);
     }
 
-    public void CoroutineHandler(int _index, GameObject _laundry, int _expression)
+    public void CoroutineHandler(int _index, GameObject _laundry, GameObject _basket, int _expression)
     {
-        StartCoroutine(OnDelivelySuccess(_index, _laundry, _expression));
+        StartCoroutine(OnDelivelySuccess(_index, _laundry, _basket, _expression));
     }
 }
