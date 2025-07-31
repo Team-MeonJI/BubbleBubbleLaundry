@@ -155,7 +155,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7402292804861233201, guid: e0ef10c0980102e4ca10f368550e5a6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -247,8 +247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4aca900a05e714d90987681eec5fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineSprites: []
-  selectSprites: []
+  animator: {fileID: 0}
+  laundrySprites:
+  - {fileID: 21300000, guid: 1a0961342bb077b4085366edd30245e0, type: 3}
+  - {fileID: 21300000, guid: 9d40ebb170e22e14292f86c9e22279c0, type: 3}
+  - {fileID: 21300000, guid: b57196e52427433488e3305fb5279416, type: 3}
+  - {fileID: 21300000, guid: f55e62910e00d4d48bafbd100cd92a80, type: 3}
+  - {fileID: 21300000, guid: d6874aa00cff8dd498e59ed82c4b03eb, type: 3}
   machineType: 3
   laundryState: 3
   machineState: 0
@@ -382,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 4187305997878724172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.075, y: -0.055, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -459,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6279124885802952648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -478,7 +483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.1, y: 0}
+  m_AnchoredPosition: {x: -0.13, y: 0}
   m_SizeDelta: {x: 1.28, y: 0.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6661070770223622228
@@ -565,7 +570,7 @@ RectTransform:
   m_Father: {fileID: 3172419387725469806}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
