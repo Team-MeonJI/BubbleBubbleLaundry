@@ -1,11 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using System.Linq;
 using System.Collections.Generic;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 public class CustomerBehaviour : MonoBehaviour
 {
