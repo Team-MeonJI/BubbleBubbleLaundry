@@ -4,7 +4,7 @@ using UnityEngine;
 public class MiniGameController : MonoBehaviour
 {
     private TextMeshProUGUI timerText;
-    private GameObject resultPhanel;
+    public GameObject resultPhanel;
     public TextMeshProUGUI resultText;
 
     private float currentTime;
@@ -15,9 +15,6 @@ public class MiniGameController : MonoBehaviour
 
     private void Awake()
     {
-        timerText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
-        resultPhanel = transform.GetChild(1).gameObject;
-        resultText = resultPhanel.GetComponentInChildren<TextMeshProUGUI>(true);
         Init();
     }
 
@@ -39,17 +36,21 @@ public class MiniGameController : MonoBehaviour
     }
 
     // 초기화
-    public void Init()
+    public virtual void Init()
     {
         isGameOver = false;
         isGameSuccess = false;
         currentTime = miniGameTime;
+
+        timerText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
+        resultPhanel = transform.GetChild(1).gameObject;
+        resultText = resultPhanel.GetComponentInChildren<TextMeshProUGUI>(true);
     }
 
     // 미니게임 시작
     public virtual void MiniGameStart()
     {
-        isGameOver = true;
+        isGameOver = false;
         currentTime = miniGameTime;
         timerText.text = ((int)currentTime).ToString();
         transform.gameObject.SetActive(true);
@@ -58,7 +59,7 @@ public class MiniGameController : MonoBehaviour
     // 미니게임 종료
     public virtual void MiniGameEnd()
     {
-        isGameOver = false;
+        isGameOver = true;
         resultPhanel.SetActive(true);
         resultText.text = (isGameSuccess) ? "성공!" : "실패!";
     }

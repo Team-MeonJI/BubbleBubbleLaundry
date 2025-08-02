@@ -19,6 +19,7 @@ public class MiniGame_1 : MiniGameController
     {
         clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
         spotCount = Random.Range(minSpotCount, maxSpotCount);
+        Init();
 
         for (int i = 0; i < spotCount; i++)
         {
@@ -37,6 +38,11 @@ public class MiniGame_1 : MiniGameController
             isGameSuccess = true;
             MiniGameEnd();
         }
+    }
+
+    public override void Init()
+    {
+        base.Init();
     }
 
     public override void MiniGameStart()
