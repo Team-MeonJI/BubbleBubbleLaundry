@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
+using Utils.EnumTypes;
 
 public class ArrowController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Image image;
+    public ArrowType arrowType;
 
-    // Update is called once per frame
-    void Update()
+    public Sprite[] arrowSprites;
+
+    private void Awake()
     {
-        
+        image = GetComponent<Image>();
+        arrowType = (ArrowType)Random.Range(0, 4);
+        image.sprite = arrowSprites[(int)arrowType];
     }
 }

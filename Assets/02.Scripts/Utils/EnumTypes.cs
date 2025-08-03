@@ -39,4 +39,13 @@ namespace Utils.EnumTypes
         Ironing,  // 다림질 중
         Complete  // 세탁 완료
     }
+
+    // 화살표 타입
+    public enum ArrowType
+    {
+        Up,
+        Down,
+        Right,
+        Left
+    }
 }

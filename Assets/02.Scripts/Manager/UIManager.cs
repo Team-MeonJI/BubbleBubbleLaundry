@@ -26,8 +26,8 @@ public class UIManager : MonoBehaviour
     private void Init()
     {
         canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
-        timerText = canvas.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>();
-        moneyText = canvas.transform.GetChild(0).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+        timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
+        moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
         exceptonObject = canvas.transform.GetChild(1).gameObject;
         exceptionText = exceptonObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
     }

@@ -17,15 +17,7 @@ public class MiniGame_1 : MiniGameController
 
     private void Awake()
     {
-        clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
-        spotCount = Random.Range(minSpotCount, maxSpotCount);
         Init();
-
-        for (int i = 0; i < spotCount; i++)
-        {
-            spots.Add(Instantiate(spotPrefab, clothes.transform));
-            spots[i].transform.position = SetRandomPosition();
-        }
     }
 
     private void Update()
@@ -43,6 +35,14 @@ public class MiniGame_1 : MiniGameController
     public override void Init()
     {
         base.Init();
+        clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
+        spotCount = Random.Range(minSpotCount, maxSpotCount);
+
+        for (int i = 0; i < spotCount; i++)
+        {
+            spots.Add(Instantiate(spotPrefab, clothes.transform));
+            spots[i].transform.position = SetRandomPosition();
+        }
     }
 
     public override void MiniGameStart()
