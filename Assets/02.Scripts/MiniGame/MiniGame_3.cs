@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MiniGame_3 : MiniGameController
 {
+    public Queue<ArrowController> arrows;
+
     public override void MiniGameStart()
     {
         base.MiniGameStart();
