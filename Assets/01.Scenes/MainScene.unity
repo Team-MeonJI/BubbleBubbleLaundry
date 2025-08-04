@@ -4782,7 +4782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &999843900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4819,6 +4819,7 @@ MonoBehaviour:
   resultPhanel: {fileID: 0}
   resultText: {fileID: 0}
   arrowPrefab: {fileID: 1788043181450988825, guid: 7ac170a30270ca1428f6a4fa548615a8, type: 3}
+  arrows: []
 --- !u!114 &999843902
 MonoBehaviour:
   m_ObjectHideFlags: 0

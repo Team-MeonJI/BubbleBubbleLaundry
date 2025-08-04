@@ -1,5 +1,12 @@
 namespace Utils.EnumTypes
 {
+    // ╪у╢т е╦ют
+    public enum CustomerType
+    {
+        LaundryCustomer,
+        EventCustomer
+    }
+
     // ╪у╢т ╩Себ
     public enum CustomerState
     {

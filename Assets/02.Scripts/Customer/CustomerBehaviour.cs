@@ -18,6 +18,7 @@ public class CustomerBehaviour : MonoBehaviour
     public GameObject speechBubble;
     public GameObject[] speechBubbles;
 
+    public CustomerType type;
     public CustomerState state = CustomerState.Idle;
     private Vector2 dir;
     private float moveSpeed = 1.0f;
@@ -120,7 +121,12 @@ public class CustomerBehaviour : MonoBehaviour
         }
 
         if (OnRayCheck()?.name == "Bubble")
-            CustomerManager.Instance.OnOrder(lineIndex);
+        {
+            if (type == CustomerType.LaundryCustomer)
+                CustomerManager.Instance.OnOrder(lineIndex);
+            else
+                CustomerManager.Instance.OnEventOrder(lineIndex);
+        }
     }
 
     // 빨래 기다리는 중

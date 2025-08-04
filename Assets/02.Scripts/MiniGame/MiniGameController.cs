@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class MiniGameController : MonoBehaviour
 {
-    private TextMeshProUGUI timerText;
+    protected TextMeshProUGUI timerText;
     public GameObject resultPhanel;
     public TextMeshProUGUI resultText;
 
-    private float currentTime;
-    private const float miniGameTime = 30.0f;
+    protected float currentTime;
+    protected const float miniGameTime = 30.0f;
 
     protected bool isGameSuccess = false;
     protected bool isGameOver = false;
@@ -16,23 +16,6 @@ public class MiniGameController : MonoBehaviour
     private void Awake()
     {
         Init();
-    }
-
-    private void Update()
-    {
-        if (isGameOver)
-            return;
-
-        if(currentTime > 0)
-        {
-            currentTime -= Time.deltaTime;
-            timerText.text = ((int)currentTime).ToString();
-        }
-        else
-        {
-            isGameSuccess = false;
-            MiniGameEnd();
-        }
     }
 
     // √ ±‚»≠

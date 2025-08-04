@@ -25,9 +25,20 @@ public class MiniGame_1 : MiniGameController
         if (isGameOver)
             return;
 
-        if(spots.Count <= 0)
+        if (currentTime > 0)
         {
-            isGameSuccess = true;
+            currentTime -= Time.deltaTime;
+            timerText.text = ((int)currentTime).ToString();
+
+            if (spots.Count <= 0)
+            {
+                isGameSuccess = true;
+                MiniGameEnd();
+            }
+        }
+        else
+        {
+            isGameSuccess = false;
             MiniGameEnd();
         }
     }

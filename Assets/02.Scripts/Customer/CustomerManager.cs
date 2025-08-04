@@ -81,13 +81,14 @@ public class CustomerManager : MonoBehaviour
         string _backStr = totalCustomerCount.ToString("D3");
 
         counterCustomers.Add(_customer.GetComponent<CustomerBehaviour>());
+        counterCustomers[counterZoneCustomerCount - 1].type = (totalCustomerCount % 6 == 0) ? CustomerType.EventCustomer : CustomerType.EventCustomer;
         counterCustomers[counterZoneCustomerCount - 1].customerUID = int.Parse(_frontStr + _backStr);
         counterCustomers[counterZoneCustomerCount - 1].state = CustomerState.CounterZone;
         counterCustomers[counterZoneCustomerCount - 1].lineIndex = counterZoneCustomerCount - 1;
         counterCustomers[counterZoneCustomerCount - 1].SetDestination(counterZone[counterZoneCustomerCount - 1]);
     }
 
-    // 주문 실행
+    // 빨래 주문 실행
     public void OnOrder(int _index)
     {
         for(int i = 0; i < isLaundryFull.Length; i++)
@@ -104,6 +105,27 @@ public class CustomerManager : MonoBehaviour
                 _basketController.customerUID = completeZoneCustomers[i].customerUID;
                 _basketController.laundryCount = completeZoneCustomers[i].laundryCount;
                 _basketController.laundryZoneIndex = i;
+
+                completeZoneCustomers[i].lineIndex = i;
+                completeZoneCustomers[i].state = CustomerState.CompleteZone;
+                MoveCompleteZone(completeZoneCustomers[i].lineIndex);
+
+                return;
+            }
+        }
+    }
+
+    // 이벤트 주문 실행
+    public void OnEventOrder(int _index)
+    {
+        for (int i = 0; i < isLaundryFull.Length; i++)
+        {
+            if (!isLaundryFull[i])
+            {
+                isLaundryFull[i] = true;
+
+                completeZoneCustomers[i] = counterCustomers[_index];
+                counterCustomers.RemoveAt(_index);
 
                 completeZoneCustomers[i].lineIndex = i;
                 completeZoneCustomers[i].state = CustomerState.CompleteZone;
