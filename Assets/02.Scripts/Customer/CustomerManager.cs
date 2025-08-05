@@ -81,7 +81,7 @@ public class CustomerManager : MonoBehaviour
         string _backStr = totalCustomerCount.ToString("D3");
 
         counterCustomers.Add(_customer.GetComponent<CustomerBehaviour>());
-        counterCustomers[counterZoneCustomerCount - 1].type = (totalCustomerCount % 6 == 0) ? CustomerType.EventCustomer : CustomerType.EventCustomer;
+        counterCustomers[counterZoneCustomerCount - 1].type = (totalCustomerCount % 2 == 0) ? CustomerType.EventCustomer : CustomerType.LaundryCustomer;
         counterCustomers[counterZoneCustomerCount - 1].customerUID = int.Parse(_frontStr + _backStr);
         counterCustomers[counterZoneCustomerCount - 1].state = CustomerState.CounterZone;
         counterCustomers[counterZoneCustomerCount - 1].lineIndex = counterZoneCustomerCount - 1;
@@ -173,7 +173,6 @@ public class CustomerManager : MonoBehaviour
     // º’¥‘ ¥Î±‚¡Ÿø°º≠ ≈¿Â
     public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry, GameObject _basket, int _expression)
     {
-        Debug.Log(":: ≈¿Â Ω√¿€ ::");
         completeZoneCustomers[_index].speechBubble.SetActive(true);
         completeZoneCustomers[_index].speechBubbles[_expression].SetActive(true);
         completeZoneCustomers[_index].state = (_expression == 1) ? CustomerState.Happy : CustomerState.Angry;

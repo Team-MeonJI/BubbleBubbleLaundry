@@ -7,16 +7,11 @@ public class MiniGameController : MonoBehaviour
     public GameObject resultPhanel;
     public TextMeshProUGUI resultText;
 
-    protected float currentTime;
+    public float currentTime;
     protected const float miniGameTime = 30.0f;
 
     protected bool isGameSuccess = false;
     protected bool isGameOver = false;
-
-    private void Awake()
-    {
-        Init();
-    }
 
     // 초기화
     public virtual void Init()
@@ -33,6 +28,8 @@ public class MiniGameController : MonoBehaviour
     // 미니게임 시작
     public virtual void MiniGameStart()
     {
+        Debug.Log("::: MiniGame Start :::");
+        Init();
         isGameOver = false;
         currentTime = miniGameTime;
         timerText.text = ((int)currentTime).ToString();

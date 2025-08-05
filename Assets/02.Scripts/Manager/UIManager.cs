@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     private Canvas canvas;
     public TextMeshProUGUI timerText;
     private TextMeshProUGUI moneyText;
+    private Slider reputationSlider;
     private GameObject exceptonObject;
     private TextMeshProUGUI exceptionText;
 
@@ -28,8 +30,11 @@ public class UIManager : MonoBehaviour
         canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
         timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
         moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
+        reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
         exceptonObject = canvas.transform.GetChild(1).gameObject;
         exceptionText = exceptonObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+
+        GameManager.Instance.ReputationHandler(0);
     }
 
     public void TimerHandler(float _time)
@@ -37,9 +42,14 @@ public class UIManager : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", (int)(_time / 60.0f), (int)(_time % 60.0f));
     }
 
-    public void MoneyHandler(int _money)
+    public void ChangeMoneyText(int _money)
     {
         moneyText.text = _money.ToString();
+    }
+
+    public void ChangeReputationBar(int _reputation)
+    {
+        reputationSlider.value = (_reputation / 100.0f);
     }
 
     public IEnumerator OnException(string _text)

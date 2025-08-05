@@ -13,6 +13,8 @@ public class MiniGame_3 : MiniGameController
     private ArrowController commandArrow;
     private TextMeshProUGUI remainArrowCount;
 
+    private const int reward = 150;
+
     private void Awake()
     {
         Init();
@@ -66,6 +68,16 @@ public class MiniGame_3 : MiniGameController
     public override void MiniGameReward()
     {
         base.MiniGameReward();
+
+        if (isGameSuccess)
+        {
+            GameManager.Instance.ReputationHandler(10);
+            GameManager.Instance.MoneyHandler(reward * (int)currentTime);
+        }
+        else
+            GameManager.Instance.ReputationHandler(-10);
+
+        transform.gameObject.SetActive(false);
     }
 
     // 방향키 입력 확인

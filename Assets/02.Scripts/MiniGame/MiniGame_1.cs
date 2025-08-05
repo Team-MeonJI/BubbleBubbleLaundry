@@ -14,6 +14,7 @@ public class MiniGame_1 : MiniGameController
     private int spotCount = 0;
     private const int minSpotCount = 3;
     private const int maxSpotCount = 7;
+    private const int reward = 100;
 
     private void Awake()
     {
@@ -69,6 +70,16 @@ public class MiniGame_1 : MiniGameController
     public override void MiniGameReward()
     {
         base.MiniGameReward();
+
+        if (isGameSuccess)
+        {
+            GameManager.Instance.ReputationHandler(10);
+            GameManager.Instance.MoneyHandler(reward * (int)currentTime);
+        }
+        else
+            GameManager.Instance.ReputationHandler(-10);
+
+        transform.gameObject.SetActive(false);
     }
 
     // ¾ó·è ·£´ý À§Ä¡ ¼³Á¤

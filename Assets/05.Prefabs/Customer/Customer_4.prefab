@@ -325,15 +325,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   speechBubble: {fileID: 0}
   speechBubbles:
   - {fileID: 6593285207250349596}
   - {fileID: 5313699327707474570}
   - {fileID: 3894776350714069014}
+  - {fileID: 6375496306303601723}
+  type: 0
   state: 0
   lineIndex: 0
   customerUID: 0
   laundryCount: 0
+  currentTime: 0
 --- !u!1001 &1291036191175807605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -456,6 +460,11 @@ GameObject:
 --- !u!1 &5313699327707474570 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6364892433025169663, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
+  m_PrefabInstance: {fileID: 1291036191175807605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6375496306303601723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5301016654824578638, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
   m_PrefabInstance: {fileID: 1291036191175807605}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6593285207250349596 stripped

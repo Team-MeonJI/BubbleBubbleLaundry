@@ -86,6 +86,8 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.LaundryWait:
                 OnLaundryWaiting();
                 break;
+            case CustomerState.MiniGame:
+                break;
             case CustomerState.Happy:
                 break;
             case CustomerState.Angry:
@@ -134,6 +136,20 @@ public class CustomerBehaviour : MonoBehaviour
     {
         if (currentTime < laundryWaitingTime)
         {
+            if(type == CustomerType.EventCustomer)
+            {
+                speechBubble.SetActive(true);
+                speechBubbles[3].SetActive(true);
+
+                if (OnRayCheck()?.name == "Bubble")
+                {
+                    // 미니게임 시작
+                    Init();
+                    MiniGameManager.Instance.OnMiniGameStart();
+                    state = CustomerState.MiniGame;
+                    return;
+                }
+            }
             animator.SetInteger("Dir", 1);
             currentTime += Time.deltaTime;
         }

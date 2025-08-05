@@ -15,6 +15,7 @@ namespace Utils.EnumTypes
         CompleteZone, // 대기존으로 이동
         Wait,         // 주문 기다림
         LaundryWait,  // 빨래 기다림
+        MiniGame,     // 미니게임 중
         Happy,        // 기쁨 상태
         Angry,        // 화남 상태
         Leave         // 가게 퇴장

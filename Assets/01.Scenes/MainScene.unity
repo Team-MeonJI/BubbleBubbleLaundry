@@ -814,7 +814,6 @@ RectTransform:
   - {fileID: 898504348}
   - {fileID: 334575915}
   - {fileID: 64272688}
-  - {fileID: 940496506}
   m_Father: {fileID: 777697359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1285,7 +1284,6 @@ RectTransform:
   - {fileID: 1225587066}
   - {fileID: 1760558936}
   - {fileID: 673061174}
-  - {fileID: 1837734267}
   m_Father: {fileID: 999843900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3660,6 +3658,7 @@ RectTransform:
   m_Children:
   - {fileID: 203176668}
   - {fileID: 1458925084}
+  - {fileID: 940496506}
   m_Father: {fileID: 1884002376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3719,6 +3718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPhanel: {fileID: 0}
   resultText: {fileID: 0}
+  currentTime: 0
 --- !u!114 &777697363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3733,6 +3733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPhanel: {fileID: 0}
   resultText: {fileID: 0}
+  currentTime: 0
   spots: []
   spotPrefab: {fileID: 1226454162883675827, guid: ad1a7013b3f227745b68040dbfb4f40d, type: 3}
 --- !u!1 &789777594
@@ -4594,17 +4595,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940496505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 271951994}
-  m_Father: {fileID: 203176668}
+  m_Father: {fileID: 777697359}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -410, y: -140}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &940496507
@@ -4651,10 +4652,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 777697358}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 777697363}
+        m_TargetAssemblyTypeName: MiniGame_1, Assembly-CSharp
+        m_MethodName: MiniGameReward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4797,6 +4798,7 @@ RectTransform:
   m_Children:
   - {fileID: 285443805}
   - {fileID: 923666642}
+  - {fileID: 1837734267}
   m_Father: {fileID: 1884002376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4818,6 +4820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPhanel: {fileID: 0}
   resultText: {fileID: 0}
+  currentTime: 0
   arrowPrefab: {fileID: 1788043181450988825, guid: 7ac170a30270ca1428f6a4fa548615a8, type: 3}
   arrows: []
 --- !u!114 &999843902
@@ -4834,6 +4837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultPhanel: {fileID: 0}
   resultText: {fileID: 0}
+  currentTime: 0
 --- !u!114 &999843903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7468,7 +7472,7 @@ MonoBehaviour:
   m_text: "\uC131\uACF5!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: defa539a282da3c46a171967dcacd62d, type: 2}
-  m_sharedMaterial: {fileID: 3173499100402662218, guid: 5b88baaf7d7696d4a8b14cb394d0c182, type: 2}
+  m_sharedMaterial: {fileID: 1773881000623458208, guid: defa539a282da3c46a171967dcacd62d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7533,7 +7537,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1701636971
@@ -8320,17 +8324,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837734266}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1898706657}
-  m_Father: {fileID: 285443805}
+  m_Father: {fileID: 999843900}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -410, y: -140}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837734268
@@ -8377,10 +8381,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 999843899}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 999843901}
+        m_TargetAssemblyTypeName: MiniGame_3, Assembly-CSharp
+        m_MethodName: MiniGameReward
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
