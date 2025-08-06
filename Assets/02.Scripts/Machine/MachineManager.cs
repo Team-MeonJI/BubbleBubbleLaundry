@@ -1,6 +1,5 @@
-using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Utils.EnumTypes;
 
 public class MachineManager : MonoBehaviour
@@ -27,7 +26,7 @@ public class MachineManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Vector2 _pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             hit = Physics2D.Raycast(_pos, Vector2.zero, 0.0f);

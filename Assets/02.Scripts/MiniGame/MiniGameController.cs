@@ -7,19 +7,20 @@ public class MiniGameController : MonoBehaviour
     public GameObject resultPhanel;
     public TextMeshProUGUI resultText;
 
-    public float currentTime;
+    protected float currentTime;
     protected const float miniGameTime = 30.0f;
 
-    protected bool isGameSuccess = false;
-    protected bool isGameOver = false;
+    public bool isGameSuccess = false;
+    public bool isGameOver = false;
+
+    private void OnEnable()
+    {
+        Init();
+    }
 
     // √ ±‚»≠
     public virtual void Init()
     {
-        isGameOver = false;
-        isGameSuccess = false;
-        currentTime = miniGameTime;
-
         timerText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
         resultPhanel = transform.GetChild(1).gameObject;
         resultText = resultPhanel.GetComponentInChildren<TextMeshProUGUI>(true);

@@ -18,6 +18,12 @@ public class MiniGame_1 : MiniGameController
 
     private void Awake()
     {
+        clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
+        spotCount = Random.Range(minSpotCount, maxSpotCount);
+    }
+
+    private void OnEnable()
+    {
         Init();
     }
 
@@ -47,8 +53,11 @@ public class MiniGame_1 : MiniGameController
     public override void Init()
     {
         base.Init();
-        clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
-        spotCount = Random.Range(minSpotCount, maxSpotCount);
+
+        isGameOver = false;
+        isGameSuccess = false;
+        currentTime = miniGameTime;
+        resultPhanel.SetActive(false);
 
         for (int i = 0; i < spotCount; i++)
         {
@@ -73,13 +82,14 @@ public class MiniGame_1 : MiniGameController
 
         if (isGameSuccess)
         {
-            GameManager.Instance.ReputationHandler(10);
+            GameManager.Instance.ReputationHandler(5);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
             GameManager.Instance.ReputationHandler(-10);
 
         transform.gameObject.SetActive(false);
+        MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);
     }
 
     // ¾ó·è ·£´ý À§Ä¡ ¼³Á¤

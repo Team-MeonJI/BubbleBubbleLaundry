@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     private float gamePlayTime = 600.0f;
     private float currentTime;
 
-    private bool isGameOver = false;
+    private bool isGameOver = true;
 
     private void Awake()
     {
@@ -36,14 +37,14 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            currentTime = 0;
-            isGameOver = true;
+            GameOver();
         }
     }
 
     // 초기화
     private void Init()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         Screen.SetResolution(1920, 1080, true);
         Application.targetFrameRate = 65;
 
@@ -74,9 +75,25 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ChangeReputationBar(reputation);
     }
 
+    // 게임 시작
+    public void GameStart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     // 게임 종료
     public void GameOver()
     {
+        currentTime = 0;
         isGameOver = true;
+    }
+
+    public void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
+    {
+        if(_scene.name == "MainScene")
+        {
+            UIManager.Instance.Init();
+            isGameOver = false;
+        }
     }
 }

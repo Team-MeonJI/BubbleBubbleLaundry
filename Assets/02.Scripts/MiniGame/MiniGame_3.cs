@@ -17,6 +17,13 @@ public class MiniGame_3 : MiniGameController
 
     private void Awake()
     {
+        command = transform.GetChild(0).GetChild(1).GetChild(1).gameObject;
+        arrowGrid = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).gameObject;
+        remainArrowCount = transform.GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void OnEnable()
+    {
         Init();
     }
 
@@ -41,9 +48,11 @@ public class MiniGame_3 : MiniGameController
     public override void Init()
     {
         base.Init();
-        command = transform.GetChild(0).GetChild(1).GetChild(1).gameObject;
-        arrowGrid = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).gameObject;
-        remainArrowCount = transform.GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+
+        isGameOver = false;
+        isGameSuccess = false;
+        currentTime = miniGameTime;
+        resultPhanel.SetActive(false);
 
         for (int i = 0; i < 20; i++)
         {
@@ -53,6 +62,7 @@ public class MiniGame_3 : MiniGameController
         commandArrow = arrows[0].GetComponent<ArrowController>();
         commandArrow.transform.parent = command.transform;
         commandArrow.GetComponent<RectTransform>().localPosition = Vector3.zero;
+        remainArrowCount.text = (arrows.Count).ToString();
     }
 
     public override void MiniGameStart()
@@ -71,13 +81,14 @@ public class MiniGame_3 : MiniGameController
 
         if (isGameSuccess)
         {
-            GameManager.Instance.ReputationHandler(10);
+            GameManager.Instance.ReputationHandler(5);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
             GameManager.Instance.ReputationHandler(-10);
 
         transform.gameObject.SetActive(false);
+        MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);
     }
 
     // 방향키 입력 확인

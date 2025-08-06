@@ -22,12 +22,12 @@ public class UIManager : MonoBehaviour
         else
             instance = this;
 
-        Init();
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void Init()
+    public void Init()
     {
-        canvas = GameObject.Find("MainCanvas").GetComponent<Canvas>();
+        canvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
         timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
         moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
         reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeMoneyText(int _money)
     {
-        moneyText.text = _money.ToString();
+        moneyText.text = string.Format("{0:#,###}", _money);
     }
 
     public void ChangeReputationBar(int _reputation)

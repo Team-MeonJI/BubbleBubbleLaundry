@@ -5,8 +5,11 @@ public class MiniGameManager : MonoBehaviour
     private static MiniGameManager instance;
     public static MiniGameManager Instance {  get { return instance; } }
 
+    public GameObject currentMiniGameCustomer;
     private GameObject miniGameCanvas;
     private MiniGameController[] miniGames = new MiniGameController[2];
+
+    public bool isMiniGameOver = false;
 
     private void Awake()
     {
@@ -25,8 +28,17 @@ public class MiniGameManager : MonoBehaviour
         miniGames[1] = miniGameCanvas.transform.GetChild(1).GetComponent<MiniGameController>();
     }
 
-    public void OnMiniGameStart()
+    public void OnMiniGameStart(GameObject _customer)
     {
         miniGames[Random.Range(0, miniGames.Length)].MiniGameStart();
+        currentMiniGameCustomer = _customer;
+        isMiniGameOver = true;
+    }
+
+    public void OnMiniGameEnd(bool isGameSuccess)
+    {
+        CustomerManager.Instance.CoroutineHandler(currentMiniGameCustomer.GetComponent<CustomerBehaviour>().lineIndex, null, null, isGameSuccess ? 1 : 2);
+        currentMiniGameCustomer = null;
+        isMiniGameOver = false;
     }
 }

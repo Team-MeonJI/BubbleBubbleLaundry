@@ -27,7 +27,7 @@ public class CustomerBehaviour : MonoBehaviour
     public int customerUID = 0;
     public int laundryCount = 0;
     private const int minLaundryCount = 2;
-    private const int maxLaundryCount = 5;
+    private const int maxLaundryCount = 4;
 
     public float currentTime = 0.0f;
     private float waitingTime = 30.0f;
@@ -119,6 +119,7 @@ public class CustomerBehaviour : MonoBehaviour
         {
             currentTime = 0.0f;
             state = CustomerState.Leave;
+            GameManager.Instance.ReputationHandler(-10);
             CustomerManager.Instance.DequeueCustomer(lineIndex);
         }
 
@@ -145,7 +146,7 @@ public class CustomerBehaviour : MonoBehaviour
                 {
                     // 미니게임 시작
                     Init();
-                    MiniGameManager.Instance.OnMiniGameStart();
+                    MiniGameManager.Instance.OnMiniGameStart(transform.gameObject);
                     state = CustomerState.MiniGame;
                     return;
                 }
@@ -157,8 +158,17 @@ public class CustomerBehaviour : MonoBehaviour
         {
             currentTime = 0.0f;
             state = CustomerState.Angry;
-            MachineManager.Instance.OnMachineCheck(customerUID);
-            CustomerManager.Instance.CoroutineHandler(lineIndex, null, null, 2);
+            GameManager.Instance.ReputationHandler(-10);
+
+            if (type == CustomerType.LaundryCustomer)
+            {
+                MachineManager.Instance.OnMachineCheck(customerUID);
+                CustomerManager.Instance.CoroutineHandler(lineIndex, null, null, 2);
+            }
+            else
+            {
+                CustomerManager.Instance.CoroutineHandler(lineIndex, null, null, 3);
+            }
         }
     }
 
@@ -188,7 +198,7 @@ public class CustomerBehaviour : MonoBehaviour
     // Ray 충돌 확인
     public GameObject OnRayCheck()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !MiniGameManager.Instance.isMiniGameOver)
         {
             PointerEventData pointerData = new PointerEventData(eventSystem);
             pointerData.position = Input.mousePosition;
