@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniGameController : MonoBehaviour
 {
     protected TextMeshProUGUI timerText;
     public GameObject resultPhanel;
-    public TextMeshProUGUI resultText;
+    private Image resultImage;
+    public Sprite[] resultSprites;
 
     protected float currentTime;
     protected const float miniGameTime = 30.0f;
@@ -23,7 +25,7 @@ public class MiniGameController : MonoBehaviour
     {
         timerText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>();
         resultPhanel = transform.GetChild(1).gameObject;
-        resultText = resultPhanel.GetComponentInChildren<TextMeshProUGUI>(true);
+        resultImage = resultPhanel.transform.GetChild(0).GetComponent<Image>();
     }
 
     // 미니게임 시작
@@ -42,7 +44,7 @@ public class MiniGameController : MonoBehaviour
     {
         isGameOver = true;
         resultPhanel.SetActive(true);
-        resultText.text = (isGameSuccess) ? "성공!" : "실패!";
+        resultImage.sprite = (isGameSuccess) ? resultSprites[0] : resultSprites[1];
     }
 
     // 게임 결과

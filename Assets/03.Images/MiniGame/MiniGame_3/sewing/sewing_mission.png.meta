@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 1ea666901c527e046abea2a93e430325
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3781148198833743141
+    second: sewing_mission_0
+  - first:
+      213: -6470613123093881812
+    second: sewing_mission_1
+  - first:
+      213: 912169924487067467
+    second: sewing_mission_2
+  - first:
+      213: -8818125479109346394
+    second: sewing_mission_3
+  - first:
+      213: 2477520752911144623
+    second: sewing_mission_4
+  - first:
+      213: 1997491190838111116
+    second: sewing_mission_5
+  - first:
+      213: -4869221514126800133
+    second: sewing_mission_6
+  - first:
+      213: -7503763474199272973
+    second: sewing_mission_7
+  - first:
+      213: 2389676108239248377
+    second: sewing_mission_8
+  - first:
+      213: 8773652696572354295
+    second: sewing_mission_9
+  - first:
+      213: 6980270003438301854
+    second: sewing_mission_10
+  - first:
+      213: 5128534016604713952
+    second: sewing_mission_11
+  - first:
+      213: -4865487614641939057
+    second: sewing_mission_12
+  - first:
+      213: 4846301734086335529
+    second: sewing_mission_13
+  - first:
+      213: -1706305966495974447
+    second: sewing_mission_14
+  - first:
+      213: 1247153254698690292
+    second: sewing_mission_15
+  - first:
+      213: -3207755048099035563
+    second: sewing_mission_16
+  - first:
+      213: -1876586428454716601
+    second: sewing_mission_17
+  - first:
+      213: 8355028268175510370
+    second: sewing_mission_18
+  - first:
+      213: 609265802681571369
+    second: sewing_mission_19
+  - first:
+      213: -8733648944634798945
+    second: sewing_mission_20
+  - first:
+      213: -2725507514890469318
+    second: sewing_mission_21
+  - first:
+      213: -3160664478786930273
+    second: sewing_mission_22
+  - first:
+      213: -4731235782585938121
+    second: sewing_mission_23
+  - first:
+      213: 4762585233714542602
+    second: sewing_mission_24
+  - first:
+      213: -4483128951078538133
+    second: sewing_mission_25
+  - first:
+      213: 5898215616344631598
+    second: sewing_mission_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 54
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sewing_mission_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 32
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda186d1fb9a68bc0800000000000000
+      internalID: -3781148198833743141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 25
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c1207b5a3c336a0800000000000000
+      internalID: -6470613123093881812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 32
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47b8d3a6bda8ac00800000000000000
+      internalID: 912169924487067467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 25
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6abbdd0e899bf9580800000000000000
+      internalID: -8818125479109346394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_4
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa65de09ffbe16220800000000000000
+      internalID: 2477520752911144623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 28
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ba0e7a7a388bb10800000000000000
+      internalID: 1997491190838111116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 33
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa48c5c4dc0d6cb0800000000000000
+      internalID: -4869221514126800133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_7
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 30
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f12dc970e64dd790800000000000000
+      internalID: -7503763474199272973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 25
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb96d762c5d92120800000000000000
+      internalID: 2389676108239248377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_9
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 31
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fed7d984a642c970800000000000000
+      internalID: 8773652696572354295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e923147c596eed060800000000000000
+      internalID: 6980270003438301854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_11
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 33
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e33b3614863c2740800000000000000
+      internalID: 5128534016604713952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_12
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d543efac05a7cb0800000000000000
+      internalID: -4865487614641939057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_13
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 33
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92c539610c5814340800000000000000
+      internalID: 4846301734086335529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_14
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 32
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbb0ec83cbf158e0800000000000000
+      internalID: -1706305966495974447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_15
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 25
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6a9c60747ce4110800000000000000
+      internalID: 1247153254698690292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_16
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 31
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 556479777c3cb73d0800000000000000
+      internalID: -3207755048099035563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_17
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b33adf59605f5e0800000000000000
+      internalID: -1876586428454716601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_18
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26bc2fc61f503f370800000000000000
+      internalID: 8355028268175510370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 928d0aef40c847800800000000000000
+      internalID: 609265802681571369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_20
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 33
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cd316ce88dbc680800000000000000
+      internalID: -8733648944634798945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_21
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 25
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30cb460b5d0d2ad0800000000000000
+      internalID: -2725507514890469318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_22
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 28
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99b5b707601324d0800000000000000
+      internalID: -3160664478786930273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_23
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 33
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f09567f16475eb0800000000000000
+      internalID: -4731235782585938121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_24
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 26
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08731c690a181240800000000000000
+      internalID: 4762585233714542602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_25
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 25
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64b1bcb8f9b8c1c0800000000000000
+      internalID: -4483128951078538133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sewing_mission_26
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 25
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2922ec5adbaad150800000000000000
+      internalID: 5898215616344631598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sewing_mission_0: -3781148198833743141
+      sewing_mission_1: -6470613123093881812
+      sewing_mission_10: 6980270003438301854
+      sewing_mission_11: 5128534016604713952
+      sewing_mission_12: -4865487614641939057
+      sewing_mission_13: 4846301734086335529
+      sewing_mission_14: -1706305966495974447
+      sewing_mission_15: 1247153254698690292
+      sewing_mission_16: -3207755048099035563
+      sewing_mission_17: -1876586428454716601
+      sewing_mission_18: 8355028268175510370
+      sewing_mission_19: 609265802681571369
+      sewing_mission_2: 912169924487067467
+      sewing_mission_20: -8733648944634798945
+      sewing_mission_21: -2725507514890469318
+      sewing_mission_22: -3160664478786930273
+      sewing_mission_23: -4731235782585938121
+      sewing_mission_24: 4762585233714542602
+      sewing_mission_25: -4483128951078538133
+      sewing_mission_26: 5898215616344631598
+      sewing_mission_3: -8818125479109346394
+      sewing_mission_4: 2477520752911144623
+      sewing_mission_5: 1997491190838111116
+      sewing_mission_6: -4869221514126800133
+      sewing_mission_7: -7503763474199272973
+      sewing_mission_8: 2389676108239248377
+      sewing_mission_9: 8773652696572354295
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

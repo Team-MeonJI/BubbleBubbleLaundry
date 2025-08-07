@@ -88,6 +88,12 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
     }
 
+    // 게임 나가기
+    public void GameExit()
+    {
+        Application.Quit();
+    }
+
     public void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
     {
         if(_scene.name == "MainScene")

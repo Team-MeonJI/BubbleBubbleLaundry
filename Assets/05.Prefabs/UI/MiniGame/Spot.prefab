@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7fb6e5af61232714db674c536ef9cf26, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,6 +89,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdcd666252f8a94081bfd5883393d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spotSprites:
+  - {fileID: 21300000, guid: d8e1e70cfc1d10a478dcf40a2a7bf551, type: 3}
+  - {fileID: 21300000, guid: 39fc6fa32d46d474682a424eb8f09b58, type: 3}
+  - {fileID: 21300000, guid: ebc50ce6d4ba4864ca82b032a83a8d7b, type: 3}
+  - {fileID: 21300000, guid: f180153ff6c0de24fbde3532224494a6, type: 3}
+  - {fileID: 21300000, guid: 5d0bc19c16aaa78478ed45317302e2f1, type: 3}
+  - {fileID: 21300000, guid: f17103e5de0a5dd45a0e11777f2737c0, type: 3}
+  - {fileID: 21300000, guid: cbdb4919f771e50489974f7d93dffbeb, type: 3}
+  - {fileID: 21300000, guid: bb4d9cabf78d2704ebef9357266126d9, type: 3}
+  - {fileID: 21300000, guid: 7fb6e5af61232714db674c536ef9cf26, type: 3}
 --- !u!1 &2417043741306628531
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,10 +164,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5b88baaf7d7696d4a8b14cb394d0c182, type: 2}
-  m_sharedMaterial: {fileID: 3173499100402662218, guid: 5b88baaf7d7696d4a8b14cb394d0c182, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: defa539a282da3c46a171967dcacd62d, type: 2}
+  m_sharedMaterial: {fileID: 1773881000623458208, guid: defa539a282da3c46a171967dcacd62d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -181,8 +191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

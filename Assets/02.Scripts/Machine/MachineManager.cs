@@ -106,7 +106,7 @@ public class MachineManager : MonoBehaviour
                 }
                 else
                 {
-                    StartCoroutine(UIManager.Instance.OnException("올바른 단계가 아닙니다!!"));
+                    StartCoroutine(UIManager.Instance.OnException(1));
 
                     if (machine != null)
                     {
@@ -123,7 +123,7 @@ public class MachineManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(UIManager.Instance.OnException("세탁물이 들어있어 넣을 수 없어요!!"));
+                StartCoroutine(UIManager.Instance.OnException(0));
 
                 if (machine != null)
                 {

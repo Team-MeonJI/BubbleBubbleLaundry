@@ -12,8 +12,10 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     private TextMeshProUGUI moneyText;
     private Slider reputationSlider;
+
     private GameObject exceptonObject;
-    private TextMeshProUGUI exceptionText;
+    private Image exceptionImage;
+    public Sprite[] exceptionSprite;
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class UIManager : MonoBehaviour
         moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
         reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
         exceptonObject = canvas.transform.GetChild(1).gameObject;
-        exceptionText = exceptonObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+        exceptionImage = exceptonObject.GetComponent<Image>();
 
         GameManager.Instance.ReputationHandler(0);
     }
@@ -52,9 +54,9 @@ public class UIManager : MonoBehaviour
         reputationSlider.value = (_reputation / 100.0f);
     }
 
-    public IEnumerator OnException(string _text)
+    public IEnumerator OnException(int _index)
     {
-        exceptionText.text = _text;
+        exceptionImage.sprite = exceptionSprite[_index];
         exceptonObject.SetActive(true);
 
         yield return new WaitForSeconds(2f);

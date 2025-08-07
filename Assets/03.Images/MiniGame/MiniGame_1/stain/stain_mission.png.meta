@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 7d27aa5580ea7b540b5f662d80e8b0b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3462790193628628386
+    second: stain_mission_0
+  - first:
+      213: 7362965509521495052
+    second: stain_mission_1
+  - first:
+      213: -750211538522309978
+    second: stain_mission_2
+  - first:
+      213: 1913415580247043128
+    second: stain_mission_3
+  - first:
+      213: -5284629212797143651
+    second: stain_mission_4
+  - first:
+      213: 1677034866085138340
+    second: stain_mission_5
+  - first:
+      213: -3408682428195232218
+    second: stain_mission_6
+  - first:
+      213: 5712293837370634218
+    second: stain_mission_7
+  - first:
+      213: 5605551695158556082
+    second: stain_mission_8
+  - first:
+      213: -5309506664645647859
+    second: stain_mission_9
+  - first:
+      213: -8037993512799524804
+    second: stain_mission_10
+  - first:
+      213: -2433658554720592197
+    second: stain_mission_11
+  - first:
+      213: -3766104868965147246
+    second: stain_mission_12
+  - first:
+      213: 1827926828649803614
+    second: stain_mission_13
+  - first:
+      213: 162044468364047433
+    second: stain_mission_14
+  - first:
+      213: -5907638594755888619
+    second: stain_mission_15
+  - first:
+      213: 2780062877677723750
+    second: stain_mission_16
+  - first:
+      213: -3959976219388117066
+    second: stain_mission_17
+  - first:
+      213: 7483116356584929901
+    second: stain_mission_18
+  - first:
+      213: 8531343628352380852
+    second: stain_mission_19
+  - first:
+      213: -4046195646764398399
+    second: stain_mission_20
+  - first:
+      213: -1718092575986895361
+    second: stain_mission_21
+  - first:
+      213: -836592446939965728
+    second: stain_mission_22
+  - first:
+      213: -6342157117080438749
+    second: stain_mission_23
+  - first:
+      213: -9044276155497103202
+    second: stain_mission_24
+  - first:
+      213: 5275566063888920018
+    second: stain_mission_25
+  - first:
+      213: 8547977756834595040
+    second: stain_mission_26
+  - first:
+      213: -2121186693531496714
+    second: stain_mission_27
+  - first:
+      213: 6751234904408336158
+    second: stain_mission_28
+  - first:
+      213: -17458727310612762
+    second: stain_mission_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 54
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: stain_mission_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 31
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a3f016aa2b1ffc0800000000000000
+      internalID: -3462790193628628386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c045b78ce128e2660800000000000000
+      internalID: 7362965509521495052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 33
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa7afb9496b695f0800000000000000
+      internalID: -750211538522309978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_3
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ca2502551dd8a10800000000000000
+      internalID: 1913415580247043128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 28
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d95f299eab939a6b0800000000000000
+      internalID: -5284629212797143651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_5
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 33
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af03fc4356064710800000000000000
+      internalID: 1677034866085138340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_6
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626ae4b346de1b0d0800000000000000
+      internalID: -3408682428195232218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_7
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 34
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef2125eaf4264f40800000000000000
+      internalID: 5712293837370634218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_8
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 30
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5b308319beacd40800000000000000
+      internalID: 5605551695158556082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_9
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d022a39c1d7d056b0800000000000000
+      internalID: -5309506664645647859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_10
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38a0babc7f437090800000000000000
+      internalID: -8037993512799524804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 33
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbed9454078e93ed0800000000000000
+      internalID: -2433658554720592197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_12
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d967a439b1cbbc0800000000000000
+      internalID: -3766104868965147246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 33
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fe31114c91e5910800000000000000
+      internalID: 1827926828649803614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_14
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 31
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944f7aed592bf3200800000000000000
+      internalID: 162044468364047433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_15
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 25
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51aff228ff9d30ea0800000000000000
+      internalID: -5907638594755888619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_16
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 25
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6602b353574c49620800000000000000
+      internalID: 2780062877677723750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_17
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 30
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf706cfb965b09c0800000000000000
+      internalID: -3959976219388117066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_18
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 25
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6af827ddae59d760800000000000000
+      internalID: 7483116356584929901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_19
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 25
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf5cb834db656670800000000000000
+      internalID: 8531343628352380852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_20
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 30
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c840e63f7609d7c0800000000000000
+      internalID: -4046195646764398399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_21
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 25
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5b01da7eb1828e0800000000000000
+      internalID: -1718092575986895361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_22
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 25
+        width: 16
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e65e5a1a93d364f0800000000000000
+      internalID: -836592446939965728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_23
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 33
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32874b644b12cf7a0800000000000000
+      internalID: -6342157117080438749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_24
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 25
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e904f0551c64c7280800000000000000
+      internalID: -9044276155497103202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_25
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 28
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd643b4263963940800000000000000
+      internalID: 5275566063888920018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_26
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 33
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e001101b7480a670800000000000000
+      internalID: 8547977756834595040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_27
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 26
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe05c5d0f70092e0800000000000000
+      internalID: -2121186693531496714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_28
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 25
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e172a70406431bd50800000000000000
+      internalID: 6751234904408336158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stain_mission_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 25
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6ab684169f1cff0800000000000000
+      internalID: -17458727310612762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      stain_mission_0: -3462790193628628386
+      stain_mission_1: 7362965509521495052
+      stain_mission_10: -8037993512799524804
+      stain_mission_11: -2433658554720592197
+      stain_mission_12: -3766104868965147246
+      stain_mission_13: 1827926828649803614
+      stain_mission_14: 162044468364047433
+      stain_mission_15: -5907638594755888619
+      stain_mission_16: 2780062877677723750
+      stain_mission_17: -3959976219388117066
+      stain_mission_18: 7483116356584929901
+      stain_mission_19: 8531343628352380852
+      stain_mission_2: -750211538522309978
+      stain_mission_20: -4046195646764398399
+      stain_mission_21: -1718092575986895361
+      stain_mission_22: -836592446939965728
+      stain_mission_23: -6342157117080438749
+      stain_mission_24: -9044276155497103202
+      stain_mission_25: 5275566063888920018
+      stain_mission_26: 8547977756834595040
+      stain_mission_27: -2121186693531496714
+      stain_mission_28: 6751234904408336158
+      stain_mission_29: -17458727310612762
+      stain_mission_3: 1913415580247043128
+      stain_mission_4: -5284629212797143651
+      stain_mission_5: 1677034866085138340
+      stain_mission_6: -3408682428195232218
+      stain_mission_7: 5712293837370634218
+      stain_mission_8: 5605551695158556082
+      stain_mission_9: -5309506664645647859
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
