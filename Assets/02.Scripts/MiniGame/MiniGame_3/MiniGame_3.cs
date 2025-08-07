@@ -1,10 +1,13 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Utils.EnumTypes;
+using System.Collections.Generic;
 
 public class MiniGame_3 : MiniGameController
 {
+    private AudioSource audioSource;
+    private AudioSource sewingAudioSource;
+
     public GameObject arrowPrefab;
     public List<GameObject> arrows = new List<GameObject>();
 
@@ -18,6 +21,8 @@ public class MiniGame_3 : MiniGameController
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        sewingAudioSource = transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<AudioSource>();
         animator = transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Animator>();
         command = transform.GetChild(0).GetChild(1).GetChild(1).gameObject;
         arrowGrid = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).gameObject;
@@ -75,6 +80,11 @@ public class MiniGame_3 : MiniGameController
     public override void MiniGameEnd()
     {
         base.MiniGameEnd();
+
+        if (isGameSuccess)
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear]);
+        else
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over]);
     }
 
     public override void MiniGameReward()
@@ -87,7 +97,9 @@ public class MiniGame_3 : MiniGameController
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
+        {
             GameManager.Instance.ReputationHandler(-10);
+        }
 
         transform.gameObject.SetActive(false);
         MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);
@@ -103,7 +115,11 @@ public class MiniGame_3 : MiniGameController
                 Input.GetKeyDown(KeyCode.RightArrow) && commandArrow.arrowType == ArrowType.Right ||
                 Input.GetKeyDown(KeyCode.LeftArrow) && commandArrow.arrowType == ArrowType.Left)
             {
+                audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Input]);
+
                 animator.SetTrigger("Sewing");
+                sewingAudioSource.Play();
+
                 Destroy(commandArrow.gameObject);
                 arrows.RemoveAt(0);
                 remainArrowCount.text = (arrows.Count).ToString();
@@ -120,12 +136,14 @@ public class MiniGame_3 : MiniGameController
                 Input.GetKeyDown(KeyCode.RightArrow) && commandArrow.arrowType != ArrowType.Right ||
                 Input.GetKeyDown(KeyCode.LeftArrow) && commandArrow.arrowType != ArrowType.Left)
             {
-
+                sewingAudioSource.Stop();
+                audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Error]);
             }
         }
         else
         {
             Debug.Log("::: Game Over :::");
+            sewingAudioSource.Stop();
             isGameSuccess = true;
             MiniGameEnd();
         }

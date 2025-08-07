@@ -6,6 +6,7 @@ using Utils.EnumTypes;
 public class MachineController : MonoBehaviour
 {
     public Animator animator;
+    public AudioSource audioSource;
     private GameObject timer;
     private Slider timerSlider;
 
@@ -23,6 +24,7 @@ public class MachineController : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         timer = transform.GetChild(0).GetChild(0).gameObject;
         timerSlider = timer.GetComponent<Slider>();
         laundryObject = transform.GetChild(1).GetComponent<SpriteRenderer>();

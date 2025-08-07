@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -16,6 +17,9 @@ public class UIManager : MonoBehaviour
     private GameObject exceptonObject;
     private Image exceptionImage;
     public Sprite[] exceptionSprite;
+
+    private GameObject endingObject;
+    private TextMeshProUGUI endingText;
 
     private void Awake()
     {
@@ -35,6 +39,9 @@ public class UIManager : MonoBehaviour
         reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
         exceptonObject = canvas.transform.GetChild(1).gameObject;
         exceptionImage = exceptonObject.GetComponent<Image>();
+
+        endingObject = canvas.transform.GetChild(2).gameObject;
+        endingText = endingObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
 
         GameManager.Instance.ReputationHandler(0);
     }
@@ -62,5 +69,16 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         exceptonObject.SetActive(false);
+    }
+
+    public IEnumerator OnEnding(string _ending)
+    {
+        endingObject.SetActive(true);
+        endingText.text = _ending;
+
+        yield return new WaitForSeconds(5.0f);
+
+        endingObject.transform.GetChild(1).gameObject.SetActive(true);
+        endingObject.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(0); });
     }
 }

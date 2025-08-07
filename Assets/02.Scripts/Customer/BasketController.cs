@@ -1,10 +1,11 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Utils.EnumTypes;
+using System.Collections.Generic;
 
 public class BasketController : MonoBehaviour
 {
+    public AudioSource audioSource;
     public SpriteRenderer spriteRenderer;
     public Sprite[] basketSprites;
     public Sprite[] basketSelectSprites;
@@ -23,6 +24,7 @@ public class BasketController : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteIndex = Random.Range(0, basketSprites.Length);
         spriteRenderer.sprite = basketSprites[spriteIndex];

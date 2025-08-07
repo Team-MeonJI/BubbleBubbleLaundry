@@ -56,4 +56,30 @@ namespace Utils.EnumTypes
         Right,
         Left
     }
+
+    // 배경음 타입
+    public enum BGMType
+    {
+        Title,
+        Main,
+        HappyEnding,
+        NormalEnding,
+        BadEnding
+    }
+
+    // 효과음 타입
+    public enum SFXType
+    {
+        Click,
+        ClickError,
+        CustomerHappy,
+        CustomerAngry,
+        MiniGame1_click,
+        MiniGame1_Remove,
+        MiniGame2_Input,
+        MiniGame2_Sewing,
+        MiniGame2_Error,
+        MiniGame_Clear,
+        MiniGame_Over
+    }
 }

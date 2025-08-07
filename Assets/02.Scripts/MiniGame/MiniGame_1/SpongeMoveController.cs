@@ -3,7 +3,6 @@ using UnityEngine;
 public class SpongeMoveController : MonoBehaviour
 {
     public RectTransform limitArea;
-
     private RectTransform spongeRect;
     private Animator animator;
     private Canvas canvas;

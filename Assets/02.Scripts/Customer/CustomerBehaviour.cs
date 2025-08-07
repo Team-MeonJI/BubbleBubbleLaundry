@@ -1,14 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class CustomerBehaviour : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Animator animator;
+    public AudioSource audioSource;
     public SpriteRenderer spriteRenderer;
 
     private Camera uiCam;
@@ -37,6 +39,7 @@ public class CustomerBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         canvas = transform.GetChild(0).GetComponent<Canvas>();
@@ -119,6 +122,9 @@ public class CustomerBehaviour : MonoBehaviour
         {
             currentTime = 0.0f;
             state = CustomerState.Leave;
+
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.CustomerAngry];
+            audioSource.Play();
             GameManager.Instance.ReputationHandler(-10);
             CustomerManager.Instance.DequeueCustomer(lineIndex);
         }

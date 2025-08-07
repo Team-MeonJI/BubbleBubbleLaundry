@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using Utils.EnumTypes;
+using UnityEngine.EventSystems;
 
 public class MachineManager : MonoBehaviour
 {
@@ -26,6 +26,9 @@ public class MachineManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.isGameOver)
+            return;
+
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Vector2 _pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -51,6 +54,8 @@ public class MachineManager : MonoBehaviour
             if (_machine.machineState == MachineState.Complete)
             {
                 // 빨래를 완료한 기계 선택
+                _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                _machine.audioSource.Play();
                 machine = _machine;
                 machine.OnSelect(true);
                 basket = machine.currentBasket;
@@ -58,6 +63,8 @@ public class MachineManager : MonoBehaviour
                 if(_machine.machineType == MachineType.IroningBoard)
                 {
                     // 작동을 끝낸 다리미 선택
+                    _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                    _machine.audioSource.Play();
                     basket.OnComplete();
                     _machine.Init();
                     machine.OnSelect(false);
@@ -76,6 +83,8 @@ public class MachineManager : MonoBehaviour
                     // 이미 이전 단계의 기계를 선택했으며 비어 있는 기계를 선택
                     if (machine != null)
                     {
+                        _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                        _machine.audioSource.Play();
                         _machine.currentBasket = basket;
                         _machine.SetTime(basket.laundryCount);
                         _machine.animator.SetBool("Action", true);
@@ -91,6 +100,8 @@ public class MachineManager : MonoBehaviour
                     }
                     else
                     {
+                        _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                        _machine.audioSource.Play();
                         _machine.currentBasket = basket;
                         _machine.SetTime(basket.laundryCount);
                         _machine.animator.SetBool("Action", true);
@@ -111,12 +122,16 @@ public class MachineManager : MonoBehaviour
                     if (machine != null)
                     {
                         machine.OnSelect(false);
+                        machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.ClickError];
+                        machine.audioSource.Play();
                         machine = null;
                         basket = null;
                     }
                     else
                     {
                         basket.OnSelect(false);
+                        basket.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.ClickError];
+                        basket.audioSource.Play();
                         basket = null;
                     }
                 }
@@ -128,12 +143,16 @@ public class MachineManager : MonoBehaviour
                 if (machine != null)
                 {
                     machine.OnSelect(false);
+                    machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.ClickError];
+                    machine.audioSource.Play();
                     machine = null;
                     basket = null;
                 }
                 else
                 {
                     basket.OnSelect(false);
+                    basket.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.ClickError];
+                    basket.audioSource.Play();
                     basket = null;
                 }
             }
@@ -146,6 +165,8 @@ public class MachineManager : MonoBehaviour
         if (machine != null)
         {
             machine.GetComponent<BasketController>().OnSelect(false);
+            machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.ClickError];
+            machine.audioSource.Play();
             machine = null;
         }
 
@@ -153,12 +174,16 @@ public class MachineManager : MonoBehaviour
         {
             basket = hit.collider?.GetComponent<BasketController>();
             basket.OnSelect(true);
+            basket.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+            basket.audioSource.Play();
         }
         else
         {
             basket.OnSelect(false);
             basket = hit.collider?.GetComponent<BasketController>();
             basket.OnSelect(true);
+            basket.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+            basket.audioSource.Play();
         }
     }
 

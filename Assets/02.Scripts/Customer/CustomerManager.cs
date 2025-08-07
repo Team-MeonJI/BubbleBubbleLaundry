@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Linq;
-using System.Collections.Generic;
 using Utils.EnumTypes;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CustomerManager : MonoBehaviour
 {
@@ -53,7 +53,7 @@ public class CustomerManager : MonoBehaviour
 
     private void Update()
     {
-        if (counterZoneCustomerCount + completeZoneCustomerCount >= customerMaxCount)
+        if (counterZoneCustomerCount + completeZoneCustomerCount >= customerMaxCount || GameManager.Instance.isGameOver)
             return;
 
         if(currentTime < appearedTime)
@@ -173,6 +173,9 @@ public class CustomerManager : MonoBehaviour
     // ¼Õ´Ô ´ë±âÁÙ¿¡¼­ ÅðÀå
     public IEnumerator OnDelivelySuccess(int _index, GameObject _laundry, GameObject _basket, int _expression)
     {
+        completeZoneCustomers[_index].audioSource.clip = AudioManager.Instance.sfxClips[(_expression == 1) ? (int)SFXType.CustomerHappy : (int)SFXType.CustomerAngry];
+        completeZoneCustomers[_index].audioSource.Play();
+
         completeZoneCustomers[_index].speechBubble.SetActive(true);
         completeZoneCustomers[_index].speechBubbles[_expression].SetActive(true);
         completeZoneCustomers[_index].state = (_expression == 1) ? CustomerState.Happy : CustomerState.Angry;

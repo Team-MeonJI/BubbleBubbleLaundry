@@ -1,9 +1,12 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine.Audio;
+using Utils.EnumTypes;
 
 public class MiniGame_1 : MiniGameController
 {
+    private AudioSource audioSource;
     private GameObject clothes;
     public Sprite[] clotheSprites;
 
@@ -20,6 +23,7 @@ public class MiniGame_1 : MiniGameController
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         clothes = transform.GetChild(0).GetChild(1).GetChild(0).gameObject;
         spotCount = Random.Range(minSpotCount, maxSpotCount);
     }
@@ -78,6 +82,11 @@ public class MiniGame_1 : MiniGameController
     public override void MiniGameEnd()
     {
         base.MiniGameEnd();
+
+        if (isGameSuccess)
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear]);
+        else
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over]);
     }
 
     public override void MiniGameReward()
@@ -90,7 +99,9 @@ public class MiniGame_1 : MiniGameController
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
+        {
             GameManager.Instance.ReputationHandler(-10);
+        }
 
         transform.gameObject.SetActive(false);
         MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);

@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.EnumTypes;
 using UnityEngine.EventSystems;
 
 public class SpotController : MonoBehaviour, IPointerClickHandler
 {
+    private AudioSource audioSource;
     private Image spotImage;
     public Sprite[] spotSprites;
 
@@ -18,6 +20,7 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         spotImage = GetComponent<Image>();
         spotImage.sprite = spotSprites[Random.Range(0, spotSprites.Length)];
 
@@ -33,6 +36,8 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
     {
         if(touchCount > 0)
         {
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_click]);
+
             touchCountText.text = touchCount.ToString();
             touchCount--;
 
@@ -51,6 +56,8 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_Remove]);
+
             touchCount = 0;
             touchCountText.text = touchCount.ToString();
             spotImage.color = new Color(spotImage.color.r, spotImage.color.g, spotImage.color.b, 0.0f);

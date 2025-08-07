@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Utils.EnumTypes;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     private float gamePlayTime = 600.0f;
     private float currentTime;
 
-    private bool isGameOver = true;
+    public bool isGameOver = true;
 
     private void Awake()
     {
@@ -86,6 +87,25 @@ public class GameManager : MonoBehaviour
     {
         currentTime = 0;
         isGameOver = true;
+
+        if(money >= 15000)
+        {
+            // 해피 엔딩
+            StartCoroutine(UIManager.Instance.OnEnding("해피 엔딩"));
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.HappyEnding];
+        }
+        else if(money >= 5000 && money < 15000)
+        {
+            // 노말 엔딩
+            StartCoroutine(UIManager.Instance.OnEnding("노말 엔딩"));
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.NormalEnding];
+        }
+        else
+        {
+            // 베드 엔딩
+            StartCoroutine(UIManager.Instance.OnEnding("베드 엔딩"));
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.BadEnding];
+        }
     }
 
     // 게임 나가기
