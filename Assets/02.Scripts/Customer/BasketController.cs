@@ -63,6 +63,7 @@ public class BasketController : MonoBehaviour
             {
                 if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].state != CustomerState.Angry)
                 {
+                    UIManager.Instance.ChangeCompleteText();
                     GameManager.Instance.ReputationHandler(5);
                     GameManager.Instance.MoneyHandler(laundryCount * 100);
                     CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, gameObject, 1);

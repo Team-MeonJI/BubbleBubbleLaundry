@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using Utils.EnumTypes;
+using System.Collections;
 using System.Collections.Generic;
 
 public class MiniGame_3 : MiniGameController
@@ -93,6 +94,7 @@ public class MiniGame_3 : MiniGameController
 
         if (isGameSuccess)
         {
+            UIManager.Instance.ChangeSewingMachineText();
             GameManager.Instance.ReputationHandler(5);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
@@ -115,9 +117,11 @@ public class MiniGame_3 : MiniGameController
                 Input.GetKeyDown(KeyCode.RightArrow) && commandArrow.arrowType == ArrowType.Right ||
                 Input.GetKeyDown(KeyCode.LeftArrow) && commandArrow.arrowType == ArrowType.Left)
             {
-                audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Input]);
+                audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Input];
+                audioSource.Play();
 
                 animator.SetTrigger("Sewing");
+                sewingAudioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Sewing];
                 sewingAudioSource.Play();
 
                 Destroy(commandArrow.gameObject);
@@ -136,14 +140,15 @@ public class MiniGame_3 : MiniGameController
                 Input.GetKeyDown(KeyCode.RightArrow) && commandArrow.arrowType != ArrowType.Right ||
                 Input.GetKeyDown(KeyCode.LeftArrow) && commandArrow.arrowType != ArrowType.Left)
             {
-                sewingAudioSource.Stop();
-                audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Error]);
+                sewingAudioSource.clip = null;
+                audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Error];
+                audioSource.Play();
             }
         }
         else
         {
             Debug.Log("::: Game Over :::");
-            sewingAudioSource.Stop();
+            sewingAudioSource.clip = null;
             isGameSuccess = true;
             MiniGameEnd();
         }

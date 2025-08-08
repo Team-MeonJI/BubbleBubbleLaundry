@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     private int money = 0;
     private int reputation = 50;
+    public int completeCount = 0;
+    public int customerCount = 0;
+    public int spotCompleteCount = 0;
+    public int sewingMachineCount = 0;
 
     private float gamePlayTime = 600.0f;
     private float currentTime;

@@ -18,6 +18,11 @@ public class UIManager : MonoBehaviour
     private Image exceptionImage;
     public Sprite[] exceptionSprite;
 
+    private TextMeshProUGUI completeText;
+    private TextMeshProUGUI customerText;
+    private TextMeshProUGUI spotCompletetText;
+    private TextMeshProUGUI SewingMachineText;
+
     private GameObject endingObject;
     private TextMeshProUGUI endingText;
 
@@ -40,6 +45,11 @@ public class UIManager : MonoBehaviour
         exceptonObject = canvas.transform.GetChild(1).gameObject;
         exceptionImage = exceptonObject.GetComponent<Image>();
 
+        completeText = canvas.transform.GetChild(0).GetChild(5).GetComponentInChildren<TextMeshProUGUI>();
+        customerText = canvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
+        spotCompletetText = canvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
+        SewingMachineText = canvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
+
         endingObject = canvas.transform.GetChild(2).gameObject;
         endingText = endingObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
 
@@ -59,6 +69,30 @@ public class UIManager : MonoBehaviour
     public void ChangeReputationBar(int _reputation)
     {
         reputationSlider.value = (_reputation / 100.0f);
+    }
+
+    public void ChangeCompleteText()
+    {
+        GameManager.Instance.completeCount += 1;
+        completeText.text = (GameManager.Instance.completeCount).ToString();
+    }
+
+    public void ChangeCustomerText()
+    {
+        GameManager.Instance.customerCount += 1;
+        customerText.text = (GameManager.Instance.customerCount).ToString();
+    }
+
+    public void ChangeSpotCompleteText()
+    {
+        GameManager.Instance.spotCompleteCount += 1;
+        spotCompletetText.text = (GameManager.Instance.spotCompleteCount).ToString();
+    }
+
+    public void ChangeSewingMachineText()
+    {
+        GameManager.Instance.sewingMachineCount += 1;
+        SewingMachineText.text = (GameManager.Instance.sewingMachineCount).ToString();
     }
 
     public IEnumerator OnException(int _index)

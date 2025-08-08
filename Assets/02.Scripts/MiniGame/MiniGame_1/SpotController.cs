@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 
 public class SpotController : MonoBehaviour, IPointerClickHandler
 {
@@ -36,7 +37,8 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
     {
         if(touchCount > 0)
         {
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_click]);
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_click];
+            audioSource.Play();
 
             touchCountText.text = touchCount.ToString();
             touchCount--;
@@ -56,7 +58,9 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
         }
         else
         {
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_Remove]);
+            audioSource.clip = null;
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame1_Remove];
+            audioSource.Play();
 
             touchCount = 0;
             touchCountText.text = touchCount.ToString();

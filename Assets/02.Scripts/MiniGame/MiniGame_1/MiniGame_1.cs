@@ -95,6 +95,7 @@ public class MiniGame_1 : MiniGameController
 
         if (isGameSuccess)
         {
+            UIManager.Instance.ChangeSpotCompleteText();
             GameManager.Instance.ReputationHandler(5);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
