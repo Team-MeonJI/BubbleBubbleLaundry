@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpongeMoveController : MonoBehaviour
 {
+    private MiniGame_1 miniGame1;
     public RectTransform limitArea;
     private RectTransform spongeRect;
     private Animator animator;
@@ -11,6 +12,7 @@ public class SpongeMoveController : MonoBehaviour
 
     void Awake()
     {
+        miniGame1 = transform.parent.parent.parent.GetComponent<MiniGame_1>();
         spongeRect = GetComponent<RectTransform>();
         animator = GetComponent<Animator>();
         canvas = GameObject.Find("MiniGameCanvas").GetComponent<Canvas>();
@@ -34,7 +36,7 @@ public class SpongeMoveController : MonoBehaviour
         // 마우스 좌표를 limitArea 기준 로컬 좌표로 변환
         RectTransformUtility.ScreenPointToLocalPointInRectangle(limitArea, Input.mousePosition, null, out localMousePos);
 
-        if(limitArea.rect.Contains(localMousePos))
+        if(limitArea.rect.Contains(localMousePos) && !miniGame1.isGameOver)
         {
             if (!isCursorHidden)
             {

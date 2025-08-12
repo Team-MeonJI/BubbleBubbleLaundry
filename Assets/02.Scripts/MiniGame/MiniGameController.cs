@@ -40,7 +40,7 @@ public class MiniGameController : MonoBehaviour
     }
 
     // 미니게임 종료
-    public virtual void MiniGameEnd()
+    public virtual void MiniGameOver()
     {
         isGameOver = true;
         resultPhanel.SetActive(true);

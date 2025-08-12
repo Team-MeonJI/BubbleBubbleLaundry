@@ -49,7 +49,8 @@ public class MiniGame_3 : MiniGameController
         else
         {
             isGameSuccess = false;
-            MiniGameEnd();
+            StartCoroutine(GameEnd());
+            //MiniGameOver();
         }
     }
 
@@ -78,14 +79,16 @@ public class MiniGame_3 : MiniGameController
         base.MiniGameStart();
     }
 
-    public override void MiniGameEnd()
+    public override void MiniGameOver()
     {
-        base.MiniGameEnd();
+        base.MiniGameOver();
 
         if (isGameSuccess)
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear]);
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear];
         else
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over]);
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over];
+
+        audioSource.Play();
     }
 
     public override void MiniGameReward()
@@ -105,6 +108,13 @@ public class MiniGame_3 : MiniGameController
 
         transform.gameObject.SetActive(false);
         MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);
+    }
+
+    public IEnumerator GameEnd()
+    {
+        MiniGameOver();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        MiniGameReward();
     }
 
     // 방향키 입력 확인
@@ -150,7 +160,7 @@ public class MiniGame_3 : MiniGameController
             Debug.Log("::: Game Over :::");
             sewingAudioSource.clip = null;
             isGameSuccess = true;
-            MiniGameEnd();
+            StartCoroutine(GameEnd());
         }
     }
 

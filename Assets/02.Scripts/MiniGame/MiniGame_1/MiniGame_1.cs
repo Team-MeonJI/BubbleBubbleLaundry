@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 using Utils.EnumTypes;
+using System.Collections;
 
 public class MiniGame_1 : MiniGameController
 {
@@ -46,13 +46,15 @@ public class MiniGame_1 : MiniGameController
             if (spots.Count <= 0)
             {
                 isGameSuccess = true;
-                MiniGameEnd();
+                StartCoroutine(GameEnd());
+                //MiniGameOver();
             }
         }
         else
         {
             isGameSuccess = false;
-            MiniGameEnd();
+            StartCoroutine(GameEnd());
+            //MiniGameOver();
         }
     }
 
@@ -79,14 +81,16 @@ public class MiniGame_1 : MiniGameController
         base.MiniGameStart();
     }
 
-    public override void MiniGameEnd()
+    public override void MiniGameOver()
     {
-        base.MiniGameEnd();
+        base.MiniGameOver();
 
         if (isGameSuccess)
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear]);
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Clear];
         else
-            audioSource.PlayOneShot(AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over]);
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame_Over];
+
+        audioSource.Play();
     }
 
     public override void MiniGameReward()
@@ -106,6 +110,13 @@ public class MiniGame_1 : MiniGameController
 
         transform.gameObject.SetActive(false);
         MiniGameManager.Instance.OnMiniGameEnd(isGameSuccess);
+    }
+
+    public IEnumerator GameEnd()
+    {
+        MiniGameOver();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        MiniGameReward();
     }
 
     // ¾ó·è ·£´ý À§Ä¡ ¼³Á¤
