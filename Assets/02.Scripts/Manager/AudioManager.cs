@@ -10,7 +10,6 @@ public class AudioManager : MonoBehaviour
     public AudioMixer audioMixer;
     public AudioSource audioSource;
 
-    private Slider masterSlider;
     private Slider bgmSlider;
     private Slider sfxSlider;
 
@@ -25,16 +24,14 @@ public class AudioManager : MonoBehaviour
             instance = this;
 
         DontDestroyOnLoad(gameObject);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Init()
     {
-        audioSource = GetComponent<AudioSource>();
-        masterSlider = GameObject.Find("MasterSlider").GetComponent<Slider>();
         bgmSlider = GameObject.Find("BGMSlider").GetComponent<Slider>();
         sfxSlider = GameObject.Find("SFXSlider").GetComponent<Slider>();
 
-        masterSlider.onValueChanged.AddListener(SetMasterVolume);
         bgmSlider.onValueChanged.AddListener(SetBGMVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }

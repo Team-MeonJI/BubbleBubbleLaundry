@@ -122,6 +122,8 @@ public class GameManager : MonoBehaviour
     {
         if(_scene.name == "MainScene")
         {
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Main];
+            AudioManager.Instance.audioSource.Play();
             UIManager.Instance.Init();
             isGameOver = false;
         }
