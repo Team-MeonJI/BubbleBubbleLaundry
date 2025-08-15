@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 339f35fd591e95746ad0dda1c998b579
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1412222369110349472
+    second: ending_touchText_sheet_0
+  - first:
+      213: -6591862563061120788
+    second: ending_touchText_sheet_1
+  - first:
+      213: -1028451705713842494
+    second: ending_touchText_sheet_2
+  - first:
+      213: 8538746096823230914
+    second: ending_touchText_sheet_3
+  - first:
+      213: -6230091075872674067
+    second: ending_touchText_sheet_4
+  - first:
+      213: 8460851396318657916
+    second: ending_touchText_sheet_5
+  - first:
+      213: -2023781353368779974
+    second: ending_touchText_sheet_6
+  - first:
+      213: 8393423695523560052
+    second: ending_touchText_sheet_7
+  - first:
+      213: -2989099733283902107
+    second: ending_touchText_sheet_8
+  - first:
+      213: 1539999927710504545
+    second: ending_touchText_sheet_9
+  - first:
+      213: 1097339895026839507
+    second: ending_touchText_sheet_10
+  - first:
+      213: -1496401429659901203
+    second: ending_touchText_sheet_11
+  - first:
+      213: 433004712010748377
+    second: ending_touchText_sheet_12
+  - first:
+      213: 4203287286213448541
+    second: ending_touchText_sheet_13
+  - first:
+      213: 7584161928719873662
+    second: ending_touchText_sheet_14
+  - first:
+      213: -578492071801949465
+    second: ending_touchText_sheet_15
+  - first:
+      213: 975778565177074815
+    second: ending_touchText_sheet_16
+  - first:
+      213: 5091104188908050608
+    second: ending_touchText_sheet_17
+  - first:
+      213: 7710027533082063339
+    second: ending_touchText_sheet_18
+  - first:
+      213: 4402702079680929671
+    second: ending_touchText_sheet_19
+  - first:
+      213: 8888342271200970462
+    second: ending_touchText_sheet_20
+  - first:
+      213: 7540072415760987359
+    second: ending_touchText_sheet_21
+  - first:
+      213: 8026137744655384072
+    second: ending_touchText_sheet_22
+  - first:
+      213: -8883885555399719083
+    second: ending_touchText_sheet_23
+  - first:
+      213: -477757313207602849
+    second: ending_touchText_sheet_24
+  - first:
+      213: 416033081127751539
+    second: ending_touchText_sheet_25
+  - first:
+      213: -4067561778202917382
+    second: ending_touchText_sheet_26
+  - first:
+      213: 8995638449373353678
+    second: ending_touchText_sheet_27
+  - first:
+      213: 1709779643614029986
+    second: ending_touchText_sheet_28
+  - first:
+      213: 8610764973320812365
+    second: ending_touchText_sheet_29
+  - first:
+      213: 124212039421487817
+    second: ending_touchText_sheet_30
+  - first:
+      213: 2236772797579654831
+    second: ending_touchText_sheet_31
+  - first:
+      213: -7347188228826967453
+    second: ending_touchText_sheet_32
+  - first:
+      213: -7233854448704761595
+    second: ending_touchText_sheet_33
+  - first:
+      213: -9184200126706784319
+    second: ending_touchText_sheet_34
+  - first:
+      213: -286708188505961107
+    second: ending_touchText_sheet_35
+  - first:
+      213: -966720804495494839
+    second: ending_touchText_sheet_36
+  - first:
+      213: 563839754974861051
+    second: ending_touchText_sheet_37
+  - first:
+      213: 1988823866972944819
+    second: ending_touchText_sheet_38
+  - first:
+      213: -5941059267112075798
+    second: ending_touchText_sheet_39
+  - first:
+      213: 1982928567731869701
+    second: ending_touchText_sheet_40
+  - first:
+      213: -6335032705713907710
+    second: ending_touchText_sheet_41
+  - first:
+      213: 8604637725539623206
+    second: ending_touchText_sheet_42
+  - first:
+      213: 5193292920882168667
+    second: ending_touchText_sheet_43
+  - first:
+      213: -4016126954605091006
+    second: ending_touchText_sheet_44
+  - first:
+      213: 7874339669383755791
+    second: ending_touchText_sheet_45
+  - first:
+      213: 9198246120092000229
+    second: ending_touchText_sheet_46
+  - first:
+      213: 3215478691254783147
+    second: ending_touchText_sheet_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 54
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ending_touchText_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 448
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0692151dc37c66ce0800000000000000
+      internalID: -1412222369110349472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending_touchText_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0cb809ceff484a0800000000000000
+      internalID: -6591862563061120788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending_touchText_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c628446f943ab1f0800000000000000
+      internalID: -1028451705713842494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bd44203cd9fec6a418b402e4e7684b21
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ending_touchText_sheet_0: -1412222369110349472
+      ending_touchText_sheet_1: -6591862563061120788
+      ending_touchText_sheet_2: -1028451705713842494
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -81,7 +81,7 @@ public class CustomerManager : MonoBehaviour
         string _backStr = totalCustomerCount.ToString("D3");
 
         counterCustomers.Add(_customer.GetComponent<CustomerBehaviour>());
-        counterCustomers[counterZoneCustomerCount - 1].type = (totalCustomerCount % 2 == 0) ? CustomerType.EventCustomer : CustomerType.LaundryCustomer;
+        counterCustomers[counterZoneCustomerCount - 1].type = (totalCustomerCount % 6 == 0) ? CustomerType.EventCustomer : CustomerType.LaundryCustomer;
         counterCustomers[counterZoneCustomerCount - 1].customerUID = int.Parse(_frontStr + _backStr);
         counterCustomers[counterZoneCustomerCount - 1].state = CustomerState.CounterZone;
         counterCustomers[counterZoneCustomerCount - 1].lineIndex = counterZoneCustomerCount - 1;

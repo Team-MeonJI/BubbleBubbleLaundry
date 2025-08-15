@@ -1,8 +1,8 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +23,12 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI spotCompletetText;
     private TextMeshProUGUI SewingMachineText;
 
+    private GameObject helpPhanel;
+    private Image helpImage;
+    public Sprite[] helpSprites;
+    private Image[] stepButtons;
+    private int currentStep = 0;
+
     private GameObject endingObject;
     private TextMeshProUGUI endingText;
 
@@ -36,7 +42,51 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void Init()
+    public void TitleSceneInit()
+    {
+        helpPhanel = GameObject.Find("HelpPhanel").gameObject;
+        helpImage = helpPhanel.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        stepButtons = helpPhanel.transform.GetChild(0).GetChild(3).GetComponentsInChildren<Image>();
+    }
+
+    public void OnNextStep(bool _isRight)
+    {
+        if (_isRight)
+        {
+            if (currentStep >= 3)
+                currentStep = 3;
+            else
+                currentStep += 1;
+        }
+        else
+        {
+            if (currentStep <= 0)
+                currentStep = 0;
+            else
+                currentStep -= 1;
+        }
+
+        OnStep(currentStep);
+    }
+
+    public void OnStep(int _step)
+    {
+        for(int i = 0; i < stepButtons.Length; i++)
+        {
+            if (i == _step)
+            {
+                currentStep = i;
+                helpImage.sprite = helpSprites[i];
+                stepButtons[i].color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+            }
+            else
+            {
+                stepButtons[i].color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+            }
+        }
+    }
+
+    public void MainSceneInit()
     {
         canvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
         timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
@@ -54,6 +104,12 @@ public class UIManager : MonoBehaviour
         endingText = endingObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
 
         GameManager.Instance.ReputationHandler(0);
+    }
+
+    // 도움말 화면
+    public void HelpPhanelHandler()
+    {
+
     }
 
     public void TimerHandler(float _time)

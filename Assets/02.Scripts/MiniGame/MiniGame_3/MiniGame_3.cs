@@ -17,6 +17,7 @@ public class MiniGame_3 : MiniGameController
     private GameObject arrowGrid;
     private ArrowController commandArrow;
     private TextMeshProUGUI remainArrowCount;
+    public GameObject error;
 
     private const int reward = 150;
 
@@ -28,6 +29,7 @@ public class MiniGame_3 : MiniGameController
         command = transform.GetChild(0).GetChild(1).GetChild(1).gameObject;
         arrowGrid = transform.GetChild(0).GetChild(1).GetChild(2).GetChild(0).gameObject;
         remainArrowCount = transform.GetChild(0).GetChild(1).GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
+        error = transform.GetChild(0).GetChild(3).gameObject;
     }
 
     private void OnEnable()
@@ -150,6 +152,7 @@ public class MiniGame_3 : MiniGameController
                 Input.GetKeyDown(KeyCode.RightArrow) && commandArrow.arrowType != ArrowType.Right ||
                 Input.GetKeyDown(KeyCode.LeftArrow) && commandArrow.arrowType != ArrowType.Left)
             {
+                StartCoroutine(OnError());
                 sewingAudioSource.clip = null;
                 audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.MiniGame2_Error];
                 audioSource.Play();
@@ -162,6 +165,14 @@ public class MiniGame_3 : MiniGameController
             isGameSuccess = true;
             StartCoroutine(GameEnd());
         }
+    }
+
+    // 잘못 입력했을 경우
+    public IEnumerator OnError()
+    {
+        error.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        error.SetActive(false);
     }
 
     // 화살표 위치, 크기 변경

@@ -60,18 +60,18 @@ public class MachineManager : MonoBehaviour
                 machine.OnSelect(true);
                 basket = machine.currentBasket;
 
-                if(_machine.machineType == MachineType.IroningBoard)
-                {
-                    // 작동을 끝낸 다리미 선택
-                    _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
-                    _machine.audioSource.Play();
-                    basket.OnComplete();
-                    _machine.Init();
-                    machine.OnSelect(false);
-                    machine.Init();
-                    machine = null;
-                    basket = null;
-                }
+                //if(_machine.machineType == MachineType.IroningBoard)
+                //{
+                //    // 작동을 끝낸 다리미 선택
+                //    _machine.audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                //    _machine.audioSource.Play();
+                //    basket.OnComplete();
+                //    _machine.Init();
+                //    machine.OnSelect(false);
+                //    machine.Init();
+                //    machine = null;
+                //    basket = null;
+                //}
             }
         }
         else if(basket != null)

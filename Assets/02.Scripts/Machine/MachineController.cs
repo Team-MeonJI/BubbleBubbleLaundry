@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.EnumTypes;
@@ -41,6 +43,13 @@ public class MachineController : MonoBehaviour
                 StartCoroutine(OnOperation());
                 break;
             case MachineState.Complete:
+                if(machineType == MachineType.IroningBoard)
+                {
+                    audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                    audioSource.Play();
+                    currentBasket.OnComplete();
+                    Init();
+                }
                 break;
         }
     }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9f8818fa2cfd8754d98aabe4b9c4d840
+guid: 5a5030c746187f54184bc658225a0f7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8615004856486635708
-    second: option_back_NObar_0
+      213: 2891854995308378381
+    second: ending_happy_sheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: option_back_NObar_0
+      name: ending_happy_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 540
-        height: 336
+        width: 448
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb8a621d545ae8770800000000000000
-      internalID: 8615004856486635708
+      spriteID: d097b49ebcee12820800000000000000
+      internalID: 2891854995308378381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending_happy_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 448
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5095e7afd8d1e8a4c8706c0527a27962
+      internalID: 2102388578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ending_happy_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 448
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6798b3bf0f3214aa2bc6078abbdc0b
+      internalID: 425497483
       vertices: []
       indices: 
       edges: []
@@ -151,7 +195,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9d345bc4f22d03d499ea8c06755c9d08
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +205,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      option_back_NObar_0: 8615004856486635708
+      ending_happy_sheet_0: 2891854995308378381
+      ending_happy_sheet_1: 2102388578
+      ending_happy_sheet_2: 425497483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
