@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     private int currentStep = 0;
 
     private GameObject endingObject;
-    private TextMeshProUGUI endingText;
+    private Animator endingAnimator;
 
     private void Awake()
     {
@@ -47,6 +47,26 @@ public class UIManager : MonoBehaviour
         helpPhanel = GameObject.Find("HelpPhanel").gameObject;
         helpImage = helpPhanel.transform.GetChild(0).GetChild(0).GetComponent<Image>();
         stepButtons = helpPhanel.transform.GetChild(0).GetChild(3).GetComponentsInChildren<Image>();
+    }
+
+    public void MainSceneInit()
+    {
+        canvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
+        timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
+        moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
+        reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
+        exceptonObject = canvas.transform.GetChild(1).gameObject;
+        exceptionImage = exceptonObject.GetComponent<Image>();
+
+        completeText = canvas.transform.GetChild(0).GetChild(5).GetComponentInChildren<TextMeshProUGUI>();
+        customerText = canvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
+        spotCompletetText = canvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
+        SewingMachineText = canvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
+
+        endingObject = canvas.transform.GetChild(2).gameObject;
+        endingAnimator = endingObject.transform.GetChild(0).GetComponent<Animator>();
+
+        GameManager.Instance.ReputationHandler(0);
     }
 
     public void OnNextStep(bool _isRight)
@@ -84,32 +104,6 @@ public class UIManager : MonoBehaviour
                 stepButtons[i].color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
             }
         }
-    }
-
-    public void MainSceneInit()
-    {
-        canvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
-        timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
-        moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
-        reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
-        exceptonObject = canvas.transform.GetChild(1).gameObject;
-        exceptionImage = exceptonObject.GetComponent<Image>();
-
-        completeText = canvas.transform.GetChild(0).GetChild(5).GetComponentInChildren<TextMeshProUGUI>();
-        customerText = canvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
-        spotCompletetText = canvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
-        SewingMachineText = canvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
-
-        endingObject = canvas.transform.GetChild(2).gameObject;
-        endingText = endingObject.transform.GetChild(0).GetComponentInChildren<TextMeshProUGUI>();
-
-        GameManager.Instance.ReputationHandler(0);
-    }
-
-    // 도움말 화면
-    public void HelpPhanelHandler()
-    {
-
     }
 
     public void TimerHandler(float _time)
@@ -164,7 +158,7 @@ public class UIManager : MonoBehaviour
     public IEnumerator OnEnding(string _ending)
     {
         endingObject.SetActive(true);
-        endingText.text = _ending;
+        endingAnimator.SetBool(_ending, true);
 
         yield return new WaitForSeconds(5.0f);
 
