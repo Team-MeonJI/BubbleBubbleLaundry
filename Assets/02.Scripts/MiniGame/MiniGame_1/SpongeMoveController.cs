@@ -36,7 +36,7 @@ public class SpongeMoveController : MonoBehaviour
         // 마우스 좌표를 limitArea 기준 로컬 좌표로 변환
         RectTransformUtility.ScreenPointToLocalPointInRectangle(limitArea, Input.mousePosition, null, out localMousePos);
 
-        if(limitArea.rect.Contains(localMousePos) && !miniGame1.isGameOver)
+        if(limitArea.rect.Contains(localMousePos) && !miniGame1.isGameOver && !GameManager.Instance.isGameOver)
         {
             if (!isCursorHidden)
             {

@@ -37,6 +37,7 @@ public class MiniGame_1 : MiniGameController
     {
         if (GameManager.Instance.isGameOver)
         {
+            isGameOver = true;
             isGameSuccess = false;
             transform.gameObject.SetActive(false);
             GameManager.Instance.ReputationHandler(-10);
