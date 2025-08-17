@@ -35,6 +35,14 @@ public class MiniGame_1 : MiniGameController
 
     private void Update()
     {
+        if (GameManager.Instance.isGameOver)
+        {
+            isGameSuccess = false;
+            transform.gameObject.SetActive(false);
+            GameManager.Instance.ReputationHandler(-10);
+            return;
+        }
+
         if (isGameOver)
             return;
 
@@ -47,14 +55,12 @@ public class MiniGame_1 : MiniGameController
             {
                 isGameSuccess = true;
                 StartCoroutine(GameEnd());
-                //MiniGameOver();
             }
         }
         else
         {
             isGameSuccess = false;
             StartCoroutine(GameEnd());
-            //MiniGameOver();
         }
     }
 

@@ -15,20 +15,22 @@ public class GameManager : MonoBehaviour
     public int sewingMachineCount = 0;
 
     //private float gamePlayTime = 600.0f;
-    private float gamePlayTime = 150.0f;
+    private float gamePlayTime = 100.0f;
     private float currentTime;
 
     public bool isGameOver = true;
 
     private void Awake()
     {
-        if (instance != null)
-            Destroy(instance);
-        else
-            instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        DontDestroyOnLoad(gameObject);
         Init();
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -123,7 +125,15 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
     {
-        if(_scene.name == "MainScene")
+        if(_scene.name == "TitleScene")
+        {
+            AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Title];
+            AudioManager.Instance.audioSource.Play();
+            UIManager.Instance.TitleSceneInit();
+            UIManager.Instance.ButtonInit();
+            isGameOver = true;
+        }
+        else if(_scene.name == "MainScene")
         {
             AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Main];
             AudioManager.Instance.audioSource.Play();

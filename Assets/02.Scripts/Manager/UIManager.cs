@@ -3,13 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System;
 
 public class UIManager : MonoBehaviour
 {
     private static UIManager instance;
     public static UIManager Instance {  get { return instance; } }
 
-    private Canvas canvas;
+    private Canvas mainCanvas;
     public TextMeshProUGUI timerText;
     private TextMeshProUGUI moneyText;
     private Slider reputationSlider;
@@ -23,10 +24,19 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI spotCompletetText;
     private TextMeshProUGUI SewingMachineText;
 
+    private Canvas titleCanvas;
+    private Button gameStartButton;
+    private Button helpButton;
+    private Button optionButton;
+    private Button exitButton;
+
     private GameObject helpPhanel;
+    private Button leftButton;
+    private Button rightButton;
+    private Button[] stepButtons;
     private Image helpImage;
     public Sprite[] helpSprites;
-    private Image[] stepButtons;
+    private Image[] stepImages;
     private int currentStep = 0;
 
     private GameObject endingObject;
@@ -34,39 +44,78 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-            Destroy(instance);
-        else
-            instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     public void TitleSceneInit()
     {
-        helpPhanel = GameObject.Find("HelpPhanel").gameObject;
+        titleCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        gameStartButton = titleCanvas.transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        helpButton = titleCanvas.transform.GetChild(0).GetChild(3).GetComponent<Button>();
+        optionButton = titleCanvas.transform.GetChild(0).GetChild(4).GetComponent<Button>();
+        exitButton = titleCanvas.transform.GetChild(0).GetChild(5).GetComponent<Button>();
+
+        helpPhanel = titleCanvas.transform.GetChild(2)?.gameObject;
+        leftButton = helpPhanel.transform.GetChild(0).GetChild(1).GetComponent<Button>();
+        rightButton = helpPhanel.transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        stepButtons = helpPhanel.transform.GetChild(0).GetChild(3).GetComponentsInChildren<Button>();
         helpImage = helpPhanel.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        stepButtons = helpPhanel.transform.GetChild(0).GetChild(3).GetComponentsInChildren<Image>();
+        stepImages = helpPhanel.transform.GetChild(0).GetChild(3).GetComponentsInChildren<Image>();
     }
 
     public void MainSceneInit()
     {
-        canvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
-        timerText = canvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
-        moneyText = canvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
-        reputationSlider = canvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
-        exceptonObject = canvas.transform.GetChild(1).gameObject;
+        mainCanvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
+        timerText = mainCanvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
+        moneyText = mainCanvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
+        reputationSlider = mainCanvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
+        exceptonObject = mainCanvas.transform.GetChild(1).gameObject;
         exceptionImage = exceptonObject.GetComponent<Image>();
 
-        completeText = canvas.transform.GetChild(0).GetChild(5).GetComponentInChildren<TextMeshProUGUI>();
-        customerText = canvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
-        spotCompletetText = canvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
-        SewingMachineText = canvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
+        completeText = mainCanvas.transform.GetChild(0).GetChild(5).GetComponentInChildren<TextMeshProUGUI>();
+        customerText = mainCanvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
+        spotCompletetText = mainCanvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
+        SewingMachineText = mainCanvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
 
-        endingObject = canvas.transform.GetChild(2).gameObject;
+        endingObject = mainCanvas.transform.GetChild(2).gameObject;
         endingAnimator = endingObject.transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.Instance.ReputationHandler(0);
+    }
+
+    public void ButtonInit()
+    {
+        gameStartButton.onClick.AddListener(delegate
+        {
+            GameManager.Instance.GameStart();
+        });
+        helpButton.onClick.AddListener(delegate
+        {
+            TitleSceneInit();
+            OnStep(0);
+        });
+        optionButton.onClick.AddListener(delegate
+        {
+            AudioManager.Instance.Init();
+        });
+        exitButton.onClick.AddListener(delegate
+        {
+            GameManager.Instance.GameExit();
+        });
+
+        leftButton.onClick.AddListener(delegate { OnNextStep(false); });
+        rightButton.onClick.AddListener(delegate { OnNextStep(true); });
+        stepButtons[0].onClick.AddListener(delegate { OnStep(0); });
+        stepButtons[1].onClick.AddListener(delegate { OnStep(1); });
+        stepButtons[2].onClick.AddListener(delegate { OnStep(2); });
+        stepButtons[3].onClick.AddListener(delegate { OnStep(3); });
     }
 
     public void OnNextStep(bool _isRight)
@@ -91,17 +140,17 @@ public class UIManager : MonoBehaviour
 
     public void OnStep(int _step)
     {
-        for(int i = 0; i < stepButtons.Length; i++)
+        for (int i = 0; i < stepImages.Length; i++)
         {
             if (i == _step)
             {
                 currentStep = i;
                 helpImage.sprite = helpSprites[i];
-                stepButtons[i].color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+                stepImages[i].color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
             }
             else
             {
-                stepButtons[i].color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
+                stepImages[i].color = new Color(255.0f, 255.0f, 255.0f, 0.0f);
             }
         }
     }
@@ -163,6 +212,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(5.0f);
 
         endingObject.transform.GetChild(1).gameObject.SetActive(true);
-        endingObject.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(0); });
+        endingObject.GetComponent<Button>().onClick.AddListener(
+            delegate
+            {
+                SceneManager.LoadScene(0);
+            });
     }
 }

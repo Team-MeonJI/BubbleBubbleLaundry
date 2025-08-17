@@ -68,6 +68,9 @@ public class CustomerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.isGameOver)
+            return;
+
         OnDirection();
         StateHandler();
     }
