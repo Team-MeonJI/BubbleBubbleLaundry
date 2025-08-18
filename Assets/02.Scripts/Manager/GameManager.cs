@@ -8,15 +8,18 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return instance; }}
 
     private int money = 0;
-    private int reputation = 50;
+    public int reputation = 50;
     public int completeCount = 0;
     public int customerCount = 0;
     public int spotCompleteCount = 0;
     public int sewingMachineCount = 0;
 
     //private float gamePlayTime = 600.0f;
-    private float gamePlayTime = 100.0f;
+    private float gamePlayTime = 600.0f;
     private float currentTime;
+
+    public int reputeDecr = 3;
+    public int reputeAdd = 2;
 
     public bool isGameOver = true;
 
@@ -55,8 +58,6 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         Screen.SetResolution(1920, 1080, true);
         Application.targetFrameRate = 65;
-
-        currentTime = gamePlayTime;
     }
 
     // 재화 관리
@@ -95,13 +96,13 @@ public class GameManager : MonoBehaviour
         currentTime = 0;
         isGameOver = true;
 
-        if(money >= 15000)
+        if(money >= 301000)
         {
             // 해피 엔딩
             StartCoroutine(UIManager.Instance.OnEnding("IsHappy"));
             AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.HappyEnding];
         }
-        else if(money >= 5000 && money < 15000)
+        else if(money >= 184000 && money < 301000)
         {
             // 노말 엔딩
             StartCoroutine(UIManager.Instance.OnEnding("IsNormal"));
@@ -127,18 +128,27 @@ public class GameManager : MonoBehaviour
     {
         if(_scene.name == "TitleScene")
         {
+            isGameOver = true;
             AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Title];
             AudioManager.Instance.audioSource.Play();
             UIManager.Instance.TitleSceneInit();
             UIManager.Instance.ButtonInit();
-            isGameOver = true;
         }
         else if(_scene.name == "MainScene")
         {
+            isGameOver = false;
+            money = 0;
+            reputation = 50;
+            currentTime = gamePlayTime;
+            completeCount = 0;
+            customerCount = 0;
+            spotCompleteCount = 0;
+            sewingMachineCount = 0;
+
             AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Main];
             AudioManager.Instance.audioSource.Play();
             UIManager.Instance.MainSceneInit();
-            isGameOver = false;
+            UIManager.Instance.Init();
         }
     }
 }

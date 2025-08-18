@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
-using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -52,6 +51,17 @@ public class UIManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void Init()
+    {
+        endingObject.SetActive(false);
+        moneyText.text = string.Format("{0}", 0);
+        reputationSlider.value = (50 / 100.0f);
+        completeText.text = (GameManager.Instance.completeCount).ToString();
+        customerText.text = (GameManager.Instance.customerCount).ToString();
+        spotCompletetText.text = (GameManager.Instance.spotCompleteCount).ToString();
+        SewingMachineText.text = (GameManager.Instance.sewingMachineCount).ToString();
     }
 
     public void TitleSceneInit()
@@ -212,10 +222,6 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(5.0f);
 
         endingObject.transform.GetChild(1).gameObject.SetActive(true);
-        endingObject.GetComponent<Button>().onClick.AddListener(
-            delegate
-            {
-                SceneManager.LoadScene(0);
-            });
+        endingObject.GetComponent<Button>().onClick.AddListener(delegate { SceneManager.LoadScene(0); });
     }
 }

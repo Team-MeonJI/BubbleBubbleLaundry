@@ -1,6 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils.EnumTypes;
@@ -34,6 +32,12 @@ public class MachineController : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.isGameOver)
+        {
+            machineState = MachineState.Idle;
+            return;
+        }
+
         switch (machineState)
         {
             case MachineState.Idle:
@@ -72,7 +76,16 @@ public class MachineController : MonoBehaviour
     // 작동 시간 설정
     public void SetTime(int _laundryCount)
     {
-        operationTime += (_laundryCount - 1) * 1.5f;
+        float _operationTime = 0.0f;
+
+        if (machineType == MachineType.WashingMachine)
+            _operationTime = 5.0f + ((_laundryCount - 1) * 0.5f);
+        else if (machineType == MachineType.Dryer)
+            _operationTime = 4.0f + ((_laundryCount - 1) * 0.5f);
+        else
+            _operationTime = 2.5f + ((_laundryCount - 1) * 0.5f);
+
+        operationTime = _operationTime;
     }
 
     // 기계 작동 시작

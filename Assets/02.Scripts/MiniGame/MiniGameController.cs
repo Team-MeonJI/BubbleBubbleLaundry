@@ -10,7 +10,7 @@ public class MiniGameController : MonoBehaviour
     public Sprite[] resultSprites;
 
     protected float currentTime;
-    protected const float miniGameTime = 30.0f;
+    protected const float miniGameTime = 17.0f;
 
     public bool isGameSuccess = false;
     public bool isGameOver = false;

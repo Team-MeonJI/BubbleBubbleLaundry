@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 
 public class CustomerBehaviour : MonoBehaviour
 {
@@ -28,12 +27,10 @@ public class CustomerBehaviour : MonoBehaviour
 
     public int customerUID = 0;
     public int laundryCount = 0;
-    private const int minLaundryCount = 2;
-    private const int maxLaundryCount = 4;
 
     public float currentTime = 0.0f;
-    private float waitingTime = 30.0f;
-    private float laundryWaitingTime = 40.0f;
+    private float waitingTime = 10.0f;
+    private float laundryWaitingTime = 24.5f;
 
     private void Awake()
     {
@@ -69,7 +66,10 @@ public class CustomerBehaviour : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.isGameOver)
+        {
+            agent.isStopped = true;
             return;
+        }
 
         OnDirection();
         StateHandler();
@@ -99,6 +99,7 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.Angry:
                 break;
             case CustomerState.Leave:
+                spriteRenderer.sortingOrder = 11;
                 break;
         }
     }
@@ -128,7 +129,7 @@ public class CustomerBehaviour : MonoBehaviour
 
             audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.CustomerAngry];
             audioSource.Play();
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
             CustomerManager.Instance.DequeueCustomer(lineIndex);
         }
 
@@ -167,7 +168,7 @@ public class CustomerBehaviour : MonoBehaviour
         {
             currentTime = 0.0f;
             state = CustomerState.Angry;
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
 
             if (type == CustomerType.LaundryCustomer)
             {
@@ -241,6 +242,19 @@ public class CustomerBehaviour : MonoBehaviour
         return false;
     }
 
+    // »¡·§°¨ °³¼ö °áÁ¤
+    public void RandomLaundryCount()
+    {
+        if (GameManager.Instance.reputation < 30)
+            laundryCount = Random.Range(1, 3);
+        else if (GameManager.Instance.reputation >= 30 && GameManager.Instance.reputation < 50)
+            laundryCount = Random.Range(1, 4);
+        else if (GameManager.Instance.reputation >= 50 && GameManager.Instance.reputation < 100)
+            laundryCount = Random.Range(2, 5);
+        else if (GameManager.Instance.reputation >= 100)
+            laundryCount = Random.Range(3, 6);
+    }
+
     private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.transform.CompareTag("Door") && state == CustomerState.Leave)
@@ -255,7 +269,7 @@ public class CustomerBehaviour : MonoBehaviour
             {
                 state = CustomerState.Wait;
                 animator.SetInteger("Dir", 1);
-                laundryCount = Random.Range(minLaundryCount, maxLaundryCount);
+                RandomLaundryCount();
             }
         }
         if (coll.transform.CompareTag("CompleteZone") && HasReacheDestination())

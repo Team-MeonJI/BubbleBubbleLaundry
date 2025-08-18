@@ -41,7 +41,7 @@ public class BasketController : MonoBehaviour
     public void OnComplete()
     {
         Debug.Log("::: »¡·¡ ¿Ï·á :::");
-        GameObject _laundry = Instantiate(laundryPrefab, completeZone[laundryZoneIndex]);
+        GameObject _laundry = Instantiate(laundryPrefab, completeZone[laundryZoneIndex].position, Quaternion.identity);
         SpriteRenderer[] _laundrySprite = _laundry.GetComponentsInChildren<SpriteRenderer>();
 
         for (int i = 0; i < _laundrySprite.Length; i++)
@@ -64,7 +64,7 @@ public class BasketController : MonoBehaviour
                 if (CustomerManager.Instance.completeZoneCustomers[laundryZoneIndex].state != CustomerState.Angry)
                 {
                     UIManager.Instance.ChangeCompleteText();
-                    GameManager.Instance.ReputationHandler(5);
+                    GameManager.Instance.ReputationHandler(GameManager.Instance.reputeAdd);
                     GameManager.Instance.MoneyHandler(laundryCount * 100);
                     CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, gameObject, 1);
                 }

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
-using UnityEngine.Audio;
 
 public class SpotController : MonoBehaviour, IPointerClickHandler
 {
@@ -16,8 +15,8 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
 
     private int quartiles;
     private int touchCount;
-    private const int minTouchCount = 10;
-    private const int maxTouchCount = 21;
+    private const int minTouchCount = 6;
+    private const int maxTouchCount = 13;
 
     private void Awake()
     {

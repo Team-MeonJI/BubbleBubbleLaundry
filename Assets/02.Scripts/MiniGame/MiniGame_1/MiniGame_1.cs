@@ -17,9 +17,9 @@ public class MiniGame_1 : MiniGameController
     private float randomRangeY = 160.0f;
 
     private int spotCount = 0;
-    private const int minSpotCount = 3;
-    private const int maxSpotCount = 7;
-    private const int reward = 100;
+    private const int minSpotCount = 6;
+    private const int maxSpotCount = 8;
+    private const int reward = 2100;
 
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class MiniGame_1 : MiniGameController
             isGameOver = true;
             isGameSuccess = false;
             transform.gameObject.SetActive(false);
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
             return;
         }
 
@@ -107,12 +107,12 @@ public class MiniGame_1 : MiniGameController
         if (isGameSuccess)
         {
             UIManager.Instance.ChangeSpotCompleteText();
-            GameManager.Instance.ReputationHandler(5);
+            GameManager.Instance.ReputationHandler(GameManager.Instance.reputeAdd);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
         {
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
         }
 
         transform.gameObject.SetActive(false);

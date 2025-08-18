@@ -19,7 +19,7 @@ public class MiniGame_3 : MiniGameController
     private TextMeshProUGUI remainArrowCount;
     public GameObject error;
 
-    private const int reward = 150;
+    private const int reward = 1500;
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class MiniGame_3 : MiniGameController
             isGameOver = true;
             isGameSuccess = false;
             transform.gameObject.SetActive(false);
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
             return;
         }
 
@@ -108,12 +108,12 @@ public class MiniGame_3 : MiniGameController
         if (isGameSuccess)
         {
             UIManager.Instance.ChangeSewingMachineText();
-            GameManager.Instance.ReputationHandler(5);
+            GameManager.Instance.ReputationHandler(GameManager.Instance.reputeAdd);
             GameManager.Instance.MoneyHandler(reward * (int)currentTime);
         }
         else
         {
-            GameManager.Instance.ReputationHandler(-10);
+            GameManager.Instance.ReputationHandler(-GameManager.Instance.reputeDecr);
         }
 
         transform.gameObject.SetActive(false);

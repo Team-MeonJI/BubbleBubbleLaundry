@@ -42,21 +42,12 @@ public class CustomerManager : MonoBehaviour
         Init();
     }
 
-    private void Init()
-    {
-        door = GameObject.Find("Door").GetComponent<Transform>();
-        counterZone = GameObject.Find("CounterLine").GetComponentsInChildren<Transform>().ToList();
-        counterZone.Remove(counterZone[0]);
-        basketTranform = GameObject.Find("BasketZone").transform.GetChild(0).GetComponentsInChildren<Transform>().ToList();
-        basketTranform.RemoveAt(0);
-    }
-
     private void Update()
     {
         if (counterZoneCustomerCount + completeZoneCustomerCount >= customerMaxCount || GameManager.Instance.isGameOver)
             return;
 
-        if(currentTime < appearedTime)
+        if (currentTime < appearedTime)
         {
             currentTime += Time.deltaTime;
         }
@@ -66,6 +57,29 @@ public class CustomerManager : MonoBehaviour
             int _customerIndex = Random.Range(0, customerPrefab.Length);
             EnqueueCustomer(Instantiate(customerPrefab[_customerIndex], door.position, Quaternion.identity), _customerIndex);
         }
+
+        AppearedTimeHandler();
+    }
+
+    private void Init()
+    {
+        door = GameObject.Find("Door").GetComponent<Transform>();
+        counterZone = GameObject.Find("CounterLine").GetComponentsInChildren<Transform>().ToList();
+        counterZone.Remove(counterZone[0]);
+        basketTranform = GameObject.Find("BasketZone").transform.GetChild(0).GetComponentsInChildren<Transform>().ToList();
+        basketTranform.RemoveAt(0);
+    }
+
+    public void AppearedTimeHandler()
+    {
+        if (GameManager.Instance.reputation < 30)
+            appearedTime = 11.0f;
+        else if (GameManager.Instance.reputation >= 30 && GameManager.Instance.reputation < 50)
+            appearedTime = 8.0f;
+        else if (GameManager.Instance.reputation >= 50 && GameManager.Instance.reputation < 75)
+            appearedTime = 6.0f;
+        else if (GameManager.Instance.reputation >= 75)
+            appearedTime = 4.0f;
     }
 
     // 손님 등장 카운터로 이동
