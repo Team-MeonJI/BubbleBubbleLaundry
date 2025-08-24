@@ -16,7 +16,7 @@ public class SpotController : MonoBehaviour, IPointerClickHandler
     private int quartiles;
     private int touchCount;
     private const int minTouchCount = 6;
-    private const int maxTouchCount = 13;
+    private const int maxTouchCount = 11;
 
     private void Awake()
     {

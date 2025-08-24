@@ -65,7 +65,7 @@ public class BasketController : MonoBehaviour
                 {
                     UIManager.Instance.ChangeCompleteText();
                     GameManager.Instance.ReputationHandler(GameManager.Instance.reputeAdd);
-                    GameManager.Instance.MoneyHandler(laundryCount * 100);
+                    GameManager.Instance.MoneyHandler(laundryCount * 1000);
                     CustomerManager.Instance.CoroutineHandler(laundryZoneIndex, _laundry, gameObject, 1);
                 }
             }

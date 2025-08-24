@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public int spotCompleteCount = 0;
     public int sewingMachineCount = 0;
 
-    //private float gamePlayTime = 600.0f;
     private float gamePlayTime = 600.0f;
     private float currentTime;
 
@@ -96,13 +95,13 @@ public class GameManager : MonoBehaviour
         currentTime = 0;
         isGameOver = true;
 
-        if(money >= 301000)
+        if(money >= 175000)
         {
             // 해피 엔딩
             StartCoroutine(UIManager.Instance.OnEnding("IsHappy"));
             AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.HappyEnding];
         }
-        else if(money >= 184000 && money < 301000)
+        else if(money >= 100000 && money < 175000)
         {
             // 노말 엔딩
             StartCoroutine(UIManager.Instance.OnEnding("IsNormal"));

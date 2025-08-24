@@ -73,7 +73,7 @@ public class MiniGame_3 : MiniGameController
         currentTime = miniGameTime;
         resultPhanel.SetActive(false);
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 21; i++)
         {
             arrows.Add(Instantiate(arrowPrefab, arrowGrid.transform));
         }

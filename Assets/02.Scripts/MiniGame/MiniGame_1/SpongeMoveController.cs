@@ -6,7 +6,6 @@ public class SpongeMoveController : MonoBehaviour
     public RectTransform limitArea;
     private RectTransform spongeRect;
     private Animator animator;
-    private Canvas canvas;
 
     private bool isCursorHidden = false;
 
@@ -15,7 +14,6 @@ public class SpongeMoveController : MonoBehaviour
         miniGame1 = transform.parent.parent.parent.GetComponent<MiniGame_1>();
         spongeRect = GetComponent<RectTransform>();
         animator = GetComponent<Animator>();
-        canvas = GameObject.Find("MiniGameCanvas").GetComponent<Canvas>();
     }
 
     void Update()

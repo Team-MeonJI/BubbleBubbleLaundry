@@ -17,7 +17,7 @@ public class MiniGame_1 : MiniGameController
     private float randomRangeY = 160.0f;
 
     private int spotCount = 0;
-    private const int minSpotCount = 6;
+    private const int minSpotCount = 4;
     private const int maxSpotCount = 8;
     private const int reward = 2100;
 
