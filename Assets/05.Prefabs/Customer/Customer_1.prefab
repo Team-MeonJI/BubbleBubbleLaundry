@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -30791636, guid: 4244c65551afccb48b01a02a0cb6bc5f, type: 3}
+  m_Sprite: {fileID: -1625188514087772908, guid: 7b3b159215dbd524cbf8c7cc0e45c030, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  audioSource: {fileID: 0}
   spriteRenderer: {fileID: 0}
   speechBubble: {fileID: 0}
   speechBubbles:
