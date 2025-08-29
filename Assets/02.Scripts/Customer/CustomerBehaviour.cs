@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public class CustomerBehaviour : MonoBehaviour
 {
@@ -144,6 +143,9 @@ public class CustomerBehaviour : MonoBehaviour
                 CustomerManager.Instance.OnOrder(lineIndex);
             else
                 CustomerManager.Instance.OnEventOrder(lineIndex);
+
+            audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+            audioSource.Play();
         }
     }
 
@@ -161,6 +163,9 @@ public class CustomerBehaviour : MonoBehaviour
                 {
                     // 미니게임 시작
                     Init();
+                    audioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+                    audioSource.Play();
+
                     MiniGameManager.Instance.OnMiniGameStart(transform.gameObject);
                     state = CustomerState.MiniGame;
                     return;

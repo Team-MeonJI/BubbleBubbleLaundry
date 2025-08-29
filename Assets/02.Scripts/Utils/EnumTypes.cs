@@ -64,7 +64,8 @@ namespace Utils.EnumTypes
         Main,
         HappyEnding,
         NormalEnding,
-        BadEnding
+        BadEnding,
+        Credit
     }
 
     // 효과음 타입

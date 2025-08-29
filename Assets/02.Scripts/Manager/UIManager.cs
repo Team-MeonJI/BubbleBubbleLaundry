@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Utils.EnumTypes;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     private TextMeshProUGUI moneyText;
     private Slider reputationSlider;
     private Button homeButton;
+    private AudioSource mainAudioSource;
 
     private GameObject exceptonObject;
     private Image exceptionImage;
@@ -84,6 +86,7 @@ public class UIManager : MonoBehaviour
     public void MainSceneInit()
     {
         mainCanvas = GameObject.Find("MainCanvas")?.GetComponent<Canvas>();
+        mainAudioSource = mainCanvas.GetComponent<AudioSource>();
         timerText = mainCanvas.transform.GetChild(0).GetChild(3).GetComponentInChildren<TextMeshProUGUI>();
         moneyText = mainCanvas.transform.GetChild(0).GetChild(4).GetComponentInChildren<TextMeshProUGUI>();
         reputationSlider = mainCanvas.transform.GetChild(0).GetChild(2).GetComponent<Slider>();
@@ -99,7 +102,11 @@ public class UIManager : MonoBehaviour
         endingObject = mainCanvas.transform.GetChild(2).gameObject;
         endingAnimator = endingObject.transform.GetChild(0).GetComponent<Animator>();
 
-        homeButton.onClick.AddListener(delegate { SceneManager.LoadScene(0); });
+        homeButton.onClick.AddListener(delegate {
+            mainAudioSource.clip = AudioManager.Instance.sfxClips[(int)SFXType.Click];
+            mainAudioSource.Play();
+            SceneManager.LoadScene(0);
+        });
         GameManager.Instance.ReputationHandler(0);
     }
 

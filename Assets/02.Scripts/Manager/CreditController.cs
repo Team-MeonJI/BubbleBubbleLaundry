@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using Utils.EnumTypes;
 
 public class CreditController : MonoBehaviour
 {
@@ -25,7 +26,10 @@ public class CreditController : MonoBehaviour
     {
         creditObject.SetActive(true);
         Vector2 endPos = new Vector2(originPos.x, targetY);
-        moveTween = creditTransform.DOAnchorPos(endPos, duration).OnComplete(() => { Debug.Log(":: Credit End ::"); });
+        moveTween = creditTransform.DOAnchorPos(endPos, duration).SetDelay(1.5f);
+
+        AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Credit];
+        AudioManager.Instance.audioSource.Play();
     }
 
     public void OnCloseCredit()
@@ -33,5 +37,8 @@ public class CreditController : MonoBehaviour
         moveTween.Kill();
         creditObject.SetActive(false);
         creditTransform.anchoredPosition = originPos;
+
+        AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Title];
+        AudioManager.Instance.audioSource.Play();
     }
 }
