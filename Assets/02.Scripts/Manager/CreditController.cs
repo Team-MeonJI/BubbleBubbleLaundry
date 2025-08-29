@@ -26,7 +26,7 @@ public class CreditController : MonoBehaviour
     {
         creditObject.SetActive(true);
         Vector2 endPos = new Vector2(originPos.x, targetY);
-        moveTween = creditTransform.DOAnchorPos(endPos, duration).SetDelay(1.5f);
+        moveTween = creditTransform.DOAnchorPos(endPos, duration).SetDelay(2.0f);
 
         AudioManager.Instance.audioSource.clip = AudioManager.Instance.bgmClips[(int)BGMType.Credit];
         AudioManager.Instance.audioSource.Play();
