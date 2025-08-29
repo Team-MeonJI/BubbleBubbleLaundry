@@ -201,7 +201,6 @@ public class CustomerManager : MonoBehaviour
         completeZoneCustomers[_index].speechBubbles[_expression].SetActive(false);
         completeZoneCustomers[_index].state = CustomerState.Leave;
         completeZoneCustomers[_index].Init();
-        completeZoneCustomers[_index].spriteRenderer.sortingOrder = 1;
         completeZoneCustomers[_index].SetDestination(door);
         completeZoneCustomers[_index] = null;
         isLaundryFull[_index] = false;

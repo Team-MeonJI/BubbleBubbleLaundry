@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 790995110, guid: 660fa86d4ee34564eade3991e73592fe, type: 3}
+  m_Sprite: {fileID: 8468984714723522377, guid: 08efe00e6485e4542bbda6d2a83efccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -261,7 +261,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9846154, y: 0.9846154}
+    oldSize: {x: 1.0666667, y: 1.0666667}
     newSize: {x: 0.9846154, y: 0.9846154}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  audioSource: {fileID: 0}
   spriteRenderer: {fileID: 0}
   speechBubble: {fileID: 0}
   speechBubbles:
@@ -510,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.55
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1237545990373373222, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -527,22 +528,6 @@ PrefabInstance:
     - target: {fileID: 4497466914507637090, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
       propertyPath: m_Name
       value: Bubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 4497466914507637090, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5301016654824578638, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5362277963877039209, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6364892433025169663, guid: 4e2712e751d04434da5aafdcce9fd6a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 8c2ba2fe054afad49a3605ec1a7daa6d
+guid: 2fe593cb23a94394a8bb8f523dc18504
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 911834196474551894
-    second: bubble-Sheet1_0
+      213: 3486268013532659165
+    second: bubble_sheet 1_0
   - first:
-      213: 1461385849356639590
-    second: bubble-Sheet1_1
+      213: -3644733393577578768
+    second: bubble_sheet 1_1
   - first:
-      213: 3879104719941169681
-    second: bubble-Sheet1_2
+      213: 2942203156699288139
+    second: bubble_sheet 1_2
   - first:
-      213: -6780578320703674435
-    second: bubble-Sheet1_3
+      213: 7121783488418553006
+    second: bubble_sheet 1_3
   - first:
-      213: 8295034833814070216
-    second: bubble-Sheet1_4
+      213: -8187276546061323323
+    second: bubble_sheet 1_4
   - first:
-      213: -3732227182414444860
-    second: bubble-Sheet1_5
+      213: -6480623847879327644
+    second: bubble_sheet 1_5
   - first:
-      213: 5259079348134870587
-    second: bubble-Sheet1_6
+      213: 2192841836179398779
+    second: bubble_sheet 1_6
   - first:
-      213: -8646518593870086446
-    second: bubble-Sheet1_7
+      213: -5912530878036067509
+    second: bubble_sheet 1_7
+  - first:
+      213: -7544070498025501817
+    second: bubble_sheet 1_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,7 +150,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubble-Sheet1_0
+      name: bubble_sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,16 +163,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0d81c373c160b3e40bea7a685de4a24d
-      internalID: -652224663
+      spriteID: dddbb6a8946b16030800000000000000
+      internalID: 3486268013532659165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_1
+      name: bubble_sheet 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -182,16 +185,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d5f63796313b6ed468009128c78ec0a4
-      internalID: -818863320
+      spriteID: 0feedc60a4e4b6dc0800000000000000
+      internalID: -3644733393577578768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_2
+      name: bubble_sheet 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -204,16 +207,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5bffd743b0805d54c961c08a532bc36e
-      internalID: 2119416867
+      spriteID: b42181cbe2ec4d820800000000000000
+      internalID: 2942203156699288139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_3
+      name: bubble_sheet 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -226,16 +229,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d00543f71f145a84494b2bc211dc14ea
-      internalID: -1740108947
+      spriteID: eac1e629958a5d260800000000000000
+      internalID: 7121783488418553006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_4
+      name: bubble_sheet 1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -248,16 +251,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a6329e1683880454eb1c29bbc2142d4b
-      internalID: 1330919952
+      spriteID: 5c3b0220c53f06e80800000000000000
+      internalID: -8187276546061323323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_5
+      name: bubble_sheet 1_5
       rect:
         serializedVersion: 2
         x: 320
@@ -270,16 +273,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0744cb631bac7624a993e61f5c20f251
-      internalID: -1581032850
+      spriteID: 4604a3832f23016a0800000000000000
+      internalID: -6480623847879327644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_6
+      name: bubble_sheet 1_6
       rect:
         serializedVersion: 2
         x: 384
@@ -292,16 +295,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4e99d82d37ab8044aa67d01026f199cc
-      internalID: -1550832705
+      spriteID: b70a616280a8e6e10800000000000000
+      internalID: 2192841836179398779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubble-Sheet1_7
+      name: bubble_sheet 1_7
       rect:
         serializedVersion: 2
         x: 448
@@ -314,10 +317,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a605480c1c855c94ea202a725340e7bb
-      internalID: 1554206944
+      spriteID: b4bb12b0e7872fda0800000000000000
+      internalID: -5912530878036067509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubble_sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b8fac2ad31e4790800000000000000
+      internalID: -7544070498025501817
       vertices: []
       indices: 
       edges: []
@@ -326,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a6017c0433f9454eb9314f62e2cc8f4
+    spriteID: 7de2f6977bc61e74ba4a0885ed56977a
     internalID: 0
     vertices: []
     indices: 
@@ -336,14 +361,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bubble-Sheet1_0: -652224663
-      bubble-Sheet1_1: -818863320
-      bubble-Sheet1_2: 2119416867
-      bubble-Sheet1_3: -1740108947
-      bubble-Sheet1_4: 1330919952
-      bubble-Sheet1_5: -1581032850
-      bubble-Sheet1_6: -1550832705
-      bubble-Sheet1_7: 1554206944
+      bubble_sheet 1_0: 3486268013532659165
+      bubble_sheet 1_1: -3644733393577578768
+      bubble_sheet 1_2: 2942203156699288139
+      bubble_sheet 1_3: 7121783488418553006
+      bubble_sheet 1_4: -8187276546061323323
+      bubble_sheet 1_5: -6480623847879327644
+      bubble_sheet 1_6: 2192841836179398779
+      bubble_sheet 1_7: -5912530878036067509
+      bubble_sheet 1_8: -7544070498025501817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

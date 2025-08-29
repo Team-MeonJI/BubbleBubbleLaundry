@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Utils.EnumTypes;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 public class CustomerBehaviour : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class CustomerBehaviour : MonoBehaviour
     public float currentTime = 0.0f;
     private float waitingTime = 10.0f;
     private float laundryWaitingTime = 24.5f;
+
+    private bool isCount = false;
 
     private void Awake()
     {
@@ -86,10 +89,12 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.CompleteZone:
                 break;
             case CustomerState.Wait:
+                isCount = true;
                 spriteRenderer.sortingOrder = lineIndex + 10;
                 OnWaiting();
                 break;
             case CustomerState.LaundryWait:
+                isCount = false;
                 OnLaundryWaiting();
                 break;
             case CustomerState.MiniGame:
@@ -99,7 +104,7 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.Angry:
                 break;
             case CustomerState.Leave:
-                spriteRenderer.sortingOrder = 11;
+                spriteRenderer.sortingOrder = (isCount) ? 9 : 11;
                 break;
         }
     }
@@ -172,7 +177,19 @@ public class CustomerBehaviour : MonoBehaviour
 
             if (type == CustomerType.LaundryCustomer)
             {
-                MachineManager.Instance.OnMachineCheck(customerUID);
+                if (!MachineManager.Instance.OnMachineCheck(customerUID))
+                {
+                    GameObject[] _basket = GameObject.FindGameObjectsWithTag("Basket");
+
+                    for(int i = 0; i < _basket.Length; i++)
+                    {
+                        if(_basket[i].GetComponent<BasketController>().customerUID == customerUID)
+                        {
+                            Destroy(_basket[i]);
+                            break;
+                        }
+                    }
+                }
                 CustomerManager.Instance.CoroutineHandler(lineIndex, null, null, 2);
             }
             else
@@ -185,7 +202,7 @@ public class CustomerBehaviour : MonoBehaviour
     // 방향 확인
     public void OnDirection()
     {
-        if (state == CustomerState.Happy || state == CustomerState.Angry)
+        if (state == CustomerState.Happy || state == CustomerState.Angry || state == CustomerState.Wait)
             return;
 
         dir = new Vector2(agent.velocity.x, agent.velocity.y).normalized;

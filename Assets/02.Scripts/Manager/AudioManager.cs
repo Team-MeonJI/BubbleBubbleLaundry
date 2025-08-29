@@ -31,7 +31,6 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Audio Start");
         PlayerPrefs.SetFloat("BGM", 0.2f);
         PlayerPrefs.SetFloat("SFX", 0.2f);
 

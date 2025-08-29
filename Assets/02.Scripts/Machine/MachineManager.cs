@@ -188,9 +188,9 @@ public class MachineManager : MonoBehaviour
     }
 
     // 기계 확인
-    public void OnMachineCheck(int _UID)
+    public bool OnMachineCheck(int _UID)
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < machines.Length; i++)
         {
             MachineController _machine = machines[i].GetComponent<MachineController>();
 
@@ -201,9 +201,10 @@ public class MachineManager : MonoBehaviour
                     GameObject _basket = _machine.currentBasket.gameObject;
                     _machine.Init();
                     Destroy(_basket);
-                    return;
+                    return true;
                 }
             }
         }
+        return false;
     }
 }

@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     private TextMeshProUGUI moneyText;
     private Slider reputationSlider;
+    private Button homeButton;
 
     private GameObject exceptonObject;
     private Image exceptionImage;
@@ -67,10 +68,10 @@ public class UIManager : MonoBehaviour
     public void TitleSceneInit()
     {
         titleCanvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        gameStartButton = titleCanvas.transform.GetChild(0).GetChild(2).GetComponent<Button>();
-        helpButton = titleCanvas.transform.GetChild(0).GetChild(3).GetComponent<Button>();
-        optionButton = titleCanvas.transform.GetChild(0).GetChild(4).GetComponent<Button>();
-        exitButton = titleCanvas.transform.GetChild(0).GetChild(5).GetComponent<Button>();
+        gameStartButton = titleCanvas.transform.GetChild(0).GetChild(1).GetComponent<Button>();
+        helpButton = titleCanvas.transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        optionButton = titleCanvas.transform.GetChild(0).GetChild(3).GetComponent<Button>();
+        exitButton = titleCanvas.transform.GetChild(0).GetChild(4).GetComponent<Button>();
 
         helpPhanel = titleCanvas.transform.GetChild(2)?.gameObject;
         leftButton = helpPhanel.transform.GetChild(0).GetChild(1).GetComponent<Button>();
@@ -93,10 +94,12 @@ public class UIManager : MonoBehaviour
         customerText = mainCanvas.transform.GetChild(0).GetChild(6).GetComponentInChildren<TextMeshProUGUI>();
         spotCompletetText = mainCanvas.transform.GetChild(0).GetChild(7).GetComponentInChildren<TextMeshProUGUI>();
         SewingMachineText = mainCanvas.transform.GetChild(0).GetChild(8).GetComponentInChildren<TextMeshProUGUI>();
+        homeButton = mainCanvas.transform.GetChild(0).GetChild(9).GetComponent<Button>();
 
         endingObject = mainCanvas.transform.GetChild(2).gameObject;
         endingAnimator = endingObject.transform.GetChild(0).GetComponent<Animator>();
 
+        homeButton.onClick.AddListener(delegate { SceneManager.LoadScene(0); });
         GameManager.Instance.ReputationHandler(0);
     }
 
