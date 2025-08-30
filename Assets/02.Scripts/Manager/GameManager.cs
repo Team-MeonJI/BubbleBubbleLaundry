@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
     // 게임 나가기
     public void GameExit()
     {
-        Application.Quit();
+        //Application.Quit();
     }
 
     public void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)

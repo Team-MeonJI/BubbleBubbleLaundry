@@ -191,6 +191,7 @@ public class CustomerBehaviour : MonoBehaviour
                         if(_basket[i].GetComponent<BasketController>().customerUID == customerUID)
                         {
                             Destroy(_basket[i]);
+                            MachineManager.Instance.machine = null;
                             break;
                         }
                     }
